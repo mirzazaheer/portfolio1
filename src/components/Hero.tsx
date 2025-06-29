@@ -139,14 +139,15 @@ const Hero: React.FC = () => {
           <div className="flex justify-center lg:justify-end animate-fade-in-up order-1 lg:order-2">
             <div className="relative group">
               {/* Main photo container */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden border-3 sm:border-4 border-slate-700/50 group-hover:border-cyan-400/50 transition-all duration-500">
+              <div className="relative w-64 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[28rem] rounded-2xl sm:rounded-3xl overflow-hidden border-3 sm:border-4 border-slate-700/50 group-hover:border-cyan-400/50 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 group-hover:opacity-30 transition-opacity duration-500"></div>
                 
-                {/* Professional photo */}
+                {/* Professional photo - Fixed cropping */}
                 <img 
                   src="/IMG_40211.jpg" 
                   alt="Mirza Zaheer - Senior Data Engineer"
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  style={{ objectPosition: '50% 15%' }}
                 />
                 
                 {/* Overlay with professional badge */}
