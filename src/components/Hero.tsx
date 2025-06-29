@@ -5,7 +5,6 @@ const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [isPhotoClicked, setIsPhotoClicked] = useState(false);
   
   const titles = [
     'Senior Data Engineer & Cloud Architect',
@@ -45,12 +44,6 @@ const Hero: React.FC = () => {
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const handlePhotoClick = () => {
-    setIsPhotoClicked(true);
-    // Reset after 5 seconds
-    setTimeout(() => setIsPhotoClicked(false), 5000);
   };
 
   const achievements = [
@@ -135,14 +128,11 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Professional Photo with Glass Effect */}
+          {/* Right Column - Professional Photo - Mobile optimized with better zoom */}
           <div className="flex justify-center lg:justify-end animate-fade-in-up order-1 lg:order-2">
             <div className="relative group">
               {/* Main photo container - Mobile optimized */}
-              <div 
-                className="relative w-48 h-60 xs:w-56 xs:h-72 sm:w-72 sm:h-80 lg:w-96 lg:h-[28rem] rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden border-2 sm:border-3 lg:border-4 border-slate-700/50 group-hover:border-cyan-400/50 transition-all duration-500 cursor-pointer"
-                onClick={handlePhotoClick}
-              >
+              <div className="relative w-48 h-60 xs:w-56 xs:h-72 sm:w-72 sm:h-80 lg:w-96 lg:h-[28rem] rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden border-2 sm:border-3 lg:border-4 border-slate-700/50 group-hover:border-cyan-400/50 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 group-hover:opacity-30 transition-opacity duration-500"></div>
                 
                 {/* Professional photo - Optimized positioning for mobile zoom */}
@@ -156,37 +146,6 @@ const Hero: React.FC = () => {
                     transformOrigin: '50% 20%'
                   }}
                 />
-                
-                {/* Glass Effect Overlay */}
-                <div className={`absolute inset-0 transition-all duration-700 ease-out ${
-                  isPhotoClicked ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                }`}>
-                  {/* Main glass overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-900/40 via-slate-800/30 to-slate-900/50 backdrop-blur-[2px]"></div>
-                  
-                  {/* Frosted glass pattern */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/3"></div>
-                  
-                  {/* Subtle grid pattern */}
-                  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-                  
-                  {/* Animated shimmer effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 animate-pulse opacity-30"></div>
-                  
-                  {/* Center content */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center p-4 sm:p-6">
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 flex items-center justify-center">
-                        <User className="w-6 h-6 sm:w-8 sm:h-8 text-white/80" />
-                      </div>
-                      <p className="text-white/90 font-medium text-sm sm:text-base mb-2">View Profile</p>
-                      <p className="text-white/60 text-xs sm:text-sm">Click to reveal</p>
-                    </div>
-                  </div>
-                  
-                  {/* Subtle border highlight */}
-                  <div className="absolute inset-0 rounded-xl sm:rounded-2xl lg:rounded-3xl border border-white/10"></div>
-                </div>
                 
                 {/* Modern subtle status badge - Redesigned */}
                 <div className="absolute bottom-3 sm:bottom-4 lg:bottom-6 left-3 sm:left-4 lg:left-6 right-3 sm:right-4 lg:right-6">
