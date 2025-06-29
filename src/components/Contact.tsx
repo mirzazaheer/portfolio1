@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Linkedin, Github, Calendar, MessageCircle, User, FileText } from 'lucide-react';
+import { Mail, MapPin, Send, Linkedin, Github, Calendar, MessageCircle, User, FileText } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -25,13 +25,6 @@ const Contact: React.FC = () => {
 
   const contactInfo = [
     {
-      icon: Phone,
-      label: 'Phone',
-      value: '+91-9952383523',
-      href: 'tel:+919952383523',
-      gradient: 'from-green-400 to-emerald-500'
-    },
-    {
       icon: Mail,
       label: 'Email',
       value: 'mirzazaheer65@gmail.com',
@@ -41,18 +34,16 @@ const Contact: React.FC = () => {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Chennai, Tamil Nadu, India',
+      value: 'India',
       href: '#',
       gradient: 'from-purple-400 to-pink-500'
     }
   ];
 
   const personalDetails = [
-    { label: 'Date of Birth', value: '02 Mar 1998', icon: Calendar },
     { label: 'Nationality', value: 'Indian', icon: User },
     { label: 'Passport', value: 'Available', icon: FileText },
-    { label: 'Languages', value: 'English, Hindi, Assamese, Urdu, Bengali', icon: MessageCircle },
-    { label: 'Hobbies', value: 'Biking, Travel, Photography', icon: User }
+    { label: 'Languages', value: 'English, Hindi, Assamese, Urdu, Bengali', icon: MessageCircle }
   ];
 
   return (
@@ -161,13 +152,17 @@ const Contact: React.FC = () => {
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-4 sm:mb-6">Connect With Me</h3>
                 <div className="flex gap-3 sm:gap-4">
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/mirza-zaheer/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group/social flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/20 hover:border-blue-500/40 text-blue-400 rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-110"
                   >
                     <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 group-hover/social:scale-110 transition-transform" />
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/mirzazaheer"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group/social flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-slate-500/10 hover:bg-slate-500/20 border border-slate-500/20 hover:border-slate-500/40 text-slate-400 rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-110"
                   >
                     <Github className="w-5 h-5 sm:w-6 sm:h-6 group-hover/social:scale-110 transition-transform" />
@@ -191,21 +186,21 @@ const Contact: React.FC = () => {
               
               <div className="relative z-10">
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-6 sm:mb-8">Contact Information</h3>
-                <div className="space-y-3 sm:space-y-4">
+                <div className="space-y-4 sm:space-y-6">
                   {contactInfo.map((info, index) => {
                     const Icon = info.icon;
                     return (
                       <a
                         key={index}
                         href={info.href}
-                        className="group/contact flex items-center gap-3 sm:gap-4 p-3 sm:p-4 lg:p-6 bg-slate-800/30 hover:bg-slate-800/50 rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-105"
+                        className="group/contact flex items-center gap-4 sm:gap-6 p-4 sm:p-6 lg:p-8 bg-slate-800/30 hover:bg-slate-800/50 rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-105"
                       >
-                        <div className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${info.gradient} bg-opacity-10 rounded-xl sm:rounded-2xl group-hover/contact:scale-110 transition-transform duration-300`}>
-                          <Icon className={`w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br ${info.gradient} bg-clip-text text-transparent`} />
+                        <div className={`flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${info.gradient} bg-opacity-10 rounded-xl sm:rounded-2xl group-hover/contact:scale-110 transition-transform duration-300`}>
+                          <Icon className={`w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br ${info.gradient} bg-clip-text text-transparent`} />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-xs sm:text-sm text-slate-400 font-medium">{info.label}</p>
-                          <p className="text-slate-300 font-semibold truncate text-sm sm:text-base">{info.value}</p>
+                          <p className="text-sm sm:text-base text-slate-400 font-medium mb-1">{info.label}</p>
+                          <p className="text-slate-300 font-semibold truncate text-base sm:text-lg">{info.value}</p>
                         </div>
                       </a>
                     );
@@ -214,22 +209,24 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Personal Details */}
+            {/* Personal Details - Streamlined */}
             <div className="group relative bg-slate-900/50 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 border border-slate-800/50 hover:border-slate-700/50 transition-all duration-500">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-red-500/5 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               <div className="relative z-10">
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-6 sm:mb-8">Personal Details</h3>
-                <div className="space-y-3 sm:space-y-4">
+                <div className="space-y-4 sm:space-y-6">
                   {personalDetails.map((detail, index) => {
                     const Icon = detail.icon;
                     return (
-                      <div key={index} className="flex items-center justify-between p-3 sm:p-4 bg-slate-800/20 rounded-xl sm:rounded-2xl border border-slate-700/30">
-                        <div className="flex items-center gap-2 sm:gap-3">
-                          <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
-                          <span className="text-slate-400 text-xs sm:text-sm font-medium">{detail.label}</span>
+                      <div key={index} className="flex items-start gap-4 p-4 sm:p-6 bg-slate-800/20 rounded-xl sm:rounded-2xl border border-slate-700/30">
+                        <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-cyan-400/10 rounded-lg sm:rounded-xl flex-shrink-0">
+                          <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" />
                         </div>
-                        <span className="text-slate-300 font-semibold text-xs sm:text-sm text-right max-w-[60%] truncate">{detail.value}</span>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-slate-400 text-sm sm:text-base font-medium mb-1">{detail.label}</p>
+                          <p className="text-slate-300 font-semibold text-sm sm:text-base leading-relaxed">{detail.value}</p>
+                        </div>
                       </div>
                     );
                   })}
