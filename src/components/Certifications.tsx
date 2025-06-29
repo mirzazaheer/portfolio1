@@ -14,7 +14,7 @@ const Certifications: React.FC = () => {
     {
       name: 'Microsoft Certified: Azure AI Fundamentals',
       provider: 'Microsoft',
-      icon: '🤖',
+      icon: '🏢',
       level: 'Certified',
       gradient: 'from-blue-400 to-indigo-500',
       description: 'AI and machine learning fundamentals on Azure'
