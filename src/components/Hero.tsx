@@ -83,9 +83,9 @@ const Hero: React.FC = () => {
                 </span>
               </h1>
               <div className="h-16 sm:h-20 flex items-center justify-center lg:justify-start">
-                <span className="text-lg sm:text-xl lg:text-2xl font-light text-slate-300 leading-relaxed">
+                <span className="text-lg sm:text-xl lg:text-2xl font-light text-slate-300 leading-relaxed font-mono tracking-wide">
                   {displayText}
-                  <span className="animate-pulse text-cyan-400">|</span>
+                  <span className="animate-pulse text-cyan-400 font-thin">|</span>
                 </span>
               </div>
             </div>

@@ -7,6 +7,7 @@ const Projects: React.FC = () => {
     {
       title: 'Enterprise Data Pipeline Modernization',
       subtitle: 'AWS SQS + Iceberg Architecture',
+      client: 'Kellanova (Fortune 500 Food Company)',
       description: 'Architected and implemented scalable data ingestion pipeline using AWS SQS, replacing Lambda bottlenecks. Designed Iceberg-based ACID-compliant data lake operations with automated file processing and cost optimization.',
       technologies: ['AWS SQS', 'Apache Iceberg', 'Snowflake', 'Glue', 'Python', 'Spark', 'S3', 'Lambda'],
       features: [
@@ -20,23 +21,9 @@ const Projects: React.FC = () => {
       category: 'Enterprise Data Engineering'
     },
     {
-      title: 'Unified Customer Data Platform',
-      subtitle: 'Multi-Source Integration & Analytics',
-      description: 'Built comprehensive customer data platform integrating CRM, Twilio, Workday, and O365 data sources. Implemented real-time ingestion with Snowpipe, advanced data quality frameworks, and automated validation dashboards.',
-      technologies: ['Snowflake', 'Snowpipe', 'Python', 'REST APIs', 'AWS Lambda', 'Talend', 'PowerBI'],
-      features: [
-        'Multi-source data integration with PII compliance',
-        'Real-time ingestion using Snowpipe and AWS Lambda',
-        'Advanced data quality validation framework',
-        'Automated reconciliation and repair mechanisms'
-      ],
-      icon: Database,
-      gradient: 'from-blue-500 to-purple-600',
-      category: 'Customer Analytics Platform'
-    },
-    {
       title: 'Smart Factory Analytics Platform',
       subtitle: 'Manufacturing Intelligence Solution',
+      client: 'Kellanova (Fortune 500 Food Company)',
       description: 'Developed comprehensive analytics platform for manufacturing operations with real-time data processing, predictive maintenance insights, and automated workflow orchestration using modern cloud technologies.',
       technologies: ['Snowflake', 'dbt', 'AWS Glue', 'Redshift', 'GitHub Actions', 'Python'],
       features: [
@@ -52,6 +39,7 @@ const Projects: React.FC = () => {
     {
       title: 'Financial Services Data Lake',
       subtitle: 'Azure Fabric & Databricks Solution',
+      client: 'Alegeus (US Fintech Company)',
       description: 'Architected enterprise data lake for fintech company using Azure Fabric and Databricks. Implemented Silver/Gold layer transformations, real-time streaming with Kafka, and comprehensive data validation frameworks.',
       technologies: ['Azure Fabric', 'Databricks', 'Delta Lake', 'Kafka', 'CosmosDB', 'Python', 'Java'],
       features: [
@@ -64,11 +52,76 @@ const Projects: React.FC = () => {
       gradient: 'from-pink-500 to-rose-500',
       category: 'Financial Data Engineering'
     },
+    {
+      title: 'Unified Customer Data Platform',
+      subtitle: 'Multi-Source Integration & Analytics',
+      client: 'Capri Holdings (Luxury Fashion Conglomerate)',
+      description: 'Built comprehensive customer data platform integrating CRM, Twilio, Workday, and O365 data sources. Implemented real-time ingestion with Snowpipe, advanced data quality frameworks, and automated validation dashboards.',
+      technologies: ['Snowflake', 'Snowpipe', 'Python', 'REST APIs', 'AWS Lambda', 'Talend', 'PowerBI'],
+      features: [
+        'Multi-source data integration with PII compliance',
+        'Real-time ingestion using Snowpipe and AWS Lambda',
+        'Advanced data quality validation framework',
+        'Automated reconciliation and repair mechanisms'
+      ],
+      icon: Database,
+      gradient: 'from-blue-500 to-purple-600',
+      category: 'Customer Analytics Platform'
+    },
+    {
+      title: 'Enterprise Data Warehouse Modernization',
+      subtitle: 'Cloud Migration & Analytics Platform',
+      client: 'Capri Holdings (Luxury Fashion Conglomerate)',
+      description: 'Led comprehensive data warehouse modernization from on-premise to cloud, implementing Azure Synapse Analytics and Databricks for enhanced analytics capabilities and business intelligence reporting.',
+      technologies: ['Azure Synapse', 'Azure Databricks', 'ADLS Gen2', 'ADF', 'PowerBI', 'Spark'],
+      features: [
+        'Complete data warehouse migration to cloud',
+        'Silver/Gold layer data transformations',
+        'Advanced analytics and business intelligence',
+        'Scalable data processing with Spark'
+      ],
+      icon: Cloud,
+      gradient: 'from-emerald-400 to-teal-500',
+      category: 'Data Warehouse Modernization'
+    },
+    {
+      title: 'Retail Analytics Data Pipeline',
+      subtitle: 'E-commerce Intelligence Solution',
+      client: 'Michael Kors (Luxury Fashion Brand)',
+      description: 'Developed optimized data pipeline for retail operations enabling advanced MSTR reporting. Streamlined sales and inventory analytics with automated data processing and real-time insights.',
+      technologies: ['Snowflake', 'Talend', 'Shell Script', 'AWS', 'MicroStrategy'],
+      features: [
+        'Optimized retail data pipeline architecture',
+        'Advanced sales and inventory analytics',
+        'Real-time MSTR reporting capabilities',
+        'Automated data validation and quality checks'
+      ],
+      icon: Activity,
+      gradient: 'from-orange-400 to-red-500',
+      category: 'Retail Analytics'
+    },
+    {
+      title: 'Wholesale Operations Data Platform',
+      subtitle: 'Supply Chain Intelligence System',
+      client: 'Michael Kors (Luxury Fashion Brand)',
+      description: 'Architected robust wholesale data platform with advanced exception handling and automated workflows. Integrated SharePoint and Power Automate for seamless data operations and business process automation.',
+      technologies: ['Snowflake', 'Talend', 'SharePoint', 'Power Automate', 'Shell Script'],
+      features: [
+        'Comprehensive wholesale data feed processing',
+        'Advanced exception handling mechanisms',
+        'Automated workflow orchestration',
+        'Business process integration and optimization'
+      ],
+      icon: Building,
+      gradient: 'from-yellow-400 to-orange-500',
+      category: 'Supply Chain Analytics'
+    },
     
     // Personal/Academic Projects
     {
       title: 'Predictive Analytics for Urban Mobility',
       subtitle: 'M.Tech Dissertation - Machine Learning',
+      client: 'Academic Research Project',
       description: 'Advanced machine learning model for taxi demand prediction using NYC trip data, weather patterns, and temporal analysis. Implemented comprehensive time series forecasting with 95% accuracy for resource optimization.',
       technologies: ['Databricks', 'Snowflake', 'Python', 'Pandas', 'Scikit-learn', 'Spark', 'Time Series Analysis'],
       features: [
@@ -84,6 +137,7 @@ const Projects: React.FC = () => {
     {
       title: 'AI-Powered Healthcare Assistant',
       subtitle: 'NLP & Conversational AI',
+      client: 'Personal Innovation Project',
       description: 'Intelligent conversational AI system for automated medical diagnosis and patient interaction. Built with advanced NLP capabilities for medical query understanding and contextual response generation.',
       technologies: ['Python', 'NLP', 'TensorFlow', 'Machine Learning', 'Flask', 'Natural Language Processing'],
       features: [
@@ -99,6 +153,7 @@ const Projects: React.FC = () => {
     {
       title: 'Enterprise Hospital Management System',
       subtitle: 'Full-Stack Healthcare Solution',
+      client: 'Academic Capstone Project',
       description: 'Comprehensive hospital management platform with patient records, appointment scheduling, staff management, and inventory tracking. Built with modern web technologies and robust database architecture.',
       technologies: ['HTML5', 'CSS3', 'JavaScript', 'Database Management', 'System Architecture'],
       features: [
@@ -114,6 +169,7 @@ const Projects: React.FC = () => {
     {
       title: 'Workforce Analytics & Automation',
       subtitle: 'HR Intelligence Platform',
+      client: 'Personal Development Project',
       description: 'Automated attendance tracking system with real-time monitoring, comprehensive reporting, and HR integration. Streamlined workforce management with advanced analytics and automated notifications.',
       technologies: ['Web Development', 'Database Design', 'Analytics', 'Reporting', 'System Integration'],
       features: [
@@ -162,7 +218,8 @@ const Projects: React.FC = () => {
                       <h3 className="text-xl lg:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 transition-all duration-300 mb-1">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-slate-400 font-medium">{project.subtitle}</p>
+                      <p className="text-sm text-slate-400 font-medium mb-2">{project.subtitle}</p>
+                      <p className="text-xs text-cyan-400 font-semibold">{project.client}</p>
                     </div>
                   </div>
 
