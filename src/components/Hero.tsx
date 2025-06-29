@@ -128,19 +128,23 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Professional Photo - Mobile optimized */}
+          {/* Right Column - Professional Photo - Mobile optimized with better zoom */}
           <div className="flex justify-center lg:justify-end animate-fade-in-up order-1 lg:order-2">
             <div className="relative group">
               {/* Main photo container - Mobile optimized */}
               <div className="relative w-48 h-60 xs:w-56 xs:h-72 sm:w-72 sm:h-80 lg:w-96 lg:h-[28rem] rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden border-2 sm:border-3 lg:border-4 border-slate-700/50 group-hover:border-cyan-400/50 transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 group-hover:opacity-30 transition-opacity duration-500"></div>
                 
-                {/* Professional photo */}
+                {/* Professional photo - Optimized positioning for mobile zoom */}
                 <img 
                   src="/IMG_40211.jpg" 
                   alt="Mirza Zaheer - Senior Data Engineer"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  style={{ objectPosition: '50% 15%' }}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={{ 
+                    objectPosition: '50% 10%',
+                    transform: 'scale(1.15)',
+                    transformOrigin: '50% 20%'
+                  }}
                 />
                 
                 {/* Modern subtle status badge */}
