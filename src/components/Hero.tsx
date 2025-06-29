@@ -128,7 +128,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Professional Photo with Clean Modern Overlay */}
+          {/* Right Column - Professional Photo with Balanced Modern Overlay */}
           <div className="flex justify-center lg:justify-end animate-fade-in-up order-1 lg:order-2">
             <div className="relative group">
               {/* Main photo container */}
@@ -146,45 +146,45 @@ const Hero: React.FC = () => {
                   }}
                 />
                 
-                {/* Clean, Uniform Modern Overlay - Only visible when NOT hovered */}
+                {/* Balanced Professional Overlay - Only visible when NOT hovered */}
                 <div className="absolute inset-0 group-hover:opacity-0 transition-all duration-700 ease-out z-20">
-                  {/* Primary uniform overlay with subtle tech gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-slate-800/20 to-slate-900/40 backdrop-blur-[0.5px] rounded-xl sm:rounded-2xl lg:rounded-3xl"></div>
+                  {/* Primary balanced overlay - not too dark, not too light */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-900/15 via-slate-800/10 to-slate-900/20 backdrop-blur-[0.3px] rounded-xl sm:rounded-2xl lg:rounded-3xl"></div>
                   
-                  {/* Subtle tech-themed color wash */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/8 via-blue-500/6 to-purple-600/8 rounded-xl sm:rounded-2xl lg:rounded-3xl"></div>
+                  {/* Professional tech-themed accent */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/6 via-blue-500/4 to-purple-600/6 rounded-xl sm:rounded-2xl lg:rounded-3xl"></div>
                   
-                  {/* Clean diagonal light accent */}
+                  {/* Subtle professional highlight */}
                   <div className="absolute top-0 left-0 w-full h-full">
-                    <div className="absolute top-0 left-0 w-1/4 h-full bg-gradient-to-r from-cyan-400/12 via-cyan-400/6 to-transparent transform -skew-x-12 translate-x-6 sm:translate-x-12"></div>
+                    <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-white/8 via-white/4 to-transparent transform -skew-x-12 translate-x-4 sm:translate-x-8"></div>
                   </div>
                   
-                  {/* Minimal border accent */}
+                  {/* Clean professional border accent */}
                   <div className="absolute inset-0 rounded-xl sm:rounded-2xl lg:rounded-3xl">
-                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent"></div>
-                    <div className="absolute top-0 bottom-0 left-0 w-px bg-gradient-to-b from-cyan-400/15 via-transparent to-transparent"></div>
+                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/15 to-transparent"></div>
+                    <div className="absolute top-0 bottom-0 left-0 w-px bg-gradient-to-b from-cyan-400/12 via-transparent to-transparent"></div>
                   </div>
                   
-                  {/* Single subtle inner glow */}
-                  <div className="absolute inset-6 sm:inset-8 bg-gradient-to-br from-cyan-400/4 via-transparent to-blue-500/4 rounded-lg sm:rounded-xl lg:rounded-2xl"></div>
+                  {/* Subtle depth enhancement */}
+                  <div className="absolute inset-4 sm:inset-6 bg-gradient-to-br from-cyan-400/3 via-transparent to-blue-500/3 rounded-lg sm:rounded-xl lg:rounded-2xl"></div>
                 </div>
                 
-                {/* Clean status badge */}
+                {/* Professional status badge */}
                 <div className="absolute bottom-3 sm:bottom-4 lg:bottom-6 left-3 sm:left-4 lg:left-6 right-3 sm:right-4 lg:right-6 z-30">
-                  <div className="bg-slate-900/70 backdrop-blur-xl rounded-lg sm:rounded-xl border border-cyan-400/20 p-2 sm:p-2.5 shadow-xl">
+                  <div className="bg-slate-900/80 backdrop-blur-xl rounded-lg sm:rounded-xl border border-cyan-400/25 p-2 sm:p-2.5 shadow-xl">
                     <div className="flex items-center justify-center gap-2">
                       <div className="relative">
                         <Dot className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 animate-pulse" />
                         <div className="absolute inset-0 w-4 h-4 sm:w-5 sm:h-5 bg-emerald-400/30 rounded-full animate-ping"></div>
                       </div>
-                      <span className="text-white/90 font-medium text-xs sm:text-sm tracking-wide">Open to Opportunities</span>
+                      <span className="text-white/95 font-medium text-xs sm:text-sm tracking-wide">Open to Opportunities</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Simplified floating element - just one clean accent */}
-              <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 lg:-top-4 lg:-right-4 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-cyan-400/15 to-blue-500/15 rounded-lg sm:rounded-xl lg:rounded-2xl backdrop-blur-sm border border-cyan-400/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              {/* Professional floating accent */}
+              <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 lg:-top-4 lg:-right-4 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-lg sm:rounded-xl lg:rounded-2xl backdrop-blur-sm border border-cyan-400/25 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <User className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-cyan-400" />
               </div>
             </div>
