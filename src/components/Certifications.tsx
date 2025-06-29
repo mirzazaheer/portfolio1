@@ -12,7 +12,7 @@ const Certifications: React.FC = () => {
       description: 'Core certification for Snowflake data platform'
     },
     {
-      name: 'dbt Fundamentals',
+      name: 'dbt Certified Developer',
       provider: 'dbt Labs',
       icon: '🔧',
       level: 'Certified',

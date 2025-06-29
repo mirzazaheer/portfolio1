@@ -1,13 +1,76 @@
 import React from 'react';
-import { ExternalLink, Github, Brain, Cpu, Building, Users, ArrowRight, Database, Activity, Bot, Calendar } from 'lucide-react';
+import { ExternalLink, Github, Brain, Cpu, Building, Users, ArrowRight, Database, Activity, Bot, Calendar, Cloud, Zap } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const projects = [
+    // Professional/Job-related Projects First
     {
-      title: 'Taxi Demand Prediction',
-      subtitle: 'M.Tech Dissertation Project',
-      description: 'Advanced ML model to predict taxi demand using NYC trip data and weather patterns. Implemented comprehensive time series forecasting with multiple ML techniques for accurate demand prediction and resource optimization.',
-      technologies: ['Databricks', 'Snowflake', 'Python', 'Pandas', 'Scikit-learn', 'Spark', 'Machine Learning', 'Time Series'],
+      title: 'Enterprise Data Pipeline Modernization',
+      subtitle: 'AWS SQS + Iceberg Architecture',
+      description: 'Architected and implemented scalable data ingestion pipeline using AWS SQS, replacing Lambda bottlenecks. Designed Iceberg-based ACID-compliant data lake operations with automated file processing and cost optimization.',
+      technologies: ['AWS SQS', 'Apache Iceberg', 'Snowflake', 'Glue', 'Python', 'Spark', 'S3', 'Lambda'],
+      features: [
+        'Eliminated Lambda-based bottlenecks with SQS bulk processing',
+        'Implemented ACID transactions with Apache Iceberg tables',
+        'Automated S3 to Snowflake/Redshift data loading',
+        'Achieved 70% cost reduction in compute resources'
+      ],
+      icon: Cloud,
+      gradient: 'from-cyan-400 to-blue-500',
+      category: 'Enterprise Data Engineering'
+    },
+    {
+      title: 'Unified Customer Data Platform',
+      subtitle: 'Multi-Source Integration & Analytics',
+      description: 'Built comprehensive customer data platform integrating CRM, Twilio, Workday, and O365 data sources. Implemented real-time ingestion with Snowpipe, advanced data quality frameworks, and automated validation dashboards.',
+      technologies: ['Snowflake', 'Snowpipe', 'Python', 'REST APIs', 'AWS Lambda', 'Talend', 'PowerBI'],
+      features: [
+        'Multi-source data integration with PII compliance',
+        'Real-time ingestion using Snowpipe and AWS Lambda',
+        'Advanced data quality validation framework',
+        'Automated reconciliation and repair mechanisms'
+      ],
+      icon: Database,
+      gradient: 'from-blue-500 to-purple-600',
+      category: 'Customer Analytics Platform'
+    },
+    {
+      title: 'Smart Factory Analytics Platform',
+      subtitle: 'Manufacturing Intelligence Solution',
+      description: 'Developed comprehensive analytics platform for manufacturing operations with real-time data processing, predictive maintenance insights, and automated workflow orchestration using modern cloud technologies.',
+      technologies: ['Snowflake', 'dbt', 'AWS Glue', 'Redshift', 'GitHub Actions', 'Python'],
+      features: [
+        'Real-time manufacturing data ingestion and processing',
+        'Advanced data modeling with dbt for optimization',
+        'Automated workflow orchestration and deployments',
+        'Predictive analytics for operational efficiency'
+      ],
+      icon: Activity,
+      gradient: 'from-purple-600 to-pink-500',
+      category: 'Manufacturing Intelligence'
+    },
+    {
+      title: 'Financial Services Data Lake',
+      subtitle: 'Azure Fabric & Databricks Solution',
+      description: 'Architected enterprise data lake for fintech company using Azure Fabric and Databricks. Implemented Silver/Gold layer transformations, real-time streaming with Kafka, and comprehensive data validation frameworks.',
+      technologies: ['Azure Fabric', 'Databricks', 'Delta Lake', 'Kafka', 'CosmosDB', 'Python', 'Java'],
+      features: [
+        'Multi-layered data lake architecture (Bronze/Silver/Gold)',
+        'Real-time streaming data processing with Kafka',
+        'Advanced validation and reconciliation tools',
+        'Microservices-based data synchronization'
+      ],
+      icon: Zap,
+      gradient: 'from-pink-500 to-rose-500',
+      category: 'Financial Data Engineering'
+    },
+    
+    // Personal/Academic Projects
+    {
+      title: 'Predictive Analytics for Urban Mobility',
+      subtitle: 'M.Tech Dissertation - Machine Learning',
+      description: 'Advanced machine learning model for taxi demand prediction using NYC trip data, weather patterns, and temporal analysis. Implemented comprehensive time series forecasting with 95% accuracy for resource optimization.',
+      technologies: ['Databricks', 'Snowflake', 'Python', 'Pandas', 'Scikit-learn', 'Spark', 'Time Series Analysis'],
       features: [
         'Real-time demand forecasting with 95% accuracy',
         'Weather data integration and correlation analysis',
@@ -15,14 +78,14 @@ const Projects: React.FC = () => {
         'Scalable ML pipeline with automated retraining'
       ],
       icon: Cpu,
-      gradient: 'from-cyan-400 to-blue-500',
+      gradient: 'from-rose-500 to-orange-500',
       category: 'Machine Learning & Analytics'
     },
     {
-      title: 'Healthcare AI Chatbot',
-      subtitle: 'NLP & AI Project',
-      description: 'Intelligent conversational AI system for automated disease diagnosis and patient response management. Built with advanced NLP capabilities for medical query understanding and contextual response generation.',
-      technologies: ['Python', 'NLP', 'TensorFlow', 'Machine Learning', 'Flask', 'Natural Language Processing', 'AI'],
+      title: 'AI-Powered Healthcare Assistant',
+      subtitle: 'NLP & Conversational AI',
+      description: 'Intelligent conversational AI system for automated medical diagnosis and patient interaction. Built with advanced NLP capabilities for medical query understanding and contextual response generation.',
+      technologies: ['Python', 'NLP', 'TensorFlow', 'Machine Learning', 'Flask', 'Natural Language Processing'],
       features: [
         'Automated disease diagnosis with symptom analysis',
         'Medical query processing and understanding',
@@ -30,14 +93,14 @@ const Projects: React.FC = () => {
         'Patient interaction system with conversation memory'
       ],
       icon: Bot,
-      gradient: 'from-green-400 to-emerald-500',
+      gradient: 'from-orange-500 to-yellow-500',
       category: 'AI & Natural Language Processing'
     },
     {
-      title: 'Hospital Management System',
-      subtitle: 'Full-Stack Enterprise Solution',
+      title: 'Enterprise Hospital Management System',
+      subtitle: 'Full-Stack Healthcare Solution',
       description: 'Comprehensive hospital management platform with patient records, appointment scheduling, staff management, and inventory tracking. Built with modern web technologies and robust database architecture.',
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Database Management', 'Web Development', 'System Architecture'],
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Database Management', 'System Architecture'],
       features: [
         'Complete patient record management system',
         'Automated appointment scheduling and notifications',
@@ -45,14 +108,14 @@ const Projects: React.FC = () => {
         'Real-time inventory tracking and alerts'
       ],
       icon: Building,
-      gradient: 'from-purple-500 to-pink-500',
-      category: 'Full-Stack Development'
+      gradient: 'from-yellow-500 to-green-500',
+      category: 'Healthcare Technology'
     },
     {
-      title: 'Attendance Management System',
-      subtitle: 'Enterprise Automation Solution',
+      title: 'Workforce Analytics & Automation',
+      subtitle: 'HR Intelligence Platform',
       description: 'Automated attendance tracking system with real-time monitoring, comprehensive reporting, and HR integration. Streamlined workforce management with advanced analytics and automated notifications.',
-      technologies: ['Web Development', 'Database Design', 'Automation', 'Reporting', 'Analytics', 'System Integration'],
+      technologies: ['Web Development', 'Database Design', 'Analytics', 'Reporting', 'System Integration'],
       features: [
         'Real-time attendance tracking and monitoring',
         'Automated reporting with customizable dashboards',
@@ -60,38 +123,8 @@ const Projects: React.FC = () => {
         'Seamless HR system integration and notifications'
       ],
       icon: Users,
-      gradient: 'from-orange-400 to-red-500',
-      category: 'Enterprise Systems'
-    },
-    {
-      title: 'Data Pipeline Automation',
-      subtitle: 'ETL & Data Engineering',
-      description: 'Scalable data pipeline automation framework for enterprise data processing. Built robust ETL processes with error handling, monitoring, and automated data quality validation.',
-      technologies: ['Python', 'SQL', 'ETL', 'Data Engineering', 'Automation', 'Monitoring'],
-      features: [
-        'Automated ETL pipeline with error recovery',
-        'Real-time data quality monitoring',
-        'Scalable processing architecture',
-        'Comprehensive logging and alerting system'
-      ],
-      icon: Database,
-      gradient: 'from-blue-500 to-purple-600',
-      category: 'Data Engineering'
-    },
-    {
-      title: 'Real-time Analytics Dashboard',
-      subtitle: 'Business Intelligence Solution',
-      description: 'Interactive real-time analytics dashboard for business intelligence and data visualization. Provides actionable insights with dynamic reporting and customizable metrics.',
-      technologies: ['Analytics', 'Visualization', 'Real-time Processing', 'Business Intelligence', 'Dashboard'],
-      features: [
-        'Real-time data visualization and insights',
-        'Interactive dashboard with drill-down capabilities',
-        'Customizable metrics and KPI tracking',
-        'Automated report generation and distribution'
-      ],
-      icon: Activity,
-      gradient: 'from-teal-400 to-cyan-500',
-      category: 'Business Intelligence'
+      gradient: 'from-green-500 to-teal-500',
+      category: 'HR Technology'
     }
   ];
 
@@ -103,7 +136,7 @@ const Projects: React.FC = () => {
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Projects</span>
           </h2>
           <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Innovative solutions showcasing expertise in data engineering, machine learning, and full-stack development
+            Enterprise-grade solutions showcasing expertise in data engineering, cloud architecture, and scalable analytics platforms
           </p>
         </div>
 
@@ -172,7 +205,7 @@ const Projects: React.FC = () => {
                   <div className="flex flex-col sm:flex-row gap-3">
                     <button className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105">
                       <ExternalLink className="w-4 h-4" />
-                      <span className="text-sm">View Project</span>
+                      <span className="text-sm">View Details</span>
                     </button>
                     <button className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-slate-800/50 hover:bg-slate-700/50 text-slate-300 hover:text-white font-semibold rounded-xl border border-slate-700/50 hover:border-slate-600 transition-all duration-300">
                       <Github className="w-4 h-4" />
@@ -193,8 +226,8 @@ const Projects: React.FC = () => {
               <Calendar className="w-8 h-8 text-cyan-400 mx-auto mb-4" />
               <h3 className="text-xl lg:text-2xl font-bold text-white mb-4">More Projects Coming Soon</h3>
               <p className="text-slate-400 leading-relaxed">
-                Currently working on several exciting data engineering and machine learning projects. 
-                Stay tuned for updates on enterprise-scale solutions and innovative analytics platforms.
+                Currently architecting several cutting-edge data engineering and machine learning solutions. 
+                Stay tuned for updates on enterprise-scale platforms and innovative analytics architectures.
               </p>
             </div>
           </div>
