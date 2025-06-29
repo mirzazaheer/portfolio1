@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, ArrowRight, Sparkles, Zap, Target, User, Wifi } from 'lucide-react';
+import { ChevronDown, ArrowRight, Sparkles, Zap, Target, User, Dot } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
@@ -147,15 +147,15 @@ const Hero: React.FC = () => {
                   }}
                 />
                 
-                {/* Modern subtle status badge */}
+                {/* Modern subtle status badge - Redesigned */}
                 <div className="absolute bottom-3 sm:bottom-4 lg:bottom-6 left-3 sm:left-4 lg:left-6 right-3 sm:right-4 lg:right-6">
-                  <div className="bg-slate-900/70 backdrop-blur-xl rounded-lg sm:rounded-xl border border-slate-700/30 p-2 sm:p-2.5">
-                    <div className="flex items-center gap-2">
-                      <div className="relative flex items-center">
-                        <Wifi className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-400" />
-                        <div className="absolute -right-0.5 -top-0.5 w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></div>
+                  <div className="bg-slate-900/60 backdrop-blur-2xl rounded-lg sm:rounded-xl border border-slate-600/20 p-2 sm:p-2.5 shadow-2xl">
+                    <div className="flex items-center justify-center gap-2">
+                      <div className="relative">
+                        <Dot className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 animate-pulse" />
+                        <div className="absolute inset-0 w-4 h-4 sm:w-5 sm:h-5 bg-emerald-400/30 rounded-full animate-ping"></div>
                       </div>
-                      <span className="text-white font-medium text-xs sm:text-sm">Available</span>
+                      <span className="text-white/90 font-medium text-xs sm:text-sm tracking-wide">Open to Opportunities</span>
                     </div>
                   </div>
                 </div>
