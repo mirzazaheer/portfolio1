@@ -86,7 +86,7 @@ const Experience: React.FC = () => {
     {
       company: 'InfoCepts',
       role: 'Assistant Data Engineer',
-      period: 'Mar 2021 – Aug 2021',
+      period: 'Jun 2021 – Aug 2021',
       location: 'Pune, India',
       client: 'Michael Kors',
       technologies: ['Snowflake', 'Netezza', 'MySQL', 'DB2', 'Data Streamer', 'Shell Script'],
@@ -104,7 +104,7 @@ const Experience: React.FC = () => {
     {
       company: 'InfoCepts',
       role: 'Database Developer Trainee',
-      period: 'Dec 2020 – Feb 2021',
+      period: 'Mar 2021 – May 2021',
       location: 'Pune, India',
       client: 'InfoCepts Boot Camp',
       technologies: ['MS SQL Server', 'Linux', 'Informatica', 'MicroStrategy', 'Data Analytics'],
