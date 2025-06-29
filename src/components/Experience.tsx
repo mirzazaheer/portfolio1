@@ -98,7 +98,7 @@ const Experience: React.FC = () => {
         </div>
 
         <div className="relative">
-          {/* Enhanced timeline line for mobile */}
+          {/* Enhanced timeline line */}
           <div className="absolute left-4 sm:left-6 lg:left-1/2 top-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-600 lg:transform lg:-translate-x-0.5 rounded-full"></div>
 
           <div className="space-y-8 sm:space-y-12 lg:space-y-16">
@@ -116,7 +116,7 @@ const Experience: React.FC = () => {
                   )}
                 </div>
 
-                {/* Content card - mobile optimized */}
+                {/* Content card */}
                 <div className={`w-full lg:w-5/12 ml-10 sm:ml-16 lg:ml-0 ${
                   index % 2 === 0 ? 'lg:mr-8' : 'lg:ml-8'
                 }`}>
@@ -141,7 +141,7 @@ const Experience: React.FC = () => {
                         {exp.role}
                       </h4>
                       
-                      {/* Meta info - mobile optimized */}
+                      {/* Meta info */}
                       <div className="flex flex-col gap-2 sm:gap-3 mb-4 sm:mb-6 text-xs sm:text-sm text-slate-400">
                         <div className="flex items-center gap-2">
                           <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
@@ -180,20 +180,20 @@ const Experience: React.FC = () => {
                         </p>
                       </div>
 
-                      {/* Mobile: Collapsible achievements */}
-                      <div className="block sm:hidden">
+                      {/* Collapsible achievements for all screen sizes */}
+                      <div>
                         <button
                           onClick={() => toggleExpanded(index)}
-                          className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium mb-3"
+                          className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium mb-3 group/btn"
                         >
                           {expandedItems.includes(index) ? (
                             <>
-                              <ChevronUp className="w-4 h-4" />
+                              <ChevronUp className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
                               Hide Details
                             </>
                           ) : (
                             <>
-                              <ChevronDown className="w-4 h-4" />
+                              <ChevronDown className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
                               View Details
                             </>
                           )}
@@ -209,18 +209,6 @@ const Experience: React.FC = () => {
                             ))}
                           </ul>
                         )}
-                      </div>
-
-                      {/* Desktop: Always show achievements */}
-                      <div className="hidden sm:block">
-                        <ul className="space-y-2 sm:space-y-3">
-                          {exp.achievements.map((achievement, achievementIndex) => (
-                            <li key={achievementIndex} className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm lg:text-base text-slate-300">
-                              <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400 mt-0.5 sm:mt-1 flex-shrink-0" />
-                              <span className="leading-relaxed">{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
                       </div>
                     </div>
                   </div>
