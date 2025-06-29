@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, User, Briefcase, Code, Award, FolderOpen, Mail } from 'lucide-react';
+import { Menu, X, Home, User, Briefcase, Code, Award, FolderOpen, Mail, Download } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -66,7 +66,15 @@ const Header: React.FC = () => {
             </div>
           </nav>
 
-          <div className="lg:hidden">
+          {/* Mobile controls - CV button and menu */}
+          <div className="lg:hidden flex items-center gap-2">
+            {/* Compact CV button */}
+            <button className="group flex items-center gap-1 px-2 py-1.5 bg-gradient-to-r from-cyan-500/80 to-blue-600/80 backdrop-blur-sm text-white font-medium rounded-md hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-cyan-500/20 text-xs border border-cyan-400/20">
+              <Download className="w-3 h-3 group-hover:animate-bounce" />
+              <span>CV</span>
+            </button>
+
+            {/* Menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="relative p-2 text-slate-300 hover:text-white transition-colors duration-300"

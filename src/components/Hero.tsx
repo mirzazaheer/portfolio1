@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Download, ArrowRight, Sparkles, Zap, Target, User, CheckCircle } from 'lucide-react';
+import { ChevronDown, ArrowRight, Sparkles, Zap, Target, User, Wifi } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
@@ -49,17 +49,11 @@ const Hero: React.FC = () => {
   const achievements = [
     { icon: Target, label: '4+ Years', subtitle: 'Experience' },
     { icon: Zap, label: '50+', subtitle: 'Projects Delivered' },
-    { icon: Sparkles, label: '5+', subtitle: 'Certifications' }
+    { icon: Sparkles, label: '6+', subtitle: 'Certifications' }
   ];
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      {/* Compact Resume Button - Mobile Optimized */}
-      <button className="fixed top-20 right-3 sm:top-24 sm:right-4 z-40 group flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 bg-gradient-to-r from-cyan-500/80 to-blue-600/80 backdrop-blur-sm text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/20 text-xs border border-cyan-400/20">
-        <Download className="w-3 h-3 group-hover:animate-bounce" />
-        <span className="hidden xs:inline">CV</span>
-      </button>
-
       {/* Enhanced background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-gradient-to-r from-cyan-500/15 to-blue-500/15 rounded-full blur-3xl animate-pulse"></div>
@@ -149,18 +143,15 @@ const Hero: React.FC = () => {
                   style={{ objectPosition: '50% 15%' }}
                 />
                 
-                {/* Modern status badge */}
+                {/* Modern subtle status badge */}
                 <div className="absolute bottom-3 sm:bottom-4 lg:bottom-6 left-3 sm:left-4 lg:left-6 right-3 sm:right-4 lg:right-6">
-                  <div className="bg-slate-900/90 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-3 lg:p-4 border border-slate-700/50">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="relative">
-                          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-emerald-400 rounded-full"></div>
-                          <div className="absolute inset-0 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-emerald-400 rounded-full animate-ping"></div>
-                        </div>
-                        <span className="text-white font-semibold text-xs sm:text-sm">Open to Opportunities</span>
+                  <div className="bg-slate-900/70 backdrop-blur-xl rounded-lg sm:rounded-xl border border-slate-700/30 p-2 sm:p-2.5">
+                    <div className="flex items-center gap-2">
+                      <div className="relative flex items-center">
+                        <Wifi className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-400" />
+                        <div className="absolute -right-0.5 -top-0.5 w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></div>
                       </div>
-                      <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400" />
+                      <span className="text-white font-medium text-xs sm:text-sm">Available</span>
                     </div>
                   </div>
                 </div>

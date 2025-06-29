@@ -12,6 +12,14 @@ const Certifications: React.FC = () => {
       description: 'Core certification for Snowflake data platform'
     },
     {
+      name: 'Microsoft Certified: Azure AI Fundamentals',
+      provider: 'Microsoft',
+      icon: '🤖',
+      level: 'Certified',
+      gradient: 'from-blue-400 to-indigo-500',
+      description: 'AI and machine learning fundamentals on Azure'
+    },
+    {
       name: 'dbt Certified Developer',
       provider: 'dbt Labs',
       icon: '🔧',
