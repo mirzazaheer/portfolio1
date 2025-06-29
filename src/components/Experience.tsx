@@ -82,6 +82,59 @@ const Experience: React.FC = () => {
       ],
       isActive: false,
       gradient: 'from-pink-500 to-rose-500'
+    },
+    {
+      company: 'InfoCepts',
+      role: 'Assistant Data Engineer',
+      period: 'Mar 2021 – Aug 2021',
+      location: 'Pune, India',
+      client: 'Michael Kors',
+      technologies: ['Snowflake', 'Netezza', 'MySQL', 'DB2', 'Data Streamer', 'Shell Script'],
+      summary: 'Enhanced warehouse operations through data migration from Netezza to Snowflake and ETL development.',
+      achievements: [
+        'Developed ETL scripts and converted Netezza SQL to Snowflake SQL',
+        'Successfully migrated data from On-Premise to Cloud Snowflake',
+        'Created metadata, new instances and maintenance for IDS (InfoCepts Data Streamer)',
+        'Scheduled warehouse housekeeping tasks and handled manual data refresh',
+        'Collaborated with Solutions Team for IDS enhancements'
+      ],
+      isActive: false,
+      gradient: 'from-rose-500 to-orange-500'
+    },
+    {
+      company: 'InfoCepts',
+      role: 'Database Developer Trainee',
+      period: 'Dec 2020 – Feb 2021',
+      location: 'Pune, India',
+      client: 'InfoCepts Boot Camp',
+      technologies: ['MS SQL Server', 'Linux', 'Informatica', 'MicroStrategy', 'Data Analytics'],
+      summary: 'Completed comprehensive 3-month boot camp covering database fundamentals, ETL, and advanced analytics.',
+      achievements: [
+        'Successfully completed intensive 3-month training program',
+        'Mastered SQL Essentials and Linux Fundamentals',
+        'Gained hands-on experience with MS SQL Server and MicroStrategy',
+        'Learned Informatica PowerCenter and Data Warehouse Design',
+        'Completed Quality Assurance and Advanced Analytics modules'
+      ],
+      isActive: false,
+      gradient: 'from-orange-500 to-yellow-500'
+    },
+    {
+      company: 'KaaShiv InfoTech',
+      role: 'Web Development Intern',
+      period: 'Jun 2019',
+      location: 'Chennai, India',
+      client: 'Front End Development Project',
+      technologies: ['HTML', 'CSS', 'PHP', 'JavaScript'],
+      summary: 'Gained practical experience in web development technologies and user interface design.',
+      achievements: [
+        'Developed responsive web pages using HTML, CSS, and JavaScript',
+        'Implemented dynamic functionality with PHP backend integration',
+        'Enhanced user experience through improved interface design',
+        'Assisted senior developers in project development and maintenance'
+      ],
+      isActive: false,
+      gradient: 'from-yellow-500 to-green-500'
     }
   ];
 
