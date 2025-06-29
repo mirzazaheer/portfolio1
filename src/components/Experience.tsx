@@ -1,7 +1,17 @@
-import React from 'react';
-import { Calendar, MapPin, Building, ChevronRight, Zap } from 'lucide-react';
+import React, { useState } from 'react';
+import { Calendar, MapPin, Building, ChevronRight, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Experience: React.FC = () => {
+  const [expandedItems, setExpandedItems] = useState<number[]>([]);
+
+  const toggleExpanded = (index: number) => {
+    setExpandedItems(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
   const experiences = [
     {
       company: 'Mastek',
@@ -10,6 +20,7 @@ const Experience: React.FC = () => {
       location: 'Mumbai, India',
       client: 'Kellanova',
       technologies: ['Snowflake', 'dbt', 'AWS', 'SQS', 'Glue', 'Iceberg'],
+      summary: 'Architecting scalable data pipelines with SQS-based ingestion and Iceberg tables for ACID-compliant operations.',
       achievements: [
         'Architected & implemented SQS-based ingestion pipeline replacing Lambda model, improving scalability',
         'Designed and migrated to Iceberg tables for ACID-compliant data lake operations',
@@ -27,6 +38,7 @@ const Experience: React.FC = () => {
       location: 'Mumbai, India',
       client: 'Alegeus',
       technologies: ['Azure Fabric', 'Databricks', 'Snowflake', 'Delta Lake', 'Python', 'CosmosDB', 'Kafka'],
+      summary: 'Built enterprise data lake with Silver/Gold transformations and real-time streaming solutions.',
       achievements: [
         'Developed Silver/Gold layer transformations for data lake architecture',
         'Built custom validation & reconciliation tools for data quality assurance',
@@ -43,6 +55,7 @@ const Experience: React.FC = () => {
       location: 'Pune, India',
       client: 'Capri Holdings',
       technologies: ['Synapse', 'Databricks', 'Snowflake', 'dbt', 'Python', 'Lambda', 'Snowpipe'],
+      summary: 'Led comprehensive data pipeline development with Synapse, Databricks, and real-time API integrations.',
       achievements: [
         'Built comprehensive data pipelines in Synapse & Databricks',
         'Developed Snowflake & dbt jobs for data transformation',
@@ -60,6 +73,7 @@ const Experience: React.FC = () => {
       location: 'Pune, India',
       client: 'Michael Kors, Capri Holdings',
       technologies: ['Snowflake', 'ETL', 'Shell Script', 'PowerShell', 'SQL'],
+      summary: 'Developed robust ETL processes and automation scripts with multiple client recognitions.',
       achievements: [
         'Developed robust ETL jobs and Snowflake stored procedures',
         'Created Shell & PowerShell scripts for automation',
@@ -159,15 +173,55 @@ const Experience: React.FC = () => {
                         </div>
                       </div>
 
-                      {/* Achievements */}
-                      <ul className="space-y-2 sm:space-y-3">
-                        {exp.achievements.map((achievement, achievementIndex) => (
-                          <li key={achievementIndex} className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm lg:text-base text-slate-300">
-                            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400 mt-0.5 sm:mt-1 flex-shrink-0" />
-                            <span className="leading-relaxed">{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      {/* Summary - always visible */}
+                      <div className="mb-4">
+                        <p className="text-xs sm:text-sm lg:text-base text-slate-300 leading-relaxed">
+                          {exp.summary}
+                        </p>
+                      </div>
+
+                      {/* Mobile: Collapsible achievements */}
+                      <div className="block sm:hidden">
+                        <button
+                          onClick={() => toggleExpanded(index)}
+                          className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors text-sm font-medium mb-3"
+                        >
+                          {expandedItems.includes(index) ? (
+                            <>
+                              <ChevronUp className="w-4 h-4" />
+                              Hide Details
+                            </>
+                          ) : (
+                            <>
+                              <ChevronDown className="w-4 h-4" />
+                              View Details
+                            </>
+                          )}
+                        </button>
+                        
+                        {expandedItems.includes(index) && (
+                          <ul className="space-y-2 sm:space-y-3 animate-fade-in-up">
+                            {exp.achievements.map((achievement, achievementIndex) => (
+                              <li key={achievementIndex} className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm lg:text-base text-slate-300">
+                                <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400 mt-0.5 sm:mt-1 flex-shrink-0" />
+                                <span className="leading-relaxed">{achievement}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+
+                      {/* Desktop: Always show achievements */}
+                      <div className="hidden sm:block">
+                        <ul className="space-y-2 sm:space-y-3">
+                          {exp.achievements.map((achievement, achievementIndex) => (
+                            <li key={achievementIndex} className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm lg:text-base text-slate-300">
+                              <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400 mt-0.5 sm:mt-1 flex-shrink-0" />
+                              <span className="leading-relaxed">{achievement}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
