@@ -48,12 +48,12 @@ const About: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6">Professional Journey</h3>
-                <p className="text-slate-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg">
+                <p className="text-slate-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg text-justify">
                   With over <span className="text-cyan-400 font-semibold">4 years of experience</span> in data engineering, 
                   I've architected and implemented robust data solutions across diverse industries. My expertise spans from 
                   building real-time ingestion pipelines to creating comprehensive analytics platforms that drive business decisions.
                 </p>
-                <p className="text-slate-300 leading-relaxed text-sm sm:text-base lg:text-lg">
+                <p className="text-slate-300 leading-relaxed text-sm sm:text-base lg:text-lg text-justify">
                   I specialize in modern cloud technologies including <span className="text-blue-400 font-semibold">Snowflake, Databricks, AWS, and Azure</span>, 
                   with a strong focus on scalability, cost optimization, and performance. My approach combines technical excellence 
                   with business acumen to deliver solutions that truly make an impact.
@@ -114,7 +114,7 @@ const About: React.FC = () => {
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 transition-all duration-300">
                       {highlight.title}
                     </h3>
-                    <p className="text-slate-400 leading-relaxed text-xs sm:text-sm lg:text-base">{highlight.description}</p>
+                    <p className="text-slate-400 leading-relaxed text-xs sm:text-sm lg:text-base text-center">{highlight.description}</p>
                   </div>
                 </div>
               );
