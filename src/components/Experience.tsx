@@ -15,12 +15,33 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       company: 'Mastek',
+      role: 'Software Specialist 1',
+      period: 'Jan 2025 – Present',
+      location: 'Mumbai, India',
+      client: 'Kellanova',
+      technologies: ['Snowflake', 'dbt', 'AWS Glue', 'SQS', 'Step Functions', 'CloudFormation', 'Python', 'Apache Iceberg', 'Spark', 'CI/CD'],
+      summary: 'Driving end-to-end orchestration, deployment automation, and test-driven development for scalable, reliable data pipelines.',
+      achievements: [
+        'Architected AWS Step Functions to orchestrate complex workflows across ingestion, transformation, and data validation stages',
+        'Designed and implemented a robust automated testing framework covering data integrity, schema drift, and pipeline regressions',
+        'Developed reusable, modular Glue jobs (PySpark + Python Shell) aligned with Iceberg table requirements and ACID guarantees',
+        'Built a config-driven ingestion system integrated with SQS, supporting retries, DLQs, and dynamic file handling',
+        'Delivered metadata-driven dbt models to streamline business logic and enable scalable transformation pipelines',
+        'Automated infrastructure provisioning with AWS CloudFormation templates for Glue jobs, IAM, and Step Function stacks',
+        'Integrated pipelines with CI/CD workflows to support seamless testing and deployment across environments',
+        'Actively mentor team members, contribute to code reviews, and enforce engineering best practices'
+      ],
+      isActive: true,
+      gradient: 'from-cyan-400 to-blue-500'
+    },
+    {
+      company: 'Mastek',
       role: 'Senior Software Engineer',
-      period: 'Oct 2024 – Present',
+      period: 'Oct 2024 – Dec 2024',
       location: 'Mumbai, India',
       client: 'Kellanova',
       technologies: ['Snowflake', 'dbt', 'AWS', 'SQS', 'Glue', 'Iceberg'],
-      summary: 'Architecting scalable data pipelines with SQS-based ingestion and Iceberg tables for ACID-compliant operations.',
+      summary: 'Architected scalable data pipelines with SQS-based ingestion and Iceberg tables for ACID-compliant operations.',
       achievements: [
         'Architected & implemented SQS-based ingestion pipeline replacing Lambda model, improving scalability',
         'Designed and migrated to Iceberg tables for ACID-compliant data lake operations',
@@ -28,8 +49,8 @@ const Experience: React.FC = () => {
         'Refactored legacy File Register for performance & modularity',
         'Developed reusable Spark & Python pipelines and fixed critical production bugs'
       ],
-      isActive: true,
-      gradient: 'from-cyan-400 to-blue-500'
+      isActive: false,
+      gradient: 'from-blue-500 to-purple-600'
     },
     {
       company: 'Mastek',
@@ -46,7 +67,7 @@ const Experience: React.FC = () => {
         'Implemented real-time streaming solutions using Kafka'
       ],
       isActive: false,
-      gradient: 'from-blue-500 to-purple-600'
+      gradient: 'from-purple-600 to-pink-500'
     },
     {
       company: 'InfoCepts',
@@ -64,7 +85,7 @@ const Experience: React.FC = () => {
         'Created automation scripts for data quality monitoring'
       ],
       isActive: false,
-      gradient: 'from-purple-600 to-pink-500'
+      gradient: 'from-pink-500 to-rose-500'
     },
     {
       company: 'InfoCepts',
@@ -81,7 +102,7 @@ const Experience: React.FC = () => {
         'Received multiple client appreciations and team awards'
       ],
       isActive: false,
-      gradient: 'from-pink-500 to-rose-500'
+      gradient: 'from-rose-500 to-orange-500'
     },
     {
       company: 'InfoCepts',
@@ -99,7 +120,7 @@ const Experience: React.FC = () => {
         'Collaborated with Solutions Team for IDS enhancements'
       ],
       isActive: false,
-      gradient: 'from-rose-500 to-orange-500'
+      gradient: 'from-orange-500 to-yellow-500'
     },
     {
       company: 'InfoCepts',
@@ -117,7 +138,7 @@ const Experience: React.FC = () => {
         'Completed Quality Assurance and Advanced Analytics modules'
       ],
       isActive: false,
-      gradient: 'from-orange-500 to-yellow-500'
+      gradient: 'from-yellow-500 to-green-500'
     },
     {
       company: 'KaaShiv InfoTech',
@@ -134,7 +155,7 @@ const Experience: React.FC = () => {
         'Assisted senior developers in project development and maintenance'
       ],
       isActive: false,
-      gradient: 'from-yellow-500 to-green-500'
+      gradient: 'from-green-500 to-teal-500'
     }
   ];
 
