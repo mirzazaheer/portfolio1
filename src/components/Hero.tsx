@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, ArrowRight, Sparkles, Zap, Target, User, Dot, Code, Database, Cloud } from 'lucide-react';
+import { ChevronDown, ArrowRight, Sparkles, Zap, Target, User, Dot } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
@@ -128,13 +128,13 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Professional Photo with Enhanced Modern Tech Overlay */}
+          {/* Right Column - Professional Photo with Clean Modern Overlay */}
           <div className="flex justify-center lg:justify-end animate-fade-in-up order-1 lg:order-2">
             <div className="relative group">
-              {/* Main photo container with enhanced glass effect */}
+              {/* Main photo container */}
               <div className="relative w-48 h-60 xs:w-56 xs:h-72 sm:w-72 sm:h-80 lg:w-96 lg:h-[28rem] rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden border-2 sm:border-3 lg:border-4 border-slate-700/50 group-hover:border-cyan-400/50 transition-all duration-500">
                 
-                {/* Professional photo - Optimized positioning for mobile zoom */}
+                {/* Professional photo */}
                 <img 
                   src="/IMG_40211.jpg" 
                   alt="Mirza Zaheer - Senior Data Engineer"
@@ -146,48 +146,32 @@ const Hero: React.FC = () => {
                   }}
                 />
                 
-                {/* Modern Tech-Focused Overlay - Only visible when NOT hovered */}
+                {/* Clean, Uniform Modern Overlay - Only visible when NOT hovered */}
                 <div className="absolute inset-0 group-hover:opacity-0 transition-all duration-700 ease-out z-20">
-                  {/* Primary dark tech overlay with gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-900/40 via-slate-800/30 to-slate-900/50 backdrop-blur-[0.5px] rounded-xl sm:rounded-2xl lg:rounded-3xl"></div>
+                  {/* Primary uniform overlay with subtle tech gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-slate-800/20 to-slate-900/40 backdrop-blur-[0.5px] rounded-xl sm:rounded-2xl lg:rounded-3xl"></div>
                   
-                  {/* Tech-themed gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/15 via-blue-500/10 to-purple-600/15 rounded-xl sm:rounded-2xl lg:rounded-3xl"></div>
+                  {/* Subtle tech-themed color wash */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/8 via-blue-500/6 to-purple-600/8 rounded-xl sm:rounded-2xl lg:rounded-3xl"></div>
                   
-                  {/* Diagonal tech light streak */}
+                  {/* Clean diagonal light accent */}
                   <div className="absolute top-0 left-0 w-full h-full">
-                    <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-cyan-400/20 via-blue-400/15 to-transparent transform -skew-x-12 translate-x-4 sm:translate-x-8"></div>
+                    <div className="absolute top-0 left-0 w-1/4 h-full bg-gradient-to-r from-cyan-400/12 via-cyan-400/6 to-transparent transform -skew-x-12 translate-x-6 sm:translate-x-12"></div>
                   </div>
                   
-                  {/* Circuit-like rim lighting */}
+                  {/* Minimal border accent */}
                   <div className="absolute inset-0 rounded-xl sm:rounded-2xl lg:rounded-3xl">
-                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent"></div>
-                    <div className="absolute top-0 bottom-0 left-0 w-px bg-gradient-to-b from-cyan-400/25 via-transparent to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent"></div>
-                    <div className="absolute top-0 bottom-0 right-0 w-px bg-gradient-to-b from-transparent via-purple-400/15 to-transparent"></div>
+                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent"></div>
+                    <div className="absolute top-0 bottom-0 left-0 w-px bg-gradient-to-b from-cyan-400/15 via-transparent to-transparent"></div>
                   </div>
                   
-                  {/* Tech data visualization overlay */}
-                  <div className="absolute inset-4 sm:inset-6 bg-gradient-to-br from-cyan-400/8 via-transparent to-blue-500/8 rounded-lg sm:rounded-xl lg:rounded-2xl border border-cyan-400/10"></div>
-                  
-                  {/* Animated tech particles */}
-                  <div className="absolute top-1/4 right-1/4 w-1.5 h-1.5 bg-cyan-400/60 rounded-full animate-pulse delay-300"></div>
-                  <div className="absolute top-1/3 left-1/5 w-1 h-1 bg-blue-400/70 rounded-full animate-pulse delay-700"></div>
-                  <div className="absolute bottom-1/3 right-1/3 w-0.5 h-0.5 bg-purple-400/50 rounded-full animate-pulse delay-1000"></div>
-                  <div className="absolute top-2/3 left-1/4 w-1 h-1 bg-emerald-400/60 rounded-full animate-pulse delay-1300"></div>
-                  
-                  {/* Subtle tech grid pattern */}
-                  <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:20px_20px] rounded-xl sm:rounded-2xl lg:rounded-3xl"></div>
-                  
-                  {/* Data flow lines */}
-                  <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent animate-pulse delay-500"></div>
-                  <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400/15 to-transparent animate-pulse delay-1500"></div>
-                  <div className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400/10 to-transparent animate-pulse delay-2500"></div>
+                  {/* Single subtle inner glow */}
+                  <div className="absolute inset-6 sm:inset-8 bg-gradient-to-br from-cyan-400/4 via-transparent to-blue-500/4 rounded-lg sm:rounded-xl lg:rounded-2xl"></div>
                 </div>
                 
-                {/* Enhanced status badge with tech theme */}
+                {/* Clean status badge */}
                 <div className="absolute bottom-3 sm:bottom-4 lg:bottom-6 left-3 sm:left-4 lg:left-6 right-3 sm:right-4 lg:right-6 z-30">
-                  <div className="bg-slate-900/80 backdrop-blur-2xl rounded-lg sm:rounded-xl border border-cyan-400/20 p-2 sm:p-2.5 shadow-2xl shadow-cyan-500/10">
+                  <div className="bg-slate-900/70 backdrop-blur-xl rounded-lg sm:rounded-xl border border-cyan-400/20 p-2 sm:p-2.5 shadow-xl">
                     <div className="flex items-center justify-center gap-2">
                       <div className="relative">
                         <Dot className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 animate-pulse" />
@@ -199,17 +183,9 @@ const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Enhanced floating tech elements */}
-              <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 lg:-top-4 lg:-right-4 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-lg sm:rounded-xl lg:rounded-2xl backdrop-blur-sm border border-cyan-400/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Database className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-cyan-400" />
-              </div>
-              
-              <div className="absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 lg:-bottom-4 lg:-left-4 w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-md sm:rounded-lg lg:rounded-xl backdrop-blur-sm border border-purple-400/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Cloud className="w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 text-purple-400" />
-              </div>
-              
-              <div className="absolute top-1/2 -left-3 sm:-left-4 lg:-left-6 w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-sm sm:rounded-md lg:rounded-lg backdrop-blur-sm border border-emerald-400/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Code className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 text-emerald-400" />
+              {/* Simplified floating element - just one clean accent */}
+              <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 lg:-top-4 lg:-right-4 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-cyan-400/15 to-blue-500/15 rounded-lg sm:rounded-xl lg:rounded-2xl backdrop-blur-sm border border-cyan-400/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <User className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-cyan-400" />
               </div>
             </div>
           </div>
