@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, MapPin, Phone, Mail, Linkedin, Github, Download, ArrowRight } from 'lucide-react';
+import { ChevronDown, Download, ArrowRight, Sparkles, Zap, Target } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
@@ -45,8 +45,20 @@ const Hero: React.FC = () => {
     }
   };
 
+  const achievements = [
+    { icon: Target, label: '4+ Years', subtitle: 'Experience' },
+    { icon: Zap, label: '50+', subtitle: 'Projects Delivered' },
+    { icon: Sparkles, label: '5+', subtitle: 'Certifications' }
+  ];
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      {/* Download Resume Button - Fixed Position */}
+      <button className="fixed top-24 right-6 z-40 group flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/90 to-blue-600/90 backdrop-blur-sm text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25 text-sm">
+        <Download className="w-4 h-4 group-hover:animate-bounce" />
+        <span className="hidden sm:inline">Resume</span>
+      </button>
+
       {/* Enhanced background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -81,52 +93,69 @@ const Hero: React.FC = () => {
             Building <span className="text-blue-400 font-semibold">scalable, cost-effective</span> data pipelines using modern cloud stacks.
           </p>
           
-          {/* Contact info - mobile optimized */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-12 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-3 p-4 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50">
-              <Phone className="w-5 h-5 text-cyan-400 flex-shrink-0" />
-              <span className="text-slate-300 text-sm sm:text-base">+91-9952383523</span>
-            </div>
-            <div className="flex items-center justify-center gap-3 p-4 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50">
-              <Mail className="w-5 h-5 text-cyan-400 flex-shrink-0" />
-              <span className="text-slate-300 text-sm sm:text-base truncate">mirzazaheer65@gmail.com</span>
-            </div>
-            <div className="flex items-center justify-center gap-3 p-4 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50">
-              <MapPin className="w-5 h-5 text-cyan-400 flex-shrink-0" />
-              <span className="text-slate-300 text-sm sm:text-base">Chennai, Tamil Nadu</span>
-            </div>
+          {/* Achievement Stats - Modern Visual Elements */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+            {achievements.map((achievement, index) => {
+              const Icon = achievement.icon;
+              return (
+                <div 
+                  key={index}
+                  className="group relative bg-slate-800/30 backdrop-blur-xl rounded-3xl p-6 border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-105"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-2xl mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-6 h-6 text-cyan-400" />
+                    </div>
+                    <div className="text-2xl lg:text-3xl font-black text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 transition-all duration-300">
+                      {achievement.label}
+                    </div>
+                    <div className="text-sm text-slate-400 font-medium">
+                      {achievement.subtitle}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
-          {/* CTA buttons - mobile optimized */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <button className="w-full sm:w-auto group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25">
-              <div className="flex items-center justify-center gap-2">
-                <Download className="w-5 h-5 group-hover:animate-bounce" />
-                Download Resume
-              </div>
-            </button>
+          {/* CTA button - single centered button */}
+          <div className="flex justify-center mb-16">
             <button 
               onClick={scrollToNext}
-              className="w-full sm:w-auto group px-8 py-4 bg-slate-800/50 backdrop-blur-sm text-white font-semibold rounded-2xl border border-slate-700/50 hover:bg-slate-700/50 hover:border-slate-600 transition-all duration-300 transform hover:scale-105"
+              className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25"
             >
               <div className="flex items-center justify-center gap-2">
-                View My Work
+                Explore My Journey
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </div>
             </button>
           </div>
 
-          {/* Social links */}
-          <div className="flex justify-center gap-6 mb-16">
-            <a href="#" className="group p-4 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:scale-110">
-              <Linkedin className="w-6 h-6 text-slate-400 group-hover:text-blue-400 transition-colors" />
-            </a>
-            <a href="#" className="group p-4 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-slate-500/50 transition-all duration-300 hover:scale-110">
-              <Github className="w-6 h-6 text-slate-400 group-hover:text-slate-300 transition-colors" />
-            </a>
-            <a href="mailto:mirzazaheer65@gmail.com" className="group p-4 bg-slate-800/30 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:scale-110">
-              <Mail className="w-6 h-6 text-slate-400 group-hover:text-cyan-400 transition-colors" />
-            </a>
+          {/* Modern floating elements */}
+          <div className="relative mb-16">
+            <div className="flex justify-center gap-8 flex-wrap">
+              <div className="group relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-2xl backdrop-blur-sm border border-cyan-400/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg"></div>
+                </div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              
+              <div className="group relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-2xl backdrop-blur-sm border border-purple-400/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg"></div>
+                </div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-purple-400/20 to-pink-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              
+              <div className="group relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-2xl backdrop-blur-sm border border-emerald-400/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-8 h-8 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-lg"></div>
+                </div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/20 to-teal-500/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+            </div>
           </div>
         </div>
 
