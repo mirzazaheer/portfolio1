@@ -48,13 +48,13 @@ const About: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6">Professional Journey</h3>
-                <div className="space-y-4 sm:space-y-6">
-                  <p className="text-slate-300 leading-relaxed text-sm sm:text-base lg:text-lg">
+                <div className="space-y-4 sm:space-y-6 text-left">
+                  <p className="text-slate-300 leading-relaxed text-sm sm:text-base lg:text-lg text-justify hyphens-auto">
                     With over <span className="text-cyan-400 font-semibold">4 years of experience</span> in data engineering, 
                     I've architected and implemented robust data solutions across diverse industries. My expertise spans from 
                     building real-time ingestion pipelines to creating comprehensive analytics platforms that drive business decisions.
                   </p>
-                  <p className="text-slate-300 leading-relaxed text-sm sm:text-base lg:text-lg">
+                  <p className="text-slate-300 leading-relaxed text-sm sm:text-base lg:text-lg text-justify hyphens-auto">
                     I specialize in modern cloud technologies including <span className="text-blue-400 font-semibold">Snowflake, Databricks, AWS, and Azure</span>, 
                     with a strong focus on scalability, cost optimization, and performance. My approach combines technical excellence 
                     with business acumen to deliver solutions that truly make an impact.
