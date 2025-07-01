@@ -1,8 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, MapPin, Building, ChevronRight, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Experience: React.FC = () => {
   const [expandedItems, setExpandedItems] = useState<number[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    // Check on mount
+    checkMobile();
+
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const toggleExpanded = (index: number) => {
     setExpandedItems(prev => 
@@ -236,7 +252,7 @@ const Experience: React.FC = () => {
                       {/* Compact Technologies - Show only first 4 on mobile */}
                       <div className="mb-3 sm:mb-4">
                         <div className="flex flex-wrap gap-1 sm:gap-1.5">
-                          {exp.technologies.slice(0, window.innerWidth < 640 ? 4 : exp.technologies.length).map((tech, techIndex) => (
+                          {exp.technologies.slice(0, isMobile ? 4 : exp.technologies.length).map((tech, techIndex) => (
                             <span 
                               key={techIndex}
                               className="px-1.5 py-0.5 sm:px-2 sm:py-1 bg-slate-800/50 text-slate-300 text-[9px] sm:text-xs font-medium rounded-full border border-slate-700/50 hover:border-cyan-400/50 transition-colors"
@@ -244,7 +260,7 @@ const Experience: React.FC = () => {
                               {tech}
                             </span>
                           ))}
-                          {window.innerWidth < 640 && exp.technologies.length > 4 && (
+                          {isMobile && exp.technologies.length > 4 && (
                             <span className="px-1.5 py-0.5 bg-slate-700/50 text-slate-400 text-[9px] font-medium rounded-full">
                               +{exp.technologies.length - 4}
                             </span>
