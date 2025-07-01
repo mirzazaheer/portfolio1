@@ -5,6 +5,7 @@ const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   
   const titles = [
     'Senior Data Engineer & Cloud Architect',
@@ -13,6 +14,15 @@ const Hero: React.FC = () => {
     'Modern Data Stack Innovator',
     'Cloud-Native Data Platform Builder'
   ];
+
+  useEffect(() => {
+    // Trigger the animation after component mounts
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 500);
+    
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const currentTitle = titles[currentIndex];
@@ -64,10 +74,56 @@ const Hero: React.FC = () => {
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.02)_1px,transparent_1px)] bg-[size:60px_60px] sm:bg-[size:72px_72px]"></div>
 
+      {/* Animated Profile Photo - Full Screen Initial */}
+      <div className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-2000 ease-out ${
+        isLoaded 
+          ? 'opacity-0 pointer-events-none' 
+          : 'opacity-100 bg-slate-950/95 backdrop-blur-xl'
+      }`}>
+        <div className={`relative transition-all duration-2000 ease-out ${
+          isLoaded 
+            ? 'scale-0 rotate-180' 
+            : 'scale-100 rotate-0'
+        }`}>
+          {/* Large initial photo */}
+          <div className="relative w-64 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[30rem] rounded-3xl overflow-hidden border-4 border-cyan-400/50 shadow-2xl shadow-cyan-500/25">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/30 to-blue-500/30"></div>
+            <img 
+              src="/IMG_40211.jpg" 
+              alt="Mirza Zaheer - Senior Data Engineer"
+              className="w-full h-full object-cover"
+              style={{ 
+                objectPosition: '50% 10%',
+                transform: 'scale(1.15)',
+                transformOrigin: '50% 20%'
+              }}
+            />
+            {/* Loading shimmer effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
+          </div>
+          
+          {/* Loading text */}
+          <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 text-center">
+            <div className="text-cyan-400 font-bold text-lg sm:text-xl animate-pulse">
+              Loading Portfolio...
+            </div>
+            <div className="flex justify-center mt-4">
+              <div className="flex space-x-1">
+                <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"></div>
+                <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce delay-100"></div>
+                <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce delay-200"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 relative z-10 pt-16 sm:pt-0 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center min-h-[calc(100vh-8rem)] sm:min-h-[calc(100vh-6rem)]">
           {/* Left Column - Text Content */}
-          <div className="text-center lg:text-left animate-fade-in-up order-2 lg:order-1 flex flex-col justify-center">
+          <div className={`text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center transition-all duration-1500 delay-1000 ${
+            isLoaded ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-8'
+          }`}>
             {/* Main heading - Mobile optimized */}
             <div className="mb-4 sm:mb-6">
               <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white mb-2 sm:mb-3 tracking-tight leading-tight">
@@ -128,44 +184,55 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Professional Photo with Modern Glass Effect */}
-          <div className="flex justify-center lg:justify-end animate-fade-in-up order-1 lg:order-2">
+          {/* Right Column - Animated Professional Photo */}
+          <div className={`flex justify-center lg:justify-end order-1 lg:order-2 transition-all duration-2000 delay-500 ease-out ${
+            isLoaded ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
+          }`}>
             <div className="relative group">
               {/* Main photo container with enhanced glass effect */}
-              <div className="relative w-48 h-60 xs:w-56 xs:h-72 sm:w-72 sm:h-80 lg:w-96 lg:h-[28rem] rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden border-2 sm:border-3 lg:border-4 border-slate-700/50 group-hover:border-cyan-400/50 transition-all duration-500">
+              <div className={`relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden border-2 sm:border-3 lg:border-4 border-slate-700/50 group-hover:border-cyan-400/50 transition-all duration-1000 ${
+                isLoaded 
+                  ? 'w-48 h-60 xs:w-56 xs:h-72 sm:w-72 sm:h-80 lg:w-96 lg:h-[28rem] animate-fade-in-up' 
+                  : 'w-0 h-0'
+              }`}>
                 {/* Base gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 group-hover:opacity-30 transition-opacity duration-500"></div>
                 
-                {/* Modern Glass Light Effect - Only visible when NOT hovered */}
-                <div className="absolute inset-0 group-hover:opacity-0 transition-all duration-700 ease-out">
+                {/* Modern Glass Light Effect - Enhanced for animation */}
+                <div className={`absolute inset-0 group-hover:opacity-0 transition-all duration-700 ease-out ${
+                  isLoaded ? 'opacity-100' : 'opacity-0'
+                }`}>
                   {/* Primary glass overlay with subtle gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-white/4 to-transparent backdrop-blur-[0.5px] rounded-xl sm:rounded-2xl lg:rounded-3xl"></div>
                   
-                  {/* Diagonal light streak */}
-                  <div className="absolute top-0 left-0 w-full h-full">
-                    <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-white/12 via-white/6 to-transparent transform -skew-x-12 translate-x-4 sm:translate-x-8"></div>
+                  {/* Animated diagonal light streak */}
+                  <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-white/12 via-white/6 to-transparent transform -skew-x-12 translate-x-4 sm:translate-x-8 animate-pulse"></div>
                   </div>
                   
-                  {/* Subtle rim lighting */}
+                  {/* Enhanced rim lighting with animation */}
                   <div className="absolute inset-0 rounded-xl sm:rounded-2xl lg:rounded-3xl">
-                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                    <div className="absolute top-0 bottom-0 left-0 w-px bg-gradient-to-b from-white/15 via-transparent to-transparent"></div>
+                    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                    <div className="absolute top-0 bottom-0 left-0 w-px bg-gradient-to-b from-white/15 via-transparent to-transparent animate-pulse delay-300"></div>
                   </div>
                   
-                  {/* Soft inner glow */}
-                  <div className="absolute inset-2 sm:inset-3 bg-gradient-to-br from-cyan-400/5 via-transparent to-blue-500/5 rounded-lg sm:rounded-xl lg:rounded-2xl"></div>
+                  {/* Soft inner glow with pulsing effect */}
+                  <div className="absolute inset-2 sm:inset-3 bg-gradient-to-br from-cyan-400/5 via-transparent to-blue-500/5 rounded-lg sm:rounded-xl lg:rounded-2xl animate-pulse delay-500"></div>
                   
-                  {/* Animated light particles */}
+                  {/* Enhanced animated light particles */}
                   <div className="absolute top-1/4 right-1/4 w-1 h-1 bg-white/40 rounded-full animate-pulse delay-300"></div>
                   <div className="absolute top-1/3 left-1/5 w-0.5 h-0.5 bg-cyan-300/60 rounded-full animate-pulse delay-700"></div>
                   <div className="absolute bottom-1/3 right-1/3 w-0.5 h-0.5 bg-blue-300/50 rounded-full animate-pulse delay-1000"></div>
+                  <div className="absolute top-1/2 left-1/2 w-0.5 h-0.5 bg-purple-300/40 rounded-full animate-pulse delay-1300"></div>
                 </div>
                 
-                {/* Professional photo - Optimized positioning for mobile zoom */}
+                {/* Professional photo with smooth reveal animation */}
                 <img 
                   src="/IMG_40211.jpg" 
                   alt="Mirza Zaheer - Senior Data Engineer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 relative z-10"
+                  className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-1000 relative z-10 ${
+                    isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+                  }`}
                   style={{ 
                     objectPosition: '50% 10%',
                     transform: 'scale(1.15)',
@@ -173,9 +240,11 @@ const Hero: React.FC = () => {
                   }}
                 />
                 
-                {/* Modern subtle status badge - Redesigned */}
-                <div className="absolute bottom-3 sm:bottom-4 lg:bottom-6 left-3 sm:left-4 lg:left-6 right-3 sm:right-4 lg:right-6 z-20">
-                  <div className="bg-slate-900/60 backdrop-blur-2xl rounded-lg sm:rounded-xl border border-slate-600/20 p-2 sm:p-2.5 shadow-2xl">
+                {/* Enhanced status badge with slide-up animation */}
+                <div className={`absolute bottom-3 sm:bottom-4 lg:bottom-6 left-3 sm:left-4 lg:left-6 right-3 sm:right-4 lg:right-6 z-20 transition-all duration-1000 delay-1500 ${
+                  isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                }`}>
+                  <div className="bg-slate-900/60 backdrop-blur-2xl rounded-lg sm:rounded-xl border border-slate-600/20 p-2 sm:p-2.5 shadow-2xl hover:bg-slate-900/80 transition-all duration-300">
                     <div className="flex items-center justify-center gap-2">
                       <div className="relative">
                         <Dot className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 animate-pulse" />
@@ -187,23 +256,31 @@ const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Floating elements - Mobile optimized */}
-              <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 lg:-top-4 lg:-right-4 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-lg sm:rounded-xl lg:rounded-2xl backdrop-blur-sm border border-cyan-400/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              {/* Enhanced floating elements with staggered animations */}
+              <div className={`absolute -top-2 -right-2 sm:-top-3 sm:-right-3 lg:-top-4 lg:-right-4 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-lg sm:rounded-xl lg:rounded-2xl backdrop-blur-sm border border-cyan-400/30 flex items-center justify-center group-hover:scale-110 transition-all duration-1000 delay-1000 ${
+                isLoaded ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-4 rotate-45'
+              }`}>
                 <User className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-cyan-400" />
               </div>
               
-              <div className="absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 lg:-bottom-4 lg:-left-4 w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-md sm:rounded-lg lg:rounded-xl backdrop-blur-sm border border-purple-400/30 group-hover:scale-110 transition-transform duration-300"></div>
+              <div className={`absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 lg:-bottom-4 lg:-left-4 w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-md sm:rounded-lg lg:rounded-xl backdrop-blur-sm border border-purple-400/30 group-hover:scale-110 transition-all duration-1000 delay-1200 ${
+                isLoaded ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-4 -rotate-45'
+              }`}></div>
               
-              <div className="absolute top-1/2 -left-3 sm:-left-4 lg:-left-6 w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-sm sm:rounded-md lg:rounded-lg backdrop-blur-sm border border-emerald-400/30 group-hover:scale-110 transition-transform duration-300"></div>
+              <div className={`absolute top-1/2 -left-3 sm:-left-4 lg:-left-6 w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-sm sm:rounded-md lg:rounded-lg backdrop-blur-sm border border-emerald-400/30 group-hover:scale-110 transition-all duration-1000 delay-1400 ${
+                isLoaded ? 'opacity-100 translate-x-0 rotate-0' : 'opacity-0 -translate-x-4 rotate-90'
+              }`}></div>
             </div>
           </div>
         </div>
 
-        {/* Scroll indicator - Mobile optimized */}
-        <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2">
+        {/* Enhanced scroll indicator with delayed animation */}
+        <div className={`absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-2000 ${
+          isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+        }`}>
           <button
             onClick={scrollToNext}
-            className="animate-bounce text-cyan-400 hover:text-cyan-300 transition-colors p-1 sm:p-2"
+            className="animate-bounce text-cyan-400 hover:text-cyan-300 transition-colors p-1 sm:p-2 hover:scale-110 transform duration-300"
           >
             <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
           </button>
