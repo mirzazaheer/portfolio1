@@ -184,15 +184,15 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Animated Professional Photo */}
+          {/* Right Column - Much Smaller Animated Professional Photo */}
           <div className={`flex justify-center lg:justify-end order-1 lg:order-2 transition-all duration-2000 delay-500 ease-out ${
             isLoaded ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
           }`}>
             <div className="relative group">
-              {/* Main photo container with enhanced glass effect */}
+              {/* Much smaller photo container - Significantly reduced sizes */}
               <div className={`relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden border-2 sm:border-3 lg:border-4 border-slate-700/50 group-hover:border-cyan-400/50 transition-all duration-1000 ${
                 isLoaded 
-                  ? 'w-48 h-60 xs:w-56 xs:h-72 sm:w-72 sm:h-80 lg:w-96 lg:h-[28rem] animate-fade-in-up' 
+                  ? 'w-32 h-40 xs:w-36 xs:h-44 sm:w-48 sm:h-60 lg:w-64 lg:h-80 animate-fade-in-up' 
                   : 'w-0 h-0'
               }`}>
                 {/* Base gradient overlay */}
@@ -207,7 +207,7 @@ const Hero: React.FC = () => {
                   
                   {/* Animated diagonal light streak */}
                   <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-                    <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-white/12 via-white/6 to-transparent transform -skew-x-12 translate-x-4 sm:translate-x-8 animate-pulse"></div>
+                    <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-white/12 via-white/6 to-transparent transform -skew-x-12 translate-x-2 sm:translate-x-4 animate-pulse"></div>
                   </div>
                   
                   {/* Enhanced rim lighting with animation */}
@@ -217,10 +217,10 @@ const Hero: React.FC = () => {
                   </div>
                   
                   {/* Soft inner glow with pulsing effect */}
-                  <div className="absolute inset-2 sm:inset-3 bg-gradient-to-br from-cyan-400/5 via-transparent to-blue-500/5 rounded-lg sm:rounded-xl lg:rounded-2xl animate-pulse delay-500"></div>
+                  <div className="absolute inset-1 sm:inset-2 bg-gradient-to-br from-cyan-400/5 via-transparent to-blue-500/5 rounded-lg sm:rounded-xl lg:rounded-2xl animate-pulse delay-500"></div>
                   
-                  {/* Enhanced animated light particles */}
-                  <div className="absolute top-1/4 right-1/4 w-1 h-1 bg-white/40 rounded-full animate-pulse delay-300"></div>
+                  {/* Enhanced animated light particles - Scaled for smaller size */}
+                  <div className="absolute top-1/4 right-1/4 w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white/40 rounded-full animate-pulse delay-300"></div>
                   <div className="absolute top-1/3 left-1/5 w-0.5 h-0.5 bg-cyan-300/60 rounded-full animate-pulse delay-700"></div>
                   <div className="absolute bottom-1/3 right-1/3 w-0.5 h-0.5 bg-blue-300/50 rounded-full animate-pulse delay-1000"></div>
                   <div className="absolute top-1/2 left-1/2 w-0.5 h-0.5 bg-purple-300/40 rounded-full animate-pulse delay-1300"></div>
@@ -240,34 +240,34 @@ const Hero: React.FC = () => {
                   }}
                 />
                 
-                {/* Enhanced status badge with slide-up animation */}
-                <div className={`absolute bottom-3 sm:bottom-4 lg:bottom-6 left-3 sm:left-4 lg:left-6 right-3 sm:right-4 lg:right-6 z-20 transition-all duration-1000 delay-1500 ${
+                {/* Smaller status badge with slide-up animation */}
+                <div className={`absolute bottom-2 sm:bottom-3 lg:bottom-4 left-2 sm:left-3 lg:left-4 right-2 sm:right-3 lg:right-4 z-20 transition-all duration-1000 delay-1500 ${
                   isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                 }`}>
-                  <div className="bg-slate-900/60 backdrop-blur-2xl rounded-lg sm:rounded-xl border border-slate-600/20 p-2 sm:p-2.5 shadow-2xl hover:bg-slate-900/80 transition-all duration-300">
-                    <div className="flex items-center justify-center gap-2">
+                  <div className="bg-slate-900/60 backdrop-blur-2xl rounded-md sm:rounded-lg border border-slate-600/20 p-1.5 sm:p-2 shadow-2xl hover:bg-slate-900/80 transition-all duration-300">
+                    <div className="flex items-center justify-center gap-1.5">
                       <div className="relative">
-                        <Dot className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 animate-pulse" />
-                        <div className="absolute inset-0 w-4 h-4 sm:w-5 sm:h-5 bg-emerald-400/30 rounded-full animate-ping"></div>
+                        <Dot className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400 animate-pulse" />
+                        <div className="absolute inset-0 w-3 h-3 sm:w-4 sm:h-4 bg-emerald-400/30 rounded-full animate-ping"></div>
                       </div>
-                      <span className="text-white/90 font-medium text-xs sm:text-sm tracking-wide">Open to Opportunities</span>
+                      <span className="text-white/90 font-medium text-[10px] sm:text-xs tracking-wide">Available</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Enhanced floating elements with staggered animations */}
-              <div className={`absolute -top-2 -right-2 sm:-top-3 sm:-right-3 lg:-top-4 lg:-right-4 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-lg sm:rounded-xl lg:rounded-2xl backdrop-blur-sm border border-cyan-400/30 flex items-center justify-center group-hover:scale-110 transition-all duration-1000 delay-1000 ${
+              {/* Smaller floating elements with staggered animations */}
+              <div className={`absolute -top-1 -right-1 sm:-top-2 sm:-right-2 lg:-top-3 lg:-right-3 w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-md sm:rounded-lg lg:rounded-xl backdrop-blur-sm border border-cyan-400/30 flex items-center justify-center group-hover:scale-110 transition-all duration-1000 delay-1000 ${
                 isLoaded ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-4 rotate-45'
               }`}>
-                <User className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-cyan-400" />
+                <User className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-cyan-400" />
               </div>
               
-              <div className={`absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 lg:-bottom-4 lg:-left-4 w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-md sm:rounded-lg lg:rounded-xl backdrop-blur-sm border border-purple-400/30 group-hover:scale-110 transition-all duration-1000 delay-1200 ${
+              <div className={`absolute -bottom-1 -left-1 sm:-bottom-2 sm:-left-2 lg:-bottom-3 lg:-left-3 w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-sm sm:rounded-md lg:rounded-lg backdrop-blur-sm border border-purple-400/30 group-hover:scale-110 transition-all duration-1000 delay-1200 ${
                 isLoaded ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-4 -rotate-45'
               }`}></div>
               
-              <div className={`absolute top-1/2 -left-3 sm:-left-4 lg:-left-6 w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-sm sm:rounded-md lg:rounded-lg backdrop-blur-sm border border-emerald-400/30 group-hover:scale-110 transition-all duration-1000 delay-1400 ${
+              <div className={`absolute top-1/2 -left-2 sm:-left-3 lg:-left-4 w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-sm sm:rounded-md backdrop-blur-sm border border-emerald-400/30 group-hover:scale-110 transition-all duration-1000 delay-1400 ${
                 isLoaded ? 'opacity-100 translate-x-0 rotate-0' : 'opacity-0 -translate-x-4 rotate-90'
               }`}></div>
             </div>
