@@ -145,62 +145,62 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Social Links - Compact for mobile */}
-            <div className="group relative bg-slate-900/60 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300">
+            <div className="group relative bg-slate-900/60 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-5 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-pink-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <div className="relative z-10">
-                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-3 sm:mb-4">Connect With Me</h3>
+                <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white mb-2 sm:mb-3">Connect With Me</h3>
                 <div className="flex gap-2 sm:gap-3">
                   <a
                     href="https://www.linkedin.com/in/mirza-zaheer/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/social flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/20 hover:border-blue-500/40 text-blue-400 rounded-lg sm:rounded-xl transition-all duration-300 hover:scale-110"
+                    className="group/social flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/20 hover:border-blue-500/40 text-blue-400 rounded-lg sm:rounded-xl transition-all duration-300 hover:scale-110"
                   >
-                    <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 group-hover/social:scale-110 transition-transform" />
+                    <Linkedin className="w-4 h-4 sm:w-4 sm:h-4 lg:w-5 lg:h-5 group-hover/social:scale-110 transition-transform" />
                   </a>
                   <a
                     href="https://github.com/mirzazaheer"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/social flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-slate-500/10 hover:bg-slate-500/20 border border-slate-500/20 hover:border-slate-500/40 text-slate-400 rounded-lg sm:rounded-xl transition-all duration-300 hover:scale-110"
+                    className="group/social flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-slate-500/10 hover:bg-slate-500/20 border border-slate-500/20 hover:border-slate-500/40 text-slate-400 rounded-lg sm:rounded-xl transition-all duration-300 hover:scale-110"
                   >
-                    <Github className="w-4 h-4 sm:w-5 sm:h-5 group-hover/social:scale-110 transition-transform" />
+                    <Github className="w-4 h-4 sm:w-4 sm:h-4 lg:w-5 lg:h-5 group-hover/social:scale-110 transition-transform" />
                   </a>
                   <a
                     href="mailto:mirzazaheer65@gmail.com"
-                    className="group/social flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/20 hover:border-cyan-500/40 text-cyan-400 rounded-lg sm:rounded-xl transition-all duration-300 hover:scale-110"
+                    className="group/social flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/20 hover:border-cyan-500/40 text-cyan-400 rounded-lg sm:rounded-xl transition-all duration-300 hover:scale-110"
                   >
-                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 group-hover/social:scale-110 transition-transform" />
+                    <Mail className="w-4 h-4 sm:w-4 sm:h-4 lg:w-5 lg:h-5 group-hover/social:scale-110 transition-transform" />
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Contact Info & Personal Details - Optimized for mobile */}
-          <div className="space-y-4 sm:space-y-6">
-            {/* Contact Information - More compact */}
-            <div className="group relative bg-slate-900/60 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300">
+          {/* Contact Info & Personal Details - Significantly reduced for mobile */}
+          <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+            {/* Contact Information - Much more compact */}
+            <div className="group relative bg-slate-900/60 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-5 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-teal-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <div className="relative z-10">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-4 sm:mb-6">Contact Information</h3>
-                <div className="space-y-3 sm:space-y-4">
+                <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white mb-2 sm:mb-3 lg:mb-4">Contact Information</h3>
+                <div className="space-y-2 sm:space-y-3">
                   {contactInfo.map((info, index) => {
                     const Icon = info.icon;
                     return (
                       <a
                         key={index}
                         href={info.href}
-                        className="group/contact flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-slate-800/30 hover:bg-slate-800/50 rounded-lg sm:rounded-xl transition-all duration-300 hover:scale-105"
+                        className="group/contact flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-slate-800/30 hover:bg-slate-800/50 rounded-lg transition-all duration-300 hover:scale-105"
                       >
-                        <div className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${info.gradient} bg-opacity-10 rounded-lg sm:rounded-xl group-hover/contact:scale-110 transition-transform duration-300`}>
-                          <Icon className={`w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br ${info.gradient} bg-clip-text text-transparent`} />
+                        <div className={`flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-gradient-to-br ${info.gradient} bg-opacity-10 rounded-md sm:rounded-lg group-hover/contact:scale-110 transition-transform duration-300`}>
+                          <Icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 bg-gradient-to-br ${info.gradient} bg-clip-text text-transparent`} />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-xs sm:text-sm text-slate-400 font-medium mb-0.5 sm:mb-1">{info.label}</p>
-                          <p className="text-slate-300 font-semibold truncate text-sm sm:text-base">{info.value}</p>
+                          <p className="text-[10px] sm:text-xs text-slate-400 font-medium mb-0.5">{info.label}</p>
+                          <p className="text-slate-300 font-semibold truncate text-xs sm:text-sm">{info.value}</p>
                         </div>
                       </a>
                     );
@@ -209,23 +209,23 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Personal Details - Streamlined and compact */}
-            <div className="group relative bg-slate-900/60 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300">
+            {/* Personal Details - Very compact for mobile */}
+            <div className="group relative bg-slate-900/60 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-5 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-red-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <div className="relative z-10">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-4 sm:mb-6">Personal Details</h3>
-                <div className="space-y-3 sm:space-y-4">
+                <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white mb-2 sm:mb-3 lg:mb-4">Personal Details</h3>
+                <div className="space-y-2 sm:space-y-3">
                   {personalDetails.map((detail, index) => {
                     const Icon = detail.icon;
                     return (
-                      <div key={index} className="flex items-start gap-3 p-3 sm:p-4 bg-slate-800/20 rounded-lg sm:rounded-xl border border-slate-700/30">
-                        <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-cyan-400/10 rounded-lg flex-shrink-0">
-                          <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
+                      <div key={index} className="flex items-start gap-2 p-2 sm:p-3 bg-slate-800/20 rounded-lg border border-slate-700/30">
+                        <div className="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 bg-cyan-400/10 rounded-md flex-shrink-0">
+                          <Icon className="w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 text-cyan-400" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-slate-400 text-xs sm:text-sm font-medium mb-0.5 sm:mb-1">{detail.label}</p>
-                          <p className="text-slate-300 font-semibold text-xs sm:text-sm leading-relaxed">{detail.value}</p>
+                          <p className="text-slate-400 text-[10px] sm:text-xs font-medium mb-0.5">{detail.label}</p>
+                          <p className="text-slate-300 font-semibold text-[10px] sm:text-xs leading-relaxed">{detail.value}</p>
                         </div>
                       </div>
                     );
@@ -234,17 +234,17 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Availability - Compact */}
-            <div className="group relative bg-slate-900/60 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300">
+            {/* Availability - Very compact */}
+            <div className="group relative bg-slate-900/60 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-5 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-emerald-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <div className="relative z-10">
-                <div className="flex items-center gap-2 mb-3 sm:mb-4">
-                  <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-green-400" />
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white">Availability</h3>
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white">Availability</h3>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
                 </div>
-                <p className="text-slate-300 leading-relaxed text-xs sm:text-sm">
+                <p className="text-slate-300 leading-relaxed text-[10px] sm:text-xs lg:text-sm">
                   Currently <span className="text-green-400 font-semibold">available</span> for new opportunities and consulting projects. 
                   Open to discussing <span className="text-cyan-400 font-semibold">full-time positions</span>, contract work, and collaborative ventures 
                   in data engineering and analytics.
