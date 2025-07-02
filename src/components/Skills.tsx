@@ -12,13 +12,12 @@ const Skills: React.FC = () => {
         { name: 'Redshift', level: 85 },
         { name: 'SQL Server', level: 88 },
         { name: 'PostgreSQL', level: 82 },
-        { name: 'MySQL', level: 80 },
-        { name: 'Neo4j', level: 75 }
+        { name: 'MySQL', level: 80 }
       ],
       gradient: 'from-cyan-400 to-blue-500'
     },
     {
-      title: 'Cloud & Tools',
+      title: 'Cloud Platforms',
       icon: Cloud,
       skills: [
         { name: 'AWS', level: 92 },
@@ -26,13 +25,12 @@ const Skills: React.FC = () => {
         { name: 'S3', level: 90 },
         { name: 'Glue', level: 88 },
         { name: 'Lambda', level: 85 },
-        { name: 'SQS', level: 83 },
-        { name: 'GitHub', level: 90 }
+        { name: 'SQS', level: 83 }
       ],
       gradient: 'from-blue-500 to-purple-600'
     },
     {
-      title: 'Languages',
+      title: 'Programming',
       icon: Code,
       skills: [
         { name: 'Python', level: 92 },
@@ -54,18 +52,18 @@ const Skills: React.FC = () => {
       gradient: 'from-pink-500 to-rose-500'
     },
     {
-      title: 'Development Tools',
+      title: 'Dev Tools',
       icon: Monitor,
       skills: [
         { name: 'VS Code', level: 90 },
         { name: 'DBeaver', level: 88 },
-        { name: 'Talend', level: 75 },
-        { name: 'Git', level: 85 }
+        { name: 'Git', level: 85 },
+        { name: 'Docker', level: 75 }
       ],
       gradient: 'from-rose-500 to-orange-500'
     },
     {
-      title: 'Operating Systems',
+      title: 'Systems',
       icon: Cpu,
       skills: [
         { name: 'Linux', level: 85 },
@@ -77,44 +75,47 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <section id="skills" className="py-8 sm:py-12 lg:py-24 bg-gradient-to-b from-slate-950 to-slate-900">
+    <section id="skills" className="py-6 sm:py-8 lg:py-16 bg-gradient-to-b from-slate-950 to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-white mb-3 sm:mb-4 lg:mb-6 tracking-tight">
-            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Skills</span>
+        <div className="text-center mb-6 sm:mb-8 lg:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-2 sm:mb-3 lg:mb-4 tracking-tight">
+            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Expertise</span>
           </h2>
-          <p className="text-sm sm:text-base lg:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive expertise across modern data engineering technologies and platforms
+          <p className="text-sm sm:text-base lg:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            Comprehensive mastery of modern data engineering technologies
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-8">
+        {/* Mobile: 1 column, Tablet: 2 columns, Desktop: 3 columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
           {skillCategories.map((category, index) => {
             const Icon = category.icon;
             return (
-              <div key={index} className="group relative bg-slate-900/50 backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 border border-slate-800/50 hover:border-slate-700/50 transition-all duration-500 hover:transform hover:scale-105">
-                <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-5 rounded-xl sm:rounded-2xl lg:rounded-3xl transition-opacity duration-500`}></div>
+              <div key={index} className="group relative bg-slate-900/60 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300 hover:transform hover:scale-105">
+                <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-8 rounded-lg sm:rounded-xl lg:rounded-2xl transition-opacity duration-300`}></div>
                 
                 <div className="relative z-10">
-                  <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 mb-4 sm:mb-5 lg:mb-8">
-                    <div className={`flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br ${category.gradient} bg-opacity-10 rounded-lg sm:rounded-xl lg:rounded-2xl group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className={`w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-gradient-to-br ${category.gradient} bg-clip-text text-transparent`} />
+                  {/* Header */}
+                  <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4 lg:mb-5">
+                    <div className={`flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-gradient-to-br ${category.gradient} bg-opacity-15 rounded-md sm:rounded-lg lg:rounded-xl group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className={`w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 bg-gradient-to-br ${category.gradient} bg-clip-text text-transparent`} />
                     </div>
-                    <h3 className="text-sm sm:text-base lg:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 transition-all duration-300">
+                    <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 transition-all duration-300">
                       {category.title}
                     </h3>
                   </div>
 
-                  <div className="space-y-3 sm:space-y-4 lg:space-y-6">
+                  {/* Skills */}
+                  <div className="space-y-2 sm:space-y-3">
                     {category.skills.map((skill, skillIndex) => (
                       <div key={skillIndex} className="group/skill">
-                        <div className="flex justify-between items-center mb-1.5 sm:mb-2 lg:mb-3">
-                          <span className="text-slate-300 font-medium text-xs sm:text-sm lg:text-base">{skill.name}</span>
-                          <span className="text-cyan-400 text-[10px] sm:text-xs lg:text-sm font-bold">{skill.level}%</span>
+                        <div className="flex justify-between items-center mb-1 sm:mb-1.5">
+                          <span className="text-slate-300 font-medium text-xs sm:text-sm">{skill.name}</span>
+                          <span className="text-cyan-400 text-[10px] sm:text-xs font-bold">{skill.level}%</span>
                         </div>
-                        <div className="relative w-full bg-slate-800/50 rounded-full h-1.5 sm:h-2 lg:h-3 overflow-hidden">
+                        <div className="relative w-full bg-slate-800/60 rounded-full h-1 sm:h-1.5 lg:h-2 overflow-hidden">
                           <div 
-                            className={`absolute top-0 left-0 h-full bg-gradient-to-r ${category.gradient} rounded-full transition-all duration-1000 ease-out shadow-lg`}
+                            className={`absolute top-0 left-0 h-full bg-gradient-to-r ${category.gradient} rounded-full transition-all duration-1000 ease-out shadow-sm`}
                             style={{ width: `${skill.level}%` }}
                           >
                             <div className="absolute inset-0 bg-white/20 rounded-full animate-pulse"></div>
