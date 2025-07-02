@@ -19,8 +19,9 @@ const Hero: React.FC = () => {
     // Trigger the animation after component mounts
     const timer = setTimeout(() => {
       setIsLoaded(true);
+      // Dispatch a custom event to signal header to show profile photo
+      window.dispatchEvent(new Event('show-header-photo'));
     }, 1200);
-    
     return () => clearTimeout(timer);
   }, []);
 
@@ -74,46 +75,39 @@ const Hero: React.FC = () => {
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.02)_1px,transparent_1px)] bg-[size:60px_60px] sm:bg-[size:72px_72px]"></div>
 
-      {/* Ultra-Smooth Full Screen Initial Animation */}
-      <div className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-[3000ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
-        isLoaded 
-          ? 'opacity-0 pointer-events-none scale-95' 
-          : 'opacity-100 bg-gradient-to-br from-slate-950/98 via-slate-900/95 to-slate-950/98 backdrop-blur-2xl'
+      {/* Modern Photo Animation: fly to top-right corner */}
+      <div className={`fixed inset-0 z-50 pointer-events-none transition-all duration-[2200ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        isLoaded ? 'opacity-0' : 'opacity-100'
       }`}>
-        <div className={`relative transition-all duration-[3000ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isLoaded 
-            ? 'scale-0 rotate-[180deg] opacity-0 blur-sm' 
-            : 'scale-100 rotate-0 opacity-100 blur-0'
-        }`}>
-          {/* Ultra-smooth large initial photo */}
-          <div className="relative w-72 h-96 sm:w-80 sm:h-[28rem] lg:w-96 lg:h-[32rem] rounded-3xl sm:rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden border-4 border-gradient-to-br from-cyan-400/60 via-blue-500/40 to-purple-600/60 shadow-2xl shadow-cyan-500/30">
-            {/* Enhanced gradient overlay */}
+        {/* Responsive fly-to-header animation: */}
+        <div
+          className={`absolute left-1/2 top-1/2 transition-all duration-[2200ms] ease-[cubic-bezier(0.16,1,0.3,1)]
+            ${isLoaded
+              ? 'lg:left-auto lg:top-auto lg:right-8 lg:top-8 lg:w-12 lg:h-12 lg:translate-x-0 lg:translate-y-0 lg:scale-100 lg:opacity-0 lg:blur-[1.5px] translate-x-[calc(100vw-72px-1.5rem)] -translate-y-[calc(50vh-32px-1.5rem)] scale-50 opacity-0 blur-[2px]'
+              : '-translate-x-1/2 -translate-y-1/2 scale-100 opacity-100 w-[24rem] h-[32rem] lg:w-[24rem] lg:h-[32rem]'}
+          `}
+          style={{ maxWidth: '90vw', maxHeight: '80vh' }}
+        >
+          <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-gradient-to-br from-cyan-400/60 via-blue-500/40 to-purple-600/60 shadow-2xl shadow-cyan-500/30">
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-blue-500/15 to-purple-600/20"></div>
-            
-            {/* Ultra-smooth photo with perfect scaling */}
             <img 
               src="/IMG_40211.jpg" 
               alt="Mirza Zaheer - Senior Data Engineer"
-              className="w-full h-full object-cover transition-all duration-[3000ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+              className="w-full h-full object-cover transition-all duration-[2200ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
               style={{ 
                 objectPosition: '50% 10%',
                 transform: 'scale(1.1)',
                 transformOrigin: '50% 20%'
               }}
             />
-            
-            {/* Ultra-smooth loading shimmer */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/8 to-transparent animate-pulse"></div>
-            
-            {/* Floating particles for enhanced effect */}
             <div className="absolute inset-0">
               <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-cyan-400/60 rounded-full animate-pulse delay-300"></div>
               <div className="absolute top-1/3 right-1/3 w-0.5 h-0.5 bg-blue-400/70 rounded-full animate-pulse delay-700"></div>
               <div className="absolute bottom-1/3 left-1/5 w-0.5 h-0.5 bg-purple-400/60 rounded-full animate-pulse delay-1100"></div>
             </div>
           </div>
-          
-          {/* Ultra-smooth loading text */}
+          {/* Loading text stays centered */}
           <div className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 text-center">
             <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 font-bold text-lg sm:text-xl animate-pulse">
               Initializing Portfolio...
@@ -200,42 +194,36 @@ const Hero: React.FC = () => {
             isLoaded ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
           }`}>
             <div className="relative group">
-              {/* Small photo container - Hidden on mobile after animation, visible on desktop */}
+              {/* Small photo container - Hidden on mobile after animation, visible on desktop. Also hidden on desktop after animation isLoaded */}
               <div className={`relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden border-2 sm:border-3 lg:border-4 border-slate-700/50 group-hover:border-cyan-400/50 transition-all duration-[1500ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 isLoaded 
-                  ? 'hidden sm:block sm:w-48 sm:h-60 lg:w-64 lg:h-80 animate-fade-in-up' 
+                  ? 'hidden sm:block sm:w-48 sm:h-60 lg:w-64 lg:h-80 lg:hidden animate-fade-in-up' 
                   : 'w-0 h-0'
               }`}>
                 {/* Enhanced gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 group-hover:opacity-30 transition-opacity duration-700"></div>
-                
                 {/* Ultra-Enhanced Glass Light Effect */}
                 <div className={`absolute inset-0 group-hover:opacity-0 transition-all duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
                   isLoaded ? 'opacity-100' : 'opacity-0'
                 }`}>
                   {/* Primary glass overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-white/12 via-white/6 to-transparent backdrop-blur-[1px] rounded-xl sm:rounded-2xl lg:rounded-3xl"></div>
-                  
                   {/* Ultra-smooth animated diagonal light streak */}
                   <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                     <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-white/20 via-white/10 to-transparent transform -skew-x-12 translate-x-2 sm:translate-x-4 animate-pulse"></div>
                   </div>
-                  
                   {/* Enhanced rim lighting */}
                   <div className="absolute inset-0 rounded-xl sm:rounded-2xl lg:rounded-3xl">
                     <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
                     <div className="absolute top-0 bottom-0 left-0 w-px bg-gradient-to-b from-white/25 via-transparent to-transparent animate-pulse delay-300"></div>
                   </div>
-                  
                   {/* Enhanced inner glow */}
                   <div className="absolute inset-1 sm:inset-2 bg-gradient-to-br from-cyan-400/10 via-transparent to-blue-500/10 rounded-lg sm:rounded-xl lg:rounded-2xl animate-pulse delay-500"></div>
-                  
                   {/* Enhanced floating particles */}
                   <div className="absolute top-1/4 right-1/4 w-0.5 h-0.5 sm:w-1 sm:h-1 bg-white/60 rounded-full animate-pulse delay-300"></div>
                   <div className="absolute top-1/3 left-1/5 w-0.5 h-0.5 bg-cyan-300/80 rounded-full animate-pulse delay-700"></div>
                   <div className="absolute bottom-1/3 right-1/3 w-0.5 h-0.5 bg-blue-300/70 rounded-full animate-pulse delay-1100"></div>
                 </div>
-                
                 {/* Professional photo */}
                 <img 
                   src="/IMG_40211.jpg" 
@@ -249,7 +237,6 @@ const Hero: React.FC = () => {
                     transformOrigin: '50% 20%'
                   }}
                 />
-                
                 {/* Status badge */}
                 <div className={`absolute bottom-2 sm:bottom-3 lg:bottom-4 left-2 sm:left-3 lg:left-4 right-2 sm:right-3 lg:right-4 z-20 transition-all duration-[1500ms] delay-2000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                   isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
@@ -265,20 +252,17 @@ const Hero: React.FC = () => {
                   </div>
                 </div>
               </div>
-
               {/* Floating elements */}
               <div className={`absolute -top-1 -right-1 sm:-top-2 sm:-right-2 lg:-top-3 lg:-right-3 w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-md sm:rounded-lg lg:rounded-xl backdrop-blur-sm border border-cyan-400/30 flex items-center justify-center group-hover:scale-110 transition-all duration-[1500ms] delay-1400 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                isLoaded ? 'opacity-100 translate-y-0 rotate-0 hidden sm:flex' : 'opacity-0 translate-y-4 rotate-45'
+                isLoaded ? 'opacity-100 translate-y-0 rotate-0 hidden sm:flex lg:hidden' : 'opacity-0 translate-y-4 rotate-45'
               }`}>
                 <User className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-cyan-400" />
               </div>
-              
               <div className={`absolute -bottom-1 -left-1 sm:-bottom-2 sm:-left-2 lg:-bottom-3 lg:-left-3 w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-sm sm:rounded-md lg:rounded-lg backdrop-blur-sm border border-purple-400/30 group-hover:scale-110 transition-all duration-[1500ms] delay-1600 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                isLoaded ? 'opacity-100 translate-y-0 rotate-0 hidden sm:block' : 'opacity-0 translate-y-4 -rotate-45'
+                isLoaded ? 'opacity-100 translate-y-0 rotate-0 hidden sm:block lg:hidden' : 'opacity-0 translate-y-4 -rotate-45'
               }`}></div>
-              
               <div className={`absolute top-1/2 -left-2 sm:-left-3 lg:-left-4 w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-gradient-to-br from-emerald-400/20 to-teal-500/20 rounded-sm sm:rounded-md backdrop-blur-sm border border-emerald-400/30 group-hover:scale-110 transition-all duration-[1500ms] delay-1800 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                isLoaded ? 'opacity-100 translate-x-0 rotate-0 hidden sm:block' : 'opacity-0 -translate-x-4 rotate-90'
+                isLoaded ? 'opacity-100 translate-x-0 rotate-0 hidden sm:block lg:hidden' : 'opacity-0 -translate-x-4 rotate-90'
               }`}></div>
             </div>
           </div>

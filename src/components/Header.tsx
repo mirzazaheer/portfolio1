@@ -15,12 +15,10 @@ const Header: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // Show mobile photo after hero animation completes
-    const timer = setTimeout(() => {
-      setShowMobilePhoto(true);
-    }, 3500); // After hero animation completes
-    
-    return () => clearTimeout(timer);
+    // Listen for custom event from Hero to show profile photo
+    const handler = () => setShowMobilePhoto(true);
+    window.addEventListener('show-header-photo', handler);
+    return () => window.removeEventListener('show-header-photo', handler);
   }, []);
 
   const navItems = [
@@ -49,12 +47,11 @@ const Header: React.FC = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Brand and Mobile Photo */}
+          {/* Brand */}
           <div className="flex items-center gap-3">
             <h1 className="text-2xl lg:text-3xl font-black text-white tracking-tight">
               MZ<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">.</span>
             </h1>
-            
             {/* Mobile Profile Photo - Appears after animation */}
             <div className={`sm:hidden transition-all duration-1000 ease-out ${
               showMobilePhoto ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-0 -translate-x-4'
@@ -98,6 +95,35 @@ const Header: React.FC = () => {
             </div>
           </nav>
 
+          {/* Desktop controls - CV button and Profile Photo (right side) */}
+          <div className="hidden lg:flex items-center gap-4">
+            {/* CV button - smaller for desktop */}
+            <button className="group flex items-center gap-1 px-2 py-1.5 bg-gradient-to-r from-cyan-500/80 to-blue-600/80 backdrop-blur-sm text-white font-medium rounded-md hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-cyan-500/20 text-xs border border-cyan-400/20">
+              <Download className="w-3 h-3 group-hover:animate-bounce" />
+              <span>CV</span>
+            </button>
+            {/* Desktop Profile Photo - Always reserve space */}
+            <div className="relative w-12 h-12 rounded-xl overflow-hidden border-2 border-slate-700/50 transition-all duration-300 group" style={{visibility: showMobilePhoto ? 'visible' : 'hidden'}}>
+              {showMobilePhoto && (
+                <>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                  <img 
+                    src="/IMG_40211.jpg" 
+                    alt="Mirza Zaheer"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    style={{ 
+                      objectPosition: '50% 10%',
+                      transform: 'scale(1.15)',
+                      transformOrigin: '50% 20%'
+                    }}
+                  />
+                  {/* Status indicator */}
+                  <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-400 rounded-full border-2 border-slate-900 animate-pulse"></div>
+                </>
+              )}
+            </div>
+          </div>
+
           {/* Mobile controls - CV button and menu */}
           <div className="lg:hidden flex items-center gap-2">
             {/* Compact CV button */}
@@ -105,7 +131,6 @@ const Header: React.FC = () => {
               <Download className="w-3 h-3 group-hover:animate-bounce" />
               <span>CV</span>
             </button>
-
             {/* Menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
