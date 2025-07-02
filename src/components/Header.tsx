@@ -4,6 +4,7 @@ import { Menu, X, Home, User, Briefcase, Code, Award, FolderOpen, Mail, Download
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showMobilePhoto, setShowMobilePhoto] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,6 +12,15 @@ const Header: React.FC = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    // Show mobile photo after hero animation completes
+    const timer = setTimeout(() => {
+      setShowMobilePhoto(true);
+    }, 3500); // After hero animation completes
+    
+    return () => clearTimeout(timer);
   }, []);
 
   const navItems = [
@@ -39,10 +49,32 @@ const Header: React.FC = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <div className="flex-shrink-0">
+          {/* Brand and Mobile Photo */}
+          <div className="flex items-center gap-3">
             <h1 className="text-2xl lg:text-3xl font-black text-white tracking-tight">
               MZ<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">.</span>
             </h1>
+            
+            {/* Mobile Profile Photo - Appears after animation */}
+            <div className={`sm:hidden transition-all duration-1000 ease-out ${
+              showMobilePhoto ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-0 -translate-x-4'
+            }`}>
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden border-2 border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 group">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                <img 
+                  src="/IMG_40211.jpg" 
+                  alt="Mirza Zaheer"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  style={{ 
+                    objectPosition: '50% 10%',
+                    transform: 'scale(1.15)',
+                    transformOrigin: '50% 20%'
+                  }}
+                />
+                {/* Status indicator */}
+                <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-400 rounded-full border-2 border-slate-900 animate-pulse"></div>
+              </div>
+            </div>
           </div>
           
           <nav className="hidden lg:block">

@@ -185,59 +185,59 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-16 lg:py-24 bg-gradient-to-b from-slate-950 to-slate-900">
+    <section id="projects" className="py-8 sm:py-12 lg:py-20 bg-gradient-to-b from-slate-950 to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white mb-6 tracking-tight">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3 sm:mb-4 lg:mb-6 tracking-tight">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Projects</span>
           </h2>
-          <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
             Enterprise-grade solutions showcasing expertise in data engineering, cloud architecture, and scalable analytics platforms
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
           {projects.map((project, index) => {
             const Icon = project.icon;
             return (
-              <div key={index} className="group relative bg-slate-900/50 backdrop-blur-xl rounded-3xl p-6 lg:p-8 border border-slate-800/50 hover:border-slate-700/50 transition-all duration-500 hover:transform hover:scale-105">
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}></div>
+              <div key={index} className="group relative bg-slate-900/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-5 lg:p-6 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300 hover:transform hover:scale-105">
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-8 rounded-2xl sm:rounded-3xl transition-opacity duration-300`}></div>
                 
                 <div className="relative z-10">
                   {/* Header */}
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className={`flex items-center justify-center w-16 h-16 bg-gradient-to-br ${project.gradient} bg-opacity-10 rounded-2xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                      <Icon className={`w-8 h-8 bg-gradient-to-br ${project.gradient} bg-clip-text text-transparent`} />
+                  <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-5">
+                    <div className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-br ${project.gradient} bg-opacity-15 rounded-lg sm:rounded-xl lg:rounded-2xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                      <Icon className={`w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 bg-gradient-to-br ${project.gradient} bg-clip-text text-transparent`} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className={`px-3 py-1 bg-gradient-to-r ${project.gradient} bg-opacity-10 text-xs font-medium rounded-full border border-slate-700/50`}>
+                      <div className="flex items-center gap-2 mb-1 sm:mb-2">
+                        <span className={`px-2 py-0.5 sm:px-3 sm:py-1 bg-gradient-to-r ${project.gradient} bg-opacity-10 text-[10px] sm:text-xs font-medium rounded-full border border-slate-700/50`}>
                           {project.category}
                         </span>
                       </div>
-                      <h3 className="text-xl lg:text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 transition-all duration-300 mb-1">
+                      <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 transition-all duration-300 mb-1 leading-tight">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-slate-400 font-medium mb-2">{project.subtitle}</p>
-                      <p className="text-xs text-cyan-400 font-semibold">{project.client}</p>
+                      <p className="text-xs sm:text-sm text-slate-400 font-medium mb-1 sm:mb-2">{project.subtitle}</p>
+                      <p className="text-[10px] sm:text-xs text-cyan-400 font-semibold">{project.client}</p>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-slate-300 leading-relaxed mb-6 text-sm lg:text-base">
+                  <p className="text-slate-300 leading-relaxed mb-4 sm:mb-5 text-xs sm:text-sm lg:text-base">
                     {project.description}
                   </p>
 
                   {/* Key Features */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
-                      <ArrowRight className="w-4 h-4 text-cyan-400" />
+                  <div className="mb-4 sm:mb-5">
+                    <h4 className="text-xs sm:text-sm font-semibold text-white mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2">
+                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
                       Key Features
                     </h4>
-                    <ul className="grid grid-cols-1 gap-2">
+                    <ul className="grid grid-cols-1 gap-1.5 sm:gap-2">
                       {project.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start gap-2 text-sm text-slate-400">
-                          <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <li key={featureIndex} className="flex items-start gap-1.5 sm:gap-2 text-[10px] sm:text-xs lg:text-sm text-slate-400">
+                          <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-cyan-400 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
                           <span className="leading-relaxed">{feature}</span>
                         </li>
                       ))}
@@ -245,12 +245,12 @@ const Projects: React.FC = () => {
                   </div>
 
                   {/* Technologies */}
-                  <div className="mb-8">
-                    <div className="flex flex-wrap gap-2">
+                  <div className="mb-5 sm:mb-6">
+                    <div className="flex flex-wrap gap-1 sm:gap-1.5">
                       {project.technologies.map((tech, techIndex) => (
                         <span 
                           key={techIndex}
-                          className="px-3 py-1 bg-slate-800/50 text-slate-300 text-xs font-medium rounded-full border border-slate-700/50 hover:border-cyan-400/50 transition-colors"
+                          className="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-slate-800/60 text-slate-300 text-[9px] sm:text-xs font-medium rounded-md border border-slate-700/50 hover:border-cyan-400/50 transition-colors"
                         >
                           {tech}
                         </span>
@@ -259,14 +259,14 @@ const Projects: React.FC = () => {
                   </div>
 
                   {/* Action buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <button className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105">
-                      <ExternalLink className="w-4 h-4" />
-                      <span className="text-sm">View Details</span>
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                    <button className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-105 text-xs sm:text-sm">
+                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span>View Details</span>
                     </button>
-                    <button className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-slate-800/50 hover:bg-slate-700/50 text-slate-300 hover:text-white font-semibold rounded-xl border border-slate-700/50 hover:border-slate-600 transition-all duration-300">
-                      <Github className="w-4 h-4" />
-                      <span className="text-sm">Source Code</span>
+                    <button className="flex-1 flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-4 sm:py-2.5 bg-slate-800/60 hover:bg-slate-700/60 text-slate-300 hover:text-white font-semibold rounded-lg sm:rounded-xl border border-slate-700/50 hover:border-slate-600 transition-all duration-300 text-xs sm:text-sm">
+                      <Github className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span>Source Code</span>
                     </button>
                   </div>
                 </div>
@@ -275,14 +275,14 @@ const Projects: React.FC = () => {
           })}
         </div>
 
-        {/* Additional projects note */}
-        <div className="text-center mt-16">
-          <div className="group relative bg-slate-900/50 backdrop-blur-xl rounded-3xl p-8 border border-slate-800/50 hover:border-slate-700/50 transition-all duration-500 max-w-3xl mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        {/* Much more compact "More Projects Coming Soon" section */}
+        <div className="text-center mt-8 sm:mt-12">
+          <div className="group relative bg-slate-900/60 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300 max-w-2xl mx-auto">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-500/5 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10">
-              <Calendar className="w-8 h-8 text-cyan-400 mx-auto mb-4" />
-              <h3 className="text-xl lg:text-2xl font-bold text-white mb-4">More Projects Coming Soon</h3>
-              <p className="text-slate-400 leading-relaxed">
+              <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 mx-auto mb-2 sm:mb-3" />
+              <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-2 sm:mb-3">More Projects Coming Soon</h3>
+              <p className="text-slate-400 leading-relaxed text-xs sm:text-sm lg:text-base">
                 Currently architecting several cutting-edge data engineering and machine learning solutions. 
                 Stay tuned for updates on enterprise-scale platforms and innovative analytics architectures.
               </p>
