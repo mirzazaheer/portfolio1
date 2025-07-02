@@ -12,7 +12,8 @@ const Skills: React.FC = () => {
         { name: 'Redshift', level: 85 },
         { name: 'SQL Server', level: 88 },
         { name: 'PostgreSQL', level: 82 },
-        { name: 'MySQL', level: 80 }
+        { name: 'MySQL', level: 80 },
+        { name: 'Neo4j', level: 75 }
       ],
       gradient: 'from-cyan-400 to-blue-500'
     },
@@ -22,6 +23,8 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'AWS', level: 92 },
         { name: 'Azure', level: 88 },
+        { name: 'Synapse', level: 85 },
+        { name: 'ADF', level: 83 },
         { name: 'S3', level: 90 },
         { name: 'Glue', level: 88 },
         { name: 'Lambda', level: 85 },
@@ -57,8 +60,9 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'VS Code', level: 90 },
         { name: 'DBeaver', level: 88 },
+        { name: 'Talend', level: 75 },
         { name: 'Git', level: 85 },
-        { name: 'Docker', level: 75 }
+        { name: 'GitHub', level: 90 }
       ],
       gradient: 'from-rose-500 to-orange-500'
     },
