@@ -121,21 +121,21 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 relative z-10 pt-16 sm:pt-0 w-full">
-        <div className="flex items-center justify-center min-h-[calc(100vh-8rem)] sm:min-h-[calc(100vh-6rem)]">
-          {/* Centered Content - Clean and Elegant */}
-          <div className={`text-center flex flex-col justify-center transition-all duration-[2000ms] delay-1500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[calc(100vh-8rem)] sm:min-h-[calc(100vh-6rem)]">
+          {/* Left Column - Text Content (Mobile: Centered, Desktop: Left Aligned) */}
+          <div className={`text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center transition-all duration-[2000ms] delay-1500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             isLoaded ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-12'
           }`}>
             {/* Main heading with perfect alignment */}
             <div className="mb-4 sm:mb-5 lg:mb-6">
-              <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-3 sm:mb-4 tracking-tight leading-[0.9]">
+              <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black text-white mb-3 sm:mb-4 tracking-tight leading-[0.9]">
                 <span className="block">MIRZA</span>
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
                   ZAHEER
                 </span>
               </h1>
-              <div className="h-8 xs:h-10 sm:h-12 lg:h-20 flex items-center justify-center">
-                <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-light text-slate-300 leading-relaxed font-mono tracking-wide">
+              <div className="h-8 xs:h-10 sm:h-12 lg:h-16 xl:h-20 flex items-center justify-center lg:justify-start">
+                <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-light text-slate-300 leading-relaxed font-mono tracking-wide">
                   {displayText}
                   <span className="animate-pulse text-cyan-400 font-thin">|</span>
                 </span>
@@ -143,23 +143,23 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Enhanced description with perfect spacing */}
-            <p className="text-sm xs:text-base sm:text-lg lg:text-xl text-slate-400 max-w-3xl mx-auto mb-6 sm:mb-7 lg:mb-8 leading-relaxed px-4">
+            <p className="text-sm xs:text-base sm:text-lg lg:text-xl text-slate-400 max-w-3xl mx-auto lg:mx-0 mb-6 sm:mb-7 lg:mb-8 leading-relaxed px-4 lg:px-0">
               Transforming enterprise data landscapes with <span className="text-cyan-400 font-semibold">4+ years</span> of expertise in 
               building <span className="text-blue-400 font-semibold">scalable, cloud-native</span> data solutions that drive business intelligence.
             </p>
             
-            {/* Achievement Stats - Clean and Centered */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-7 lg:mb-8 max-w-md sm:max-w-lg lg:max-w-2xl mx-auto">
+            {/* Achievement Stats - Clean and Responsive */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-4 xl:gap-6 mb-6 sm:mb-7 lg:mb-8 max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto lg:mx-0">
               {achievements.map((achievement, index) => {
                 const Icon = achievement.icon;
                 return (
                   <div 
                     key={index}
-                    className="group relative bg-slate-800/40 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 border border-slate-700/60 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-105"
+                    className="group relative bg-slate-800/40 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-5 xl:p-6 border border-slate-700/60 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-105"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/8 to-blue-500/8 rounded-lg sm:rounded-xl lg:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="relative z-10 text-center">
-                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-cyan-400 mx-auto mb-2" />
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 text-cyan-400 mx-auto mb-2" />
                       <div className="text-base sm:text-lg lg:text-xl font-black text-white mb-1">
                         {achievement.label}
                       </div>
@@ -173,7 +173,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* CTA button with enhanced styling */}
-            <div className="flex justify-center">
+            <div className="flex justify-center lg:justify-start">
               <button 
                 onClick={scrollToNext}
                 className="group px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg sm:rounded-xl lg:rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 text-sm sm:text-base lg:text-lg"
@@ -184,6 +184,11 @@ const Hero: React.FC = () => {
                 </div>
               </button>
             </div>
+          </div>
+
+          {/* Right Column - Empty space for desktop balance, hidden on mobile */}
+          <div className="hidden lg:block order-1 lg:order-2">
+            {/* This creates the balanced two-column layout on desktop while keeping mobile centered */}
           </div>
         </div>
 
