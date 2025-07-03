@@ -52,7 +52,7 @@ const Header: React.FC = () => {
             <h1 className="text-2xl lg:text-3xl font-black text-white tracking-tight">
               MZ<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">.</span>
             </h1>
-            {/* Mobile Profile Photo - Slides in from animation */}
+            {/* Mobile Profile Photo - Slides in from animation with perfect positioning */}
             <div className={`sm:hidden transition-all duration-1000 ease-out ${
               showMobilePhoto ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-0 -translate-x-4'
             }`}>
@@ -97,14 +97,14 @@ const Header: React.FC = () => {
 
           {/* Desktop controls - CV button and Profile Photo */}
           <div className="hidden lg:flex items-center gap-4">
-            {/* Fixed CV button with proper containment */}
+            {/* Fixed CV button with perfect containment */}
             <button className="group relative flex items-center gap-1 px-2 py-1.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-md hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-cyan-500/20 text-xs overflow-hidden">
               <Download className="w-3 h-3 group-hover:animate-bounce relative z-10" />
               <span className="relative z-10">CV</span>
               {/* Contained gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md"></div>
             </button>
-            {/* Desktop Profile Photo - Slides in from animation */}
+            {/* Desktop Profile Photo - Slides in from animation with perfect positioning */}
             <div className={`relative w-12 h-12 rounded-xl overflow-hidden border-2 border-slate-700/50 transition-all duration-1000 ease-out group ${
               showMobilePhoto ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-0 translate-x-4'
             }`}>

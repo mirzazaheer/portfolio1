@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, ArrowRight, Sparkles, Zap, Target, User, Dot } from 'lucide-react';
+import { ChevronDown, ArrowRight, Sparkles, Zap, Target, User, Dot, Database, Cloud, Code } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
@@ -63,6 +63,12 @@ const Hero: React.FC = () => {
     { icon: Sparkles, label: '6+', subtitle: 'Certifications' }
   ];
 
+  const techHighlights = [
+    { icon: Database, name: 'Snowflake', color: 'from-cyan-400 to-blue-500' },
+    { icon: Cloud, name: 'AWS', color: 'from-orange-400 to-yellow-500' },
+    { icon: Code, name: 'Python', color: 'from-blue-500 to-indigo-600' }
+  ];
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Enhanced background effects */}
@@ -75,15 +81,15 @@ const Hero: React.FC = () => {
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.02)_1px,transparent_1px)] bg-[size:60px_60px] sm:bg-[size:72px_72px]"></div>
 
-      {/* Ultra-Modern Sleek Photo Animation */}
+      {/* Ultra-Modern Sleek Photo Animation with Perfect Positioning */}
       <div className={`fixed inset-0 z-50 pointer-events-none transition-all duration-[2500ms] ease-[cubic-bezier(0.23,1,0.32,1)] ${
         isLoaded ? 'opacity-0' : 'opacity-100'
       }`}>
-        {/* Modern sleek photo with perfect positioning logic */}
+        {/* Perfect positioning for both mobile and desktop */}
         <div
           className={`absolute transition-all duration-[2500ms] ease-[cubic-bezier(0.23,1,0.32,1)]
             ${isLoaded
-              ? // Mobile: Move to top-left (next to MZ logo), Desktop: Move to top-right
+              ? // Mobile: Move to exact header position (left-16 top-4), Desktop: Move to exact header position (right-8 top-5)
                 'left-16 top-4 sm:left-auto sm:right-8 sm:top-5 w-10 h-10 sm:w-12 sm:h-12 scale-100 opacity-0 blur-sm'
               : // Initial position: Center screen with modern sizing
                 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-40 sm:w-40 sm:h-48 lg:w-48 lg:h-60 scale-100 opacity-100'}
@@ -147,42 +153,42 @@ const Hero: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 relative z-10 pt-16 sm:pt-0 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-16 items-center min-h-[calc(100vh-8rem)] sm:min-h-[calc(100vh-6rem)]">
-          {/* Left Column - Text Content */}
+          {/* Left Column - Enhanced Text Content */}
           <div className={`text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center transition-all duration-[2000ms] delay-2000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             isLoaded ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-12'
           }`}>
-            {/* Main heading */}
-            <div className="mb-3 sm:mb-4 lg:mb-6">
-              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-2 sm:mb-3 tracking-tight leading-tight">
+            {/* Main heading with perfect alignment */}
+            <div className="mb-4 sm:mb-5 lg:mb-6">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-3 sm:mb-4 tracking-tight leading-[0.9] text-center lg:text-left">
                 <span className="block">MIRZA</span>
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
                   ZAHEER
                 </span>
               </h1>
-              <div className="h-8 xs:h-10 sm:h-12 lg:h-20 flex items-center justify-center lg:justify-start">
-                <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-light text-slate-300 leading-relaxed font-mono tracking-wide text-center lg:text-left px-2">
+              <div className="h-8 xs:h-10 sm:h-12 lg:h-16 flex items-center justify-center lg:justify-start">
+                <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-xl font-light text-slate-300 leading-relaxed font-mono tracking-wide text-center lg:text-left px-2 lg:px-0">
                   {displayText}
                   <span className="animate-pulse text-cyan-400 font-thin">|</span>
                 </span>
               </div>
             </div>
 
-            {/* Enhanced description */}
-            <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-3 sm:mb-4 lg:mb-6 leading-relaxed text-center lg:text-left px-2 lg:px-0">
+            {/* Enhanced description with perfect spacing */}
+            <p className="text-sm xs:text-base sm:text-lg lg:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-4 sm:mb-5 lg:mb-6 leading-relaxed text-center lg:text-left px-2 lg:px-0">
               Transforming enterprise data landscapes with <span className="text-cyan-400 font-semibold">4+ years</span> of expertise in 
               building <span className="text-blue-400 font-semibold">scalable, cloud-native</span> data solutions that drive business intelligence.
             </p>
             
-            {/* Achievement Stats */}
-            <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-3 sm:mb-4 lg:mb-6 max-w-sm sm:max-w-md lg:max-w-lg mx-auto lg:mx-0">
+            {/* Achievement Stats - Enhanced for mobile */}
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-4 sm:mb-5 lg:mb-6 max-w-sm sm:max-w-md lg:max-w-lg mx-auto lg:mx-0">
               {achievements.map((achievement, index) => {
                 const Icon = achievement.icon;
                 return (
                   <div 
                     key={index}
-                    className="group relative bg-slate-800/30 backdrop-blur-xl rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4 border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-105"
+                    className="group relative bg-slate-800/40 backdrop-blur-xl rounded-lg sm:rounded-xl p-2.5 sm:p-3 lg:p-4 border border-slate-700/60 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-105"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-500/5 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/8 to-blue-500/8 rounded-lg sm:rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="relative z-10 text-center">
                       <Icon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-cyan-400 mx-auto mb-1" />
                       <div className="text-sm sm:text-base lg:text-lg font-black text-white mb-0.5">
@@ -197,11 +203,11 @@ const Hero: React.FC = () => {
               })}
             </div>
 
-            {/* CTA button */}
-            <div className="flex justify-center lg:justify-start">
+            {/* CTA button with enhanced styling */}
+            <div className="flex justify-center lg:justify-start mb-4 sm:mb-5 lg:mb-0">
               <button 
                 onClick={scrollToNext}
-                className="group px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg sm:rounded-xl lg:rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 text-sm sm:text-base"
+                className="group px-6 sm:px-7 lg:px-8 py-3 sm:py-3.5 lg:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg sm:rounded-xl lg:rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 text-sm sm:text-base"
               >
                 <div className="flex items-center justify-center gap-2">
                   Explore My Journey
@@ -211,9 +217,72 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - COMPLETELY REMOVED for desktop to eliminate unwanted frame */}
-          <div className="order-1 lg:order-2 lg:hidden">
-            {/* This space is intentionally left empty for desktop to avoid any unwanted frames */}
+          {/* Right Column - Modern Tech Showcase (fills the empty space on mobile) */}
+          <div className={`order-1 lg:order-2 flex justify-center lg:justify-end transition-all duration-[2000ms] delay-2500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isLoaded ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
+          }`}>
+            <div className="relative">
+              {/* Modern floating tech cards - visible on mobile to fill space */}
+              <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:hidden">
+                {techHighlights.map((tech, index) => {
+                  const Icon = tech.icon;
+                  return (
+                    <div 
+                      key={index}
+                      className="group relative bg-slate-800/40 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50 hover:border-slate-600/60 transition-all duration-500 hover:transform hover:scale-105 min-w-[200px]"
+                    >
+                      <div className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-0 group-hover:opacity-8 rounded-xl transition-opacity duration-500`}></div>
+                      <div className="relative z-10 flex items-center gap-3">
+                        <div className={`flex items-center justify-center w-10 h-10 bg-gradient-to-br ${tech.color} bg-opacity-15 rounded-lg group-hover:scale-110 transition-transform duration-300`}>
+                          <Icon className={`w-5 h-5 bg-gradient-to-br ${tech.color} bg-clip-text text-transparent`} />
+                        </div>
+                        <div>
+                          <h3 className="text-white font-semibold text-sm">{tech.name}</h3>
+                          <p className="text-slate-400 text-xs">Expert Level</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Desktop: Elegant floating elements */}
+              <div className="hidden lg:block relative">
+                <div className="relative w-64 h-80">
+                  {/* Floating tech badges */}
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-2xl backdrop-blur-sm border border-cyan-400/30 flex items-center justify-center group-hover:scale-110 transition-all duration-500">
+                    <Database className="w-8 h-8 text-cyan-400" />
+                  </div>
+                  <div className="absolute top-20 left-0 w-14 h-14 bg-gradient-to-br from-orange-400/20 to-yellow-500/20 rounded-xl backdrop-blur-sm border border-orange-400/30 flex items-center justify-center group-hover:scale-110 transition-all duration-700">
+                    <Cloud className="w-7 h-7 text-orange-400" />
+                  </div>
+                  <div className="absolute bottom-20 right-4 w-12 h-12 bg-gradient-to-br from-blue-500/20 to-indigo-600/20 rounded-lg backdrop-blur-sm border border-blue-500/30 flex items-center justify-center group-hover:scale-110 transition-all duration-900">
+                    <Code className="w-6 h-6 text-blue-400" />
+                  </div>
+                  
+                  {/* Animated connecting lines */}
+                  <div className="absolute inset-0">
+                    <svg className="w-full h-full opacity-30" viewBox="0 0 256 320">
+                      <path 
+                        d="M60 60 Q120 100 200 80 Q180 150 160 200 Q100 180 80 240" 
+                        stroke="url(#gradient)" 
+                        strokeWidth="1" 
+                        fill="none" 
+                        strokeDasharray="5,5"
+                        className="animate-pulse"
+                      />
+                      <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#06b6d4" />
+                          <stop offset="50%" stopColor="#3b82f6" />
+                          <stop offset="100%" stopColor="#8b5cf6" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
