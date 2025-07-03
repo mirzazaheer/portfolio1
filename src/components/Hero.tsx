@@ -211,22 +211,9 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Placeholder for desktop layout balance */}
-          <div className={`flex justify-center lg:justify-end order-1 lg:order-2 transition-all duration-[2500ms] delay-1500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            isLoaded ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
-          }`}>
-            {/* Desktop placeholder - maintains layout balance */}
-            <div className="hidden lg:block relative">
-              <div className="w-48 h-60 lg:w-64 lg:h-80 rounded-3xl bg-gradient-to-br from-slate-800/20 to-slate-700/20 border border-slate-700/30 backdrop-blur-sm">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-500/5 rounded-3xl"></div>
-                <div className="flex items-center justify-center h-full">
-                  <div className="text-slate-500 text-center">
-                    <User className="w-12 h-12 mx-auto mb-3 opacity-30" />
-                    <p className="text-sm opacity-50">Portfolio Loading...</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Right Column - COMPLETELY REMOVED for desktop to eliminate unwanted frame */}
+          <div className="order-1 lg:order-2 lg:hidden">
+            {/* This space is intentionally left empty for desktop to avoid any unwanted frames */}
           </div>
         </div>
 
