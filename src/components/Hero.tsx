@@ -120,22 +120,23 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 relative z-10 pt-16 sm:pt-0 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[calc(100vh-8rem)] sm:min-h-[calc(100vh-6rem)]">
+      {/* Main Content Container with Perfect Header Clearance */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-screen pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
           {/* Left Column - Text Content (Mobile: Centered, Desktop: Left Aligned) */}
           <div className={`text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center transition-all duration-[2000ms] delay-1500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             isLoaded ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-12'
           }`}>
-            {/* Main heading with perfect alignment */}
-            <div className="mb-4 sm:mb-5 lg:mb-6">
-              <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black text-white mb-3 sm:mb-4 tracking-tight leading-[0.9]">
+            {/* Main heading with perfect spacing and no overlap */}
+            <div className="mb-6 sm:mb-8 lg:mb-10">
+              <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-5 lg:mb-6 tracking-tight leading-[0.85] lg:leading-[0.8]">
                 <span className="block">MIRZA</span>
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
                   ZAHEER
                 </span>
               </h1>
-              <div className="h-8 xs:h-10 sm:h-12 lg:h-16 xl:h-20 flex items-center justify-center lg:justify-start">
-                <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-light text-slate-300 leading-relaxed font-mono tracking-wide">
+              <div className="h-8 xs:h-10 sm:h-12 lg:h-14 xl:h-16 flex items-center justify-center lg:justify-start">
+                <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl font-light text-slate-300 leading-relaxed font-mono tracking-wide">
                   {displayText}
                   <span className="animate-pulse text-cyan-400 font-thin">|</span>
                 </span>
@@ -143,13 +144,13 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Enhanced description with perfect spacing */}
-            <p className="text-sm xs:text-base sm:text-lg lg:text-xl text-slate-400 max-w-3xl mx-auto lg:mx-0 mb-6 sm:mb-7 lg:mb-8 leading-relaxed px-4 lg:px-0">
+            <p className="text-sm xs:text-base sm:text-lg lg:text-lg xl:text-xl text-slate-400 max-w-2xl lg:max-w-3xl mx-auto lg:mx-0 mb-8 sm:mb-10 lg:mb-12 leading-relaxed px-2 lg:px-0">
               Transforming enterprise data landscapes with <span className="text-cyan-400 font-semibold">4+ years</span> of expertise in 
               building <span className="text-blue-400 font-semibold">scalable, cloud-native</span> data solutions that drive business intelligence.
             </p>
             
             {/* Achievement Stats - Clean and Responsive */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-4 xl:gap-6 mb-6 sm:mb-7 lg:mb-8 max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto lg:mx-0">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-5 xl:gap-6 mb-8 sm:mb-10 lg:mb-12 max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto lg:mx-0">
               {achievements.map((achievement, index) => {
                 const Icon = achievement.icon;
                 return (
@@ -193,14 +194,14 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Enhanced scroll indicator */}
-        <div className={`absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-[1500ms] delay-2500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        <div className={`absolute bottom-6 sm:bottom-8 lg:bottom-10 left-1/2 transform -translate-x-1/2 transition-all duration-[1500ms] delay-2500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}>
           <button
             onClick={scrollToNext}
-            className="animate-bounce text-cyan-400 hover:text-cyan-300 transition-colors p-1 sm:p-2 hover:scale-110 transform duration-300"
+            className="animate-bounce text-cyan-400 hover:text-cyan-300 transition-colors p-2 hover:scale-110 transform duration-300"
           >
-            <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+            <ChevronDown className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />
           </button>
         </div>
       </div>
