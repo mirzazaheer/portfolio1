@@ -47,12 +47,12 @@ const Header: React.FC = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Brand */}
+          {/* Brand with Mobile Photo */}
           <div className="flex items-center gap-3">
             <h1 className="text-2xl lg:text-3xl font-black text-white tracking-tight">
               MZ<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">.</span>
             </h1>
-            {/* Mobile Profile Photo - Appears after animation */}
+            {/* Mobile Profile Photo - Slides in from animation */}
             <div className={`sm:hidden transition-all duration-1000 ease-out ${
               showMobilePhoto ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-0 -translate-x-4'
             }`}>
@@ -95,15 +95,17 @@ const Header: React.FC = () => {
             </div>
           </nav>
 
-          {/* Desktop controls - CV button and Profile Photo (right side) */}
+          {/* Desktop controls - CV button and Profile Photo */}
           <div className="hidden lg:flex items-center gap-4">
-            {/* CV button - smaller for desktop */}
+            {/* CV button */}
             <button className="group flex items-center gap-1 px-2 py-1.5 bg-gradient-to-r from-cyan-500/80 to-blue-600/80 backdrop-blur-sm text-white font-medium rounded-md hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-cyan-500/20 text-xs border border-cyan-400/20">
               <Download className="w-3 h-3 group-hover:animate-bounce" />
               <span>CV</span>
             </button>
-            {/* Desktop Profile Photo - Always reserve space */}
-            <div className="relative w-12 h-12 rounded-xl overflow-hidden border-2 border-slate-700/50 transition-all duration-300 group" style={{visibility: showMobilePhoto ? 'visible' : 'hidden'}}>
+            {/* Desktop Profile Photo - Slides in from animation */}
+            <div className={`relative w-12 h-12 rounded-xl overflow-hidden border-2 border-slate-700/50 transition-all duration-1000 ease-out group ${
+              showMobilePhoto ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-0 translate-x-4'
+            }`}>
               {showMobilePhoto && (
                 <>
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 group-hover:opacity-40 transition-opacity duration-300"></div>
