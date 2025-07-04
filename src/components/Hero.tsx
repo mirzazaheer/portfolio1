@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, ArrowRight, Sparkles, Zap, Target } from 'lucide-react';
 
 const Hero: React.FC = () => {
@@ -6,6 +6,8 @@ const Hero: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [splineLoaded, setSplineLoaded] = useState(false);
+  const splineRef = useRef<HTMLCanvasElement>(null);
   
   const titles = [
     'Senior Data Engineer & Cloud Architect',
@@ -16,7 +18,24 @@ const Hero: React.FC = () => {
   ];
 
   useEffect(() => {
-    // Trigger the animation after component mounts
+    // Load Spline animation
+    const loadSpline = async () => {
+      try {
+        const { Application } = await import('@splinetool/runtime');
+        if (splineRef.current) {
+          const app = new Application(splineRef.current);
+          await app.load('https://prod.spline.design/vpPo2wobpeTJjgK4pUbA6uTS/scene.splinecode');
+          setSplineLoaded(true);
+        }
+      } catch (error) {
+        console.log('Spline failed to load, using fallback animation');
+        setSplineLoaded(false);
+      }
+    };
+
+    loadSpline();
+
+    // Trigger the main animation after component mounts
     const timer = setTimeout(() => {
       setIsLoaded(true);
       // Dispatch a custom event to signal header to show profile photo
@@ -65,22 +84,88 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      {/* Spline 3D Animation Background - Using iframe for instant loading */}
+      {/* Spline 3D Animation Background */}
       <div className="absolute inset-0 z-0">
-        <iframe
-          src="https://my.spline.design/particleaibrain-vpPo2wobpeTJjgK4pUbA6uTS/"
-          className="w-full h-full border-0 opacity-60"
+        {/* Spline Canvas */}
+        <canvas
+          ref={splineRef}
+          className={`w-full h-full transition-opacity duration-1000 ${
+            splineLoaded ? 'opacity-40' : 'opacity-0'
+          }`}
           style={{
             background: 'transparent',
             mixBlendMode: 'screen',
-            filter: 'brightness(0.8) contrast(1.2)'
+            filter: 'brightness(0.7) contrast(1.1)'
           }}
-          loading="eager"
-          title="AI Brain Animation"
         />
         
+        {/* Stunning Fallback Animation - AI Brain Particles */}
+        <div className={`absolute inset-0 transition-opacity duration-1000 ${
+          splineLoaded ? 'opacity-0' : 'opacity-100'
+        }`}>
+          {/* Animated Neural Network Background */}
+          <div className="absolute inset-0 overflow-hidden">
+            {/* Central Brain Core */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                {/* Pulsing Core */}
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full animate-pulse"></div>
+                <div className="absolute inset-4 bg-gradient-to-r from-cyan-500/15 to-purple-500/15 rounded-full animate-ping"></div>
+                <div className="absolute inset-8 bg-gradient-to-r from-blue-400/25 to-pink-500/25 rounded-full animate-pulse delay-500"></div>
+                
+                {/* Neural Connections */}
+                {Array.from({ length: 12 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute w-1 bg-gradient-to-r from-cyan-400/60 to-transparent rounded-full animate-pulse"
+                    style={{
+                      height: `${120 + Math.random() * 80}px`,
+                      left: '50%',
+                      top: '50%',
+                      transformOrigin: 'bottom center',
+                      transform: `translate(-50%, -100%) rotate(${i * 30}deg)`,
+                      animationDelay: `${i * 0.2}s`,
+                      animationDuration: `${2 + Math.random() * 2}s`
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+            
+            {/* Floating Particles */}
+            {Array.from({ length: 20 }).map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-pulse"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 3}s`,
+                  animationDuration: `${2 + Math.random() * 3}s`
+                }}
+              />
+            ))}
+            
+            {/* Data Streams */}
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div
+                key={i}
+                className="absolute h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent animate-pulse"
+                style={{
+                  width: `${200 + Math.random() * 300}px`,
+                  left: `${Math.random() * 80}%`,
+                  top: `${20 + Math.random() * 60}%`,
+                  transform: `rotate(${Math.random() * 360}deg)`,
+                  animationDelay: `${i * 0.5}s`,
+                  animationDuration: `${3 + Math.random() * 2}s`
+                }}
+              />
+            ))}
+          </div>
+        </div>
+        
         {/* Enhanced overlay for perfect text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/60 via-slate-900/50 to-slate-950/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/70 via-slate-900/60 to-slate-950/70"></div>
       </div>
 
       {/* Subtle grid pattern overlay */}
@@ -118,7 +203,7 @@ const Hero: React.FC = () => {
           {/* Loading text stays centered */}
           <div className="absolute -bottom-16 sm:-bottom-20 left-1/2 transform -translate-x-1/2 text-center">
             <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 font-bold text-lg sm:text-xl animate-pulse">
-              Initializing AI Portfolio...
+              {splineLoaded ? 'AI Brain Loaded...' : 'Loading AI Brain...'}
             </div>
             <div className="flex justify-center mt-4">
               <div className="flex space-x-1.5">
