@@ -120,23 +120,23 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Content Container with Perfect Header Clearance */}
+      {/* Main Content Container with Perfect Header Clearance and Optimized Desktop Layout */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-screen pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-screen pt-24 sm:pt-28 lg:pt-20 pb-16 sm:pb-20 lg:pb-16">
           {/* Left Column - Text Content (Mobile: Centered, Desktop: Left Aligned) */}
           <div className={`text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center transition-all duration-[2000ms] delay-1500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             isLoaded ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-12'
           }`}>
             {/* Main heading with perfect spacing and no overlap */}
-            <div className="mb-6 sm:mb-8 lg:mb-10">
-              <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-5 lg:mb-6 tracking-tight leading-[0.85] lg:leading-[0.8]">
+            <div className="mb-6 sm:mb-8 lg:mb-8">
+              <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black text-white mb-4 sm:mb-5 lg:mb-5 tracking-tight leading-[0.85] lg:leading-[0.8]">
                 <span className="block">MIRZA</span>
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
                   ZAHEER
                 </span>
               </h1>
-              <div className="h-8 xs:h-10 sm:h-12 lg:h-14 xl:h-16 flex items-center justify-center lg:justify-start">
-                <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl font-light text-slate-300 leading-relaxed font-mono tracking-wide">
+              <div className="h-8 xs:h-10 sm:h-12 lg:h-12 xl:h-14 flex items-center justify-center lg:justify-start">
+                <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-base xl:text-lg 2xl:text-xl font-light text-slate-300 leading-relaxed font-mono tracking-wide">
                   {displayText}
                   <span className="animate-pulse text-cyan-400 font-thin">|</span>
                 </span>
@@ -144,27 +144,27 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Enhanced description with perfect spacing */}
-            <p className="text-sm xs:text-base sm:text-lg lg:text-lg xl:text-xl text-slate-400 max-w-2xl lg:max-w-3xl mx-auto lg:mx-0 mb-8 sm:mb-10 lg:mb-12 leading-relaxed px-2 lg:px-0">
+            <p className="text-sm xs:text-base sm:text-lg lg:text-base xl:text-lg 2xl:text-xl text-slate-400 max-w-2xl lg:max-w-full xl:max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-8 lg:mb-8 leading-relaxed px-2 lg:px-0">
               Transforming enterprise data landscapes with <span className="text-cyan-400 font-semibold">4+ years</span> of expertise in 
               building <span className="text-blue-400 font-semibold">scalable, cloud-native</span> data solutions that drive business intelligence.
             </p>
             
-            {/* Achievement Stats - Clean and Responsive */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-5 xl:gap-6 mb-8 sm:mb-10 lg:mb-12 max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto lg:mx-0">
+            {/* Achievement Stats - Clean and Responsive with better desktop sizing */}
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-4 xl:gap-5 mb-6 sm:mb-8 lg:mb-8 max-w-md sm:max-w-lg lg:max-w-lg xl:max-w-xl mx-auto lg:mx-0">
               {achievements.map((achievement, index) => {
                 const Icon = achievement.icon;
                 return (
                   <div 
                     key={index}
-                    className="group relative bg-slate-800/40 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-5 xl:p-6 border border-slate-700/60 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-105"
+                    className="group relative bg-slate-800/40 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-xl xl:rounded-2xl p-3 sm:p-4 lg:p-4 xl:p-5 border border-slate-700/60 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-105"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/8 to-blue-500/8 rounded-lg sm:rounded-xl lg:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/8 to-blue-500/8 rounded-lg sm:rounded-xl lg:rounded-xl xl:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="relative z-10 text-center">
-                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 text-cyan-400 mx-auto mb-2" />
-                      <div className="text-base sm:text-lg lg:text-xl font-black text-white mb-1">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-6 lg:h-6 xl:w-7 xl:h-7 text-cyan-400 mx-auto mb-2" />
+                      <div className="text-base sm:text-lg lg:text-lg xl:text-xl font-black text-white mb-1">
                         {achievement.label}
                       </div>
-                      <div className="text-xs sm:text-sm lg:text-base text-slate-400 font-medium leading-tight">
+                      <div className="text-xs sm:text-sm lg:text-sm xl:text-base text-slate-400 font-medium leading-tight">
                         {achievement.subtitle}
                       </div>
                     </div>
@@ -173,15 +173,15 @@ const Hero: React.FC = () => {
               })}
             </div>
 
-            {/* CTA button with enhanced styling */}
+            {/* CTA button with enhanced styling and better desktop positioning */}
             <div className="flex justify-center lg:justify-start">
               <button 
                 onClick={scrollToNext}
-                className="group px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg sm:rounded-xl lg:rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 text-sm sm:text-base lg:text-lg"
+                className="group px-6 sm:px-8 lg:px-8 xl:px-10 py-3 sm:py-4 lg:py-4 xl:py-5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg sm:rounded-xl lg:rounded-xl xl:rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 text-sm sm:text-base lg:text-base xl:text-lg"
               >
                 <div className="flex items-center justify-center gap-2 sm:gap-3">
                   Explore My Journey
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6 group-hover:translate-x-1 transition-transform" />
                 </div>
               </button>
             </div>
@@ -193,8 +193,8 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Enhanced scroll indicator */}
-        <div className={`absolute bottom-6 sm:bottom-8 lg:bottom-10 left-1/2 transform -translate-x-1/2 transition-all duration-[1500ms] delay-2500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        {/* Enhanced scroll indicator with better desktop positioning */}
+        <div className={`absolute bottom-6 sm:bottom-8 lg:bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-[1500ms] delay-2500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}>
           <button
