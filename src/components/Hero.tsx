@@ -20,12 +20,12 @@ const Hero: React.FC = () => {
   ];
 
   useEffect(() => {
-    // Initialize Spline scene
+    // Initialize Spline scene with the correct particle AI brain URL
     const initSpline = async () => {
       if (canvasRef.current && !splineAppRef.current) {
         try {
           const app = new Application(canvasRef.current);
-          await app.load('https://prod.spline.design/ad3fcb35-87d6-4e2b-bd80-ade8db4e1493/scene.splinecode');
+          await app.load('https://prod.spline.design/vpPo2wobpeTJjgK4pUbA6uTS/scene.splinecode');
           splineAppRef.current = app;
           setSplineLoaded(true);
         } catch (error) {
@@ -96,12 +96,12 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      {/* Spline 3D Animation Background - Absolutely positioned for full coverage */}
+      {/* Spline 3D Particle AI Brain Animation Background */}
       <div className="absolute inset-0 z-0">
         <canvas
           ref={canvasRef}
           className={`w-full h-full object-cover transition-opacity duration-2000 ${
-            splineLoaded ? 'opacity-60' : 'opacity-0'
+            splineLoaded ? 'opacity-70' : 'opacity-0'
           }`}
           style={{
             background: 'transparent',
@@ -119,11 +119,11 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Enhanced overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950/40 via-slate-900/30 to-slate-950/40 z-1"></div>
+      {/* Enhanced overlay for perfect text readability over particle brain */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950/50 via-slate-900/40 to-slate-950/50 z-1"></div>
 
-      {/* Subtle grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.015)_1px,transparent_1px)] bg-[size:60px_60px] sm:bg-[size:72px_72px] z-2"></div>
+      {/* Subtle grid pattern overlay that complements the AI brain */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.01)_1px,transparent_1px)] bg-[size:60px_60px] sm:bg-[size:72px_72px] z-2"></div>
 
       {/* Clean Photo Animation with Perfect Positioning */}
       <div className={`fixed inset-0 z-50 pointer-events-none transition-all duration-[2200ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
@@ -157,7 +157,7 @@ const Hero: React.FC = () => {
           {/* Loading text stays centered */}
           <div className="absolute -bottom-16 sm:-bottom-20 left-1/2 transform -translate-x-1/2 text-center">
             <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 font-bold text-lg sm:text-xl animate-pulse">
-              Initializing Portfolio...
+              Initializing AI Portfolio...
             </div>
             <div className="flex justify-center mt-4">
               <div className="flex space-x-1.5">
@@ -177,24 +177,24 @@ const Hero: React.FC = () => {
           <div className={`text-center lg:text-left order-2 lg:order-1 flex flex-col justify-center transition-all duration-[2000ms] delay-1500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             isLoaded ? 'animate-fade-in-up opacity-100' : 'opacity-0 translate-y-12'
           }`}>
-            {/* Main heading with enhanced contrast for 3D background */}
+            {/* Main heading with enhanced contrast for AI brain background */}
             <div className="mb-6 sm:mb-8 lg:mb-8">
               <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black text-white mb-4 sm:mb-5 lg:mb-5 tracking-tight leading-[0.85] lg:leading-[0.8] drop-shadow-2xl">
-                <span className="block drop-shadow-lg">MIRZA</span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-lg">
+                <span className="block drop-shadow-lg text-shadow-lg">MIRZA</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-lg filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
                   ZAHEER
                 </span>
               </h1>
               <div className="h-8 xs:h-10 sm:h-12 lg:h-12 xl:h-14 flex items-center justify-center lg:justify-start">
-                <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-base xl:text-lg 2xl:text-xl font-light text-slate-200 leading-relaxed font-mono tracking-wide drop-shadow-lg">
+                <span className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-base xl:text-lg 2xl:text-xl font-light text-slate-100 leading-relaxed font-mono tracking-wide drop-shadow-lg filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                   {displayText}
                   <span className="animate-pulse text-cyan-400 font-thin">|</span>
                 </span>
               </div>
             </div>
 
-            {/* Enhanced description with better contrast */}
-            <p className="text-sm xs:text-base sm:text-lg lg:text-base xl:text-lg 2xl:text-xl text-slate-300 max-w-2xl lg:max-w-full xl:max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-8 lg:mb-8 leading-relaxed px-2 lg:px-0 drop-shadow-lg">
+            {/* Enhanced description with better contrast against AI brain */}
+            <p className="text-sm xs:text-base sm:text-lg lg:text-base xl:text-lg 2xl:text-xl text-slate-200 max-w-2xl lg:max-w-full xl:max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-8 lg:mb-8 leading-relaxed px-2 lg:px-0 drop-shadow-lg filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               Transforming enterprise data landscapes with <span className="text-cyan-400 font-semibold">4+ years</span> of expertise in 
               building <span className="text-blue-400 font-semibold">scalable, cloud-native</span> data solutions that drive business intelligence.
             </p>
@@ -206,15 +206,15 @@ const Hero: React.FC = () => {
                 return (
                   <div 
                     key={index}
-                    className="group relative bg-slate-800/60 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-xl xl:rounded-2xl p-3 sm:p-4 lg:p-4 xl:p-5 border border-slate-700/60 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-105 shadow-2xl"
+                    className="group relative bg-slate-800/70 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-xl xl:rounded-2xl p-3 sm:p-4 lg:p-4 xl:p-5 border border-slate-700/70 hover:border-cyan-400/60 transition-all duration-500 hover:transform hover:scale-105 shadow-2xl"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 to-blue-500/10 rounded-lg sm:rounded-xl lg:rounded-xl xl:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/15 to-blue-500/15 rounded-lg sm:rounded-xl lg:rounded-xl xl:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="relative z-10 text-center">
                       <Icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-6 lg:h-6 xl:w-7 xl:h-7 text-cyan-400 mx-auto mb-2 drop-shadow-lg" />
-                      <div className="text-base sm:text-lg lg:text-lg xl:text-xl font-black text-white mb-1 drop-shadow-lg">
+                      <div className="text-base sm:text-lg lg:text-lg xl:text-xl font-black text-white mb-1 drop-shadow-lg filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                         {achievement.label}
                       </div>
-                      <div className="text-xs sm:text-sm lg:text-sm xl:text-base text-slate-300 font-medium leading-tight drop-shadow-md">
+                      <div className="text-xs sm:text-sm lg:text-sm xl:text-base text-slate-200 font-medium leading-tight drop-shadow-md filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
                         {achievement.subtitle}
                       </div>
                     </div>
@@ -227,11 +227,11 @@ const Hero: React.FC = () => {
             <div className="flex justify-center lg:justify-start">
               <button 
                 onClick={scrollToNext}
-                className="group relative overflow-hidden px-6 sm:px-8 lg:px-6 xl:px-8 py-3 sm:py-4 lg:py-3 xl:py-4 bg-gradient-to-r from-cyan-500/90 to-blue-600/90 hover:from-cyan-400 hover:to-blue-500 backdrop-blur-xl text-white font-semibold rounded-lg sm:rounded-xl lg:rounded-lg xl:rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/30 text-sm sm:text-base lg:text-sm xl:text-base shadow-2xl border border-cyan-400/20"
+                className="group relative overflow-hidden px-6 sm:px-8 lg:px-6 xl:px-8 py-3 sm:py-4 lg:py-3 xl:py-4 bg-gradient-to-r from-cyan-500/90 to-blue-600/90 hover:from-cyan-400 hover:to-blue-500 backdrop-blur-xl text-white font-semibold rounded-lg sm:rounded-xl lg:rounded-lg xl:rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/40 text-sm sm:text-base lg:text-sm xl:text-base shadow-2xl border border-cyan-400/30"
               >
                 {/* Enhanced shimmer effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                <div className="relative flex items-center justify-center gap-2 sm:gap-3 lg:gap-2 xl:gap-3 drop-shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                <div className="relative flex items-center justify-center gap-2 sm:gap-3 lg:gap-2 xl:gap-3 drop-shadow-lg filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                   Explore My Journey
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 lg:w-4 lg:h-4 xl:w-5 xl:h-5 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -239,40 +239,40 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Interactive 3D Space */}
+          {/* Right Column - Interactive 3D AI Brain Space */}
           <div className="hidden lg:block order-1 lg:order-2 relative">
-            {/* Floating interaction hints */}
+            {/* Floating interaction hints for AI brain */}
             <div className={`absolute top-1/4 left-1/4 transition-all duration-1000 delay-3000 ${
-              splineLoaded ? 'opacity-60 translate-y-0' : 'opacity-0 translate-y-4'
+              splineLoaded ? 'opacity-70 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
-              <div className="bg-slate-800/40 backdrop-blur-xl rounded-xl p-3 border border-cyan-400/20 shadow-xl">
-                <p className="text-cyan-400 text-xs font-medium">Interactive 3D Scene</p>
-                <p className="text-slate-300 text-[10px]">Click & drag to explore</p>
+              <div className="bg-slate-800/60 backdrop-blur-xl rounded-xl p-3 border border-cyan-400/30 shadow-xl">
+                <p className="text-cyan-400 text-xs font-medium">Interactive AI Brain</p>
+                <p className="text-slate-200 text-[10px]">Click & drag to explore neural networks</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Enhanced scroll indicator with glow effect */}
+        {/* Enhanced scroll indicator with AI-themed glow effect */}
         <div className={`absolute bottom-6 sm:bottom-8 lg:bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-[1500ms] delay-2500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}>
           <button
             onClick={scrollToNext}
-            className="animate-bounce text-cyan-400 hover:text-cyan-300 transition-colors p-2 hover:scale-110 transform duration-300 drop-shadow-2xl hover:drop-shadow-[0_0_20px_rgba(34,211,238,0.5)]"
+            className="animate-bounce text-cyan-400 hover:text-cyan-300 transition-colors p-2 hover:scale-110 transform duration-300 drop-shadow-2xl hover:drop-shadow-[0_0_25px_rgba(34,211,238,0.6)]"
           >
             <ChevronDown className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />
           </button>
         </div>
       </div>
 
-      {/* Spline loading indicator */}
+      {/* Enhanced Spline loading indicator with AI theme */}
       {!splineLoaded && (
         <div className="absolute bottom-4 right-4 z-20">
-          <div className="bg-slate-800/60 backdrop-blur-xl rounded-lg p-2 border border-slate-700/50">
+          <div className="bg-slate-800/70 backdrop-blur-xl rounded-lg p-3 border border-slate-700/60 shadow-xl">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-              <span className="text-slate-300 text-xs">Loading 3D Scene...</span>
+              <span className="text-slate-200 text-xs font-medium">Loading AI Brain...</span>
             </div>
           </div>
         </div>
