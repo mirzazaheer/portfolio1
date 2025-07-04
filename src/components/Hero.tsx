@@ -173,15 +173,17 @@ const Hero: React.FC = () => {
               })}
             </div>
 
-            {/* CTA button with enhanced styling and better desktop positioning */}
+            {/* CTA button with sleek desktop sizing and modern aesthetics */}
             <div className="flex justify-center lg:justify-start">
               <button 
                 onClick={scrollToNext}
-                className="group px-6 sm:px-8 lg:px-8 xl:px-10 py-3 sm:py-4 lg:py-4 xl:py-5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg sm:rounded-xl lg:rounded-xl xl:rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 text-sm sm:text-base lg:text-base xl:text-lg"
+                className="group relative overflow-hidden px-6 sm:px-8 lg:px-6 xl:px-8 py-3 sm:py-4 lg:py-3 xl:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg sm:rounded-xl lg:rounded-lg xl:rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/20 text-sm sm:text-base lg:text-sm xl:text-base shadow-lg"
               >
-                <div className="flex items-center justify-center gap-2 sm:gap-3">
+                {/* Subtle shimmer effect for modern feel */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                <div className="relative flex items-center justify-center gap-2 sm:gap-3 lg:gap-2 xl:gap-3">
                   Explore My Journey
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 lg:w-4 lg:h-4 xl:w-5 xl:h-5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </button>
             </div>
