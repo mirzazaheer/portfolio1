@@ -91,13 +91,13 @@ const Hero: React.FC = () => {
           style={{
             position: 'absolute',
             right: '0',
-            bottom: '0',
-            width: '65vw', // covers right side, adjust as needed
-            height: '80vh',
-            minWidth: '400px',
-            minHeight: '400px',
-            maxWidth: '900px',
-            maxHeight: '900px',
+            bottom: '-18vh', // a bit more down
+            width: '80vw',
+            height: '90vh',
+            minWidth: '900px',
+            minHeight: '900px',
+            maxWidth: '1600px',
+            maxHeight: '1600px',
             pointerEvents: 'none',
             background: 'transparent',
             zIndex: 2,
