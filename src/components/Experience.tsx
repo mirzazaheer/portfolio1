@@ -190,9 +190,9 @@ const Experience: React.FC = () => {
                   )}
                 </div>
 
-                {/* Optimized compact content card with reduced horizontal width */}
-                <div className={`w-full lg:w-[42%] xl:w-[40%] ml-6 sm:ml-7 lg:ml-0 ${
-                  index % 2 === 0 ? 'lg:mr-8 xl:mr-12' : 'lg:ml-8 xl:ml-12'
+                {/* Optimized content card with better desktop spacing */}
+                <div className={`w-full lg:w-[45%] xl:w-[43%] ml-6 sm:ml-7 lg:ml-0 ${
+                  index % 2 === 0 ? 'lg:mr-6 xl:mr-8' : 'lg:ml-6 xl:ml-8'
                 }`}>
                   <div 
                     onClick={() => toggleExpanded(index)}
@@ -201,7 +201,7 @@ const Experience: React.FC = () => {
                     <div className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} opacity-0 group-hover:opacity-8 rounded-lg sm:rounded-xl lg:rounded-2xl transition-opacity duration-300`}></div>
                     
                     <div className="relative z-10">
-                      {/* Perfectly aligned header */}
+                      {/* Perfectly aligned header with optimized spacing */}
                       <div className="flex items-start gap-2.5 sm:gap-3 lg:gap-3.5 mb-2.5 sm:mb-3 lg:mb-3.5">
                         <div className={`flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-gradient-to-br ${exp.gradient} bg-opacity-15 rounded-md sm:rounded-lg lg:rounded-xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0 mt-0.5`}>
                           <Building className={`w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 bg-gradient-to-br ${exp.gradient} bg-clip-text text-transparent`} />
@@ -239,13 +239,13 @@ const Experience: React.FC = () => {
                         </div>
                       </div>
 
-                      {/* Perfectly aligned meta info */}
-                      <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 text-[10px] sm:text-xs text-slate-400 mb-2 sm:mb-3">
+                      {/* Optimized meta info with better date alignment */}
+                      <div className="flex flex-col sm:flex-row sm:justify-between gap-1 sm:gap-2 text-[10px] sm:text-xs text-slate-400 mb-2 sm:mb-3">
                         <div className="flex items-center gap-1.5">
                           <Calendar className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-cyan-400 flex-shrink-0" />
                           <span className="font-medium leading-tight">{exp.period}</span>
                         </div>
-                        <div className="flex items-center gap-1.5">
+                        <div className="flex items-center gap-1.5 sm:justify-end">
                           <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-cyan-400 flex-shrink-0" />
                           <span className="font-medium leading-tight">{exp.location}</span>
                         </div>

@@ -52,8 +52,8 @@ const Header: React.FC = () => {
             <h1 className="text-2xl lg:text-3xl font-black text-white tracking-tight">
               MZ<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">.</span>
             </h1>
-            {/* Mobile Profile Photo - Slides in from animation with perfect positioning */}
-            <div className={`sm:hidden transition-all duration-1000 ease-out ${
+            {/* Mobile & Tablet Profile Photo - Fixed visibility for tablet */}
+            <div className={`md:hidden transition-all duration-1000 ease-out ${
               showMobilePhoto ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-0 -translate-x-4'
             }`}>
               <div className="relative w-10 h-10 rounded-xl overflow-hidden border-2 border-slate-700/50 hover:border-cyan-400/50 transition-all duration-300 group">
@@ -128,7 +128,7 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile controls - CV button and menu */}
+          {/* Mobile & Tablet controls - CV button and menu */}
           <div className="lg:hidden flex items-center gap-2">
             {/* Fixed mobile CV button with proper containment */}
             <button className="group relative flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-cyan-500/20 text-sm overflow-hidden">
