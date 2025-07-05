@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
             <div className="w-1 h-1 bg-slate-600 rounded-full hidden sm:block"></div>
             <div className="flex items-center gap-1.5 text-slate-500 text-xs sm:text-sm">
               <Calendar className="w-3 h-3" />
-              <span>© 2024 All rights reserved</span>
+              <span>© 2025 All rights reserved</span>
             </div>
           </div>
           

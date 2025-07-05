@@ -190,9 +190,9 @@ const Experience: React.FC = () => {
                   )}
                 </div>
 
-                {/* Super compact content card */}
-                <div className={`w-full lg:w-5/12 ml-6 sm:ml-7 lg:ml-0 ${
-                  index % 2 === 0 ? 'lg:mr-6' : 'lg:ml-6'
+                {/* Optimized compact content card with reduced horizontal width */}
+                <div className={`w-full lg:w-[42%] xl:w-[40%] ml-6 sm:ml-7 lg:ml-0 ${
+                  index % 2 === 0 ? 'lg:mr-8 xl:mr-12' : 'lg:ml-8 xl:ml-12'
                 }`}>
                   <div 
                     onClick={() => toggleExpanded(index)}
@@ -201,53 +201,61 @@ const Experience: React.FC = () => {
                     <div className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} opacity-0 group-hover:opacity-8 rounded-lg sm:rounded-xl lg:rounded-2xl transition-opacity duration-300`}></div>
                     
                     <div className="relative z-10">
-                      {/* Ultra compact header */}
-                      <div className="flex items-start gap-2 sm:gap-3 mb-2 sm:mb-3">
-                        <div className={`flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-gradient-to-br ${exp.gradient} bg-opacity-15 rounded-md sm:rounded-lg lg:rounded-xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                          <Building className={`w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 bg-gradient-to-br ${exp.gradient} bg-clip-text text-transparent`} />
+                      {/* Perfectly aligned header */}
+                      <div className="flex items-start gap-2.5 sm:gap-3 lg:gap-3.5 mb-2.5 sm:mb-3 lg:mb-3.5">
+                        <div className={`flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-gradient-to-br ${exp.gradient} bg-opacity-15 rounded-md sm:rounded-lg lg:rounded-xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0 mt-0.5`}>
+                          <Building className={`w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 bg-gradient-to-br ${exp.gradient} bg-clip-text text-transparent`} />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-1.5 sm:gap-2 mb-0.5 sm:mb-1">
-                            <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white truncate">{exp.company}</h3>
+                          {/* Company and Current badge row */}
+                          <div className="flex items-center gap-2 mb-1 sm:mb-1.5">
+                            <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white leading-tight">{exp.company}</h3>
                             {exp.isActive && (
-                              <span className="px-1.5 py-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-[9px] sm:text-xs font-bold rounded-full animate-pulse shadow-md flex-shrink-0">
+                              <span className="px-1.5 py-0.5 sm:px-2 sm:py-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-[8px] sm:text-[9px] lg:text-xs font-bold rounded-full animate-pulse shadow-md flex-shrink-0">
                                 CURRENT
                               </span>
                             )}
                           </div>
-                          <h4 className="text-xs sm:text-sm lg:text-base font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-0.5 sm:mb-1 leading-tight">
+                          {/* Role */}
+                          <h4 className="text-xs sm:text-sm lg:text-base font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-1.5 sm:mb-2 leading-tight">
                             {exp.role}
                           </h4>
+                          {/* Client with label and different gradient */}
                           {exp.client && (
-                            <p className="text-[10px] sm:text-xs text-cyan-300 font-semibold bg-slate-700/30 px-1.5 py-0.5 rounded-full inline-block">{exp.client}</p>
+                            <div className="flex items-center gap-1 sm:gap-1.5">
+                              <span className="text-[9px] sm:text-[10px] lg:text-xs text-slate-400 font-medium">Client:</span>
+                              <span className="text-[9px] sm:text-[10px] lg:text-xs font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">
+                                {exp.client}
+                              </span>
+                            </div>
                           )}
                         </div>
-                        <div className="flex-shrink-0">
+                        <div className="flex-shrink-0 mt-1">
                           {expandedItems.includes(index) ? (
-                            <ChevronUp className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
+                            <ChevronUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
                           ) : (
-                            <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
+                            <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
                           )}
                         </div>
                       </div>
 
-                      {/* Ultra compact meta info */}
-                      <div className="flex flex-col sm:flex-row gap-1 sm:gap-3 text-[10px] sm:text-xs text-slate-400 mb-2 sm:mb-3">
-                        <div className="flex items-center gap-1">
+                      {/* Perfectly aligned meta info */}
+                      <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 text-[10px] sm:text-xs text-slate-400 mb-2 sm:mb-3">
+                        <div className="flex items-center gap-1.5">
                           <Calendar className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-cyan-400 flex-shrink-0" />
-                          <span className="font-medium">{exp.period}</span>
+                          <span className="font-medium leading-tight">{exp.period}</span>
                         </div>
-                        <div className="flex items-center gap-1">
+                        <div className="flex items-center gap-1.5">
                           <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-cyan-400 flex-shrink-0" />
-                          <span className="font-medium">{exp.location}</span>
+                          <span className="font-medium leading-tight">{exp.location}</span>
                         </div>
                       </div>
 
-                      {/* Expanded content */}
+                      {/* Expanded content with perfect spacing */}
                       {expandedItems.includes(index) && (
-                        <div className="animate-fade-in-up">
+                        <div className="animate-fade-in-up space-y-3 sm:space-y-4">
                           {/* Technologies */}
-                          <div className="mb-3 sm:mb-4">
+                          <div>
                             <div className="flex flex-wrap gap-1 sm:gap-1.5">
                               {exp.technologies.map((tech, techIndex) => (
                                 <span 
@@ -261,15 +269,15 @@ const Experience: React.FC = () => {
                           </div>
 
                           {/* Summary */}
-                          <div className="mb-3 sm:mb-4">
-                            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed bg-slate-700/20 p-2 sm:p-3 rounded-lg border-l-2 border-cyan-400/50">
+                          <div>
+                            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed bg-slate-700/20 p-2.5 sm:p-3 rounded-lg border-l-2 border-cyan-400/50">
                               {exp.summary}
                             </p>
                           </div>
 
                           {/* Achievements */}
                           <div className="bg-slate-700/20 rounded-lg p-3 sm:p-4 border border-slate-600/30">
-                            <h5 className="text-xs sm:text-sm font-semibold text-white mb-2 sm:mb-3 flex items-center gap-1.5">
+                            <h5 className="text-xs sm:text-sm font-semibold text-white mb-2.5 sm:mb-3 flex items-center gap-1.5">
                               <ChevronRight className="w-3 h-3 text-cyan-400" />
                               Key Achievements
                             </h5>
