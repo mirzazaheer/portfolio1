@@ -63,17 +63,55 @@ const Hero: React.FC = () => {
     { icon: Sparkles, label: '6+', subtitle: 'Certifications' }
   ];
 
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-      {/* Enhanced background effects */}
-      <div className="absolute inset-0">
+      {/* Animated background blobs and grid overlay restored */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-gradient-to-r from-cyan-500/15 to-blue-500/15 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute top-1/3 right-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute bottom-1/4 left-1/3 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-gradient-to-r from-emerald-500/15 to-teal-500/15 rounded-full blur-3xl animate-pulse delay-2000"></div>
       </div>
+      <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(rgba(148,163,184,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.02)_1px,transparent_1px)] bg-[size:60px_60px] sm:bg-[size:72px_72px]"></div>
 
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.02)_1px,transparent_1px)] bg-[size:60px_60px] sm:bg-[size:72px_72px]"></div>
+      {/* Spline 3D Animation - overlays only the Hero section, above animated background */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 1,
+          pointerEvents: 'none',
+          background: 'transparent',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            right: '0',
+            bottom: '0',
+            width: '65vw', // covers right side, adjust as needed
+            height: '80vh',
+            minWidth: '400px',
+            minHeight: '400px',
+            maxWidth: '900px',
+            maxHeight: '900px',
+            pointerEvents: 'none',
+            background: 'transparent',
+            zIndex: 2,
+          }}
+        >
+          <spline-viewer
+            url="https://prod.spline.design/h1K2eXdoHJYdqnrp/scene.splinecode"
+            loading-anim-type="none"
+            style={{ width: '100%', height: '100%', background: 'transparent' }}
+          ></spline-viewer>
+        </div>
+      </div>
+
+      {/* ...existing code... (main content, stats, etc.) */}
 
       {/* Optimized Photo Animation with Better Mobile Text Positioning */}
       <div className={`fixed inset-0 z-50 pointer-events-none transition-all duration-[2200ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
