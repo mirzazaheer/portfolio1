@@ -165,14 +165,22 @@ const Hero: React.FC = () => {
           
           {/* Fixed Loading text positioning - No overlap on mobile */}
           <div className="absolute -bottom-12 sm:-bottom-16 lg:-bottom-20 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
-            <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 font-semibold text-sm sm:text-lg lg:text-xl animate-pulse">
-              Initializing Portfolio...
+            <div className="flex justify-center w-full">
+              <div className="font-bold text-xs sm:text-base lg:text-xl animate-pulse tracking-wide text-center px-2" style={{letterSpacing: '0.01em', minWidth: 'max-content'}}>
+                <span className="inline-flex items-center gap-1 sm:gap-2">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-cyan-400 drop-shadow-[0_1px_4px_rgba(0,255,255,0.5)]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4"/></svg>
+                  <span className="font-bold whitespace-nowrap text-white drop-shadow-[0_1px_8px_rgba(0,255,255,0.25)]" style={{maxWidth: '100vw', overflow: 'visible', textOverflow: 'clip', background: 'linear-gradient(90deg,#22d3ee,#3b82f6,#a21caf)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+                    Initializing Portfolio
+                  </span>
+                  <span className="ml-1 text-cyan-300 animate-pulse font-bold drop-shadow-[0_1px_8px_rgba(34,211,238,0.4)]">...</span>
+                </span>
+              </div>
             </div>
-            <div className="flex justify-center mt-2 sm:mt-3 lg:mt-4">
+            <div className="flex justify-center mt-1 sm:mt-2 lg:mt-4">
               <div className="flex space-x-1">
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-bounce"></div>
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-bounce delay-150"></div>
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full animate-bounce delay-300"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-2 lg:h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-bounce"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-2 lg:h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-bounce delay-150"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-2 lg:h-2 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full animate-bounce delay-300"></div>
               </div>
             </div>
           </div>
