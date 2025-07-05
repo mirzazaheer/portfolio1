@@ -75,7 +75,7 @@ const Hero: React.FC = () => {
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.02)_1px,transparent_1px)] bg-[size:60px_60px] sm:bg-[size:72px_72px]"></div>
 
-      {/* Clean Photo Animation with Perfect Positioning */}
+      {/* Optimized Photo Animation with Better Mobile Text Positioning */}
       <div className={`fixed inset-0 z-50 pointer-events-none transition-all duration-[2200ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isLoaded ? 'opacity-0' : 'opacity-100'
       }`}>
@@ -100,20 +100,22 @@ const Hero: React.FC = () => {
                 transform: 'scale(1.1)',
                 transformOrigin: '50% 20%'
               }}
+              loading="eager"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/8 to-transparent animate-pulse"></div>
           </div>
           
-          {/* Loading text stays centered */}
-          <div className="absolute -bottom-16 sm:-bottom-20 left-1/2 transform -translate-x-1/2 text-center">
-            <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 font-bold text-lg sm:text-xl animate-pulse">
+          {/* Fixed Loading text positioning - No overlap on mobile */}
+          <div className="absolute -bottom-12 sm:-bottom-16 lg:-bottom-20 left-1/2 transform -translate-x-1/2 text-center w-full px-4">
+            <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 font-semibold text-sm sm:text-lg lg:text-xl animate-pulse">
               Initializing Portfolio...
             </div>
-            <div className="flex justify-center mt-4">
-              <div className="flex space-x-1.5">
-                <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-bounce"></div>
-                <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-bounce delay-150"></div>
-                <div className="w-2 h-2 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full animate-bounce delay-300"></div>
+            <div className="flex justify-center mt-2 sm:mt-3 lg:mt-4">
+              <div className="flex space-x-1">
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-bounce"></div>
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-bounce delay-150"></div>
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full animate-bounce delay-300"></div>
               </div>
             </div>
           </div>
