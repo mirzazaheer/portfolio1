@@ -22,6 +22,21 @@
     
     <!-- Preload critical image for faster loading -->
     <link rel="preload" as="image" href="/IMG_40211.jpg" />
+
+    <!-- Structured Data for SEO (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mirza Zaheer",
+      "jobTitle": "Senior Data Engineer",
+      "url": "https://your-domain.com/",
+      "sameAs": [
+        "https://www.linkedin.com/in/your-linkedin/"
+      ],
+      "description": "Senior Data Engineer with 4+ years of experience in building scalable data pipelines and cloud data solutions. Expert in Snowflake, Databricks, AWS, and modern data technologies."
+    }
+    </script>
     
     <style>
       @keyframes fade-in-up {
@@ -102,7 +117,10 @@
     <div id="loading-screen" class="loading-screen">
       <div class="loader"></div>
     </div>
-    
+
+    <!-- Hidden SEO image for Google Image Search -->
+    <img src="/IMG_40211.jpg" alt="Mirza Zaheer - Senior Data Engineer" style="display:none;" />
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
