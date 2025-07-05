@@ -1,24 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Calendar, MapPin, Building, ChevronRight, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 
 const Experience: React.FC = () => {
   const [expandedItems, setExpandedItems] = useState<number[]>([]);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-
-    // Check on mount
-    checkMobile();
-
-    // Add resize listener
-    window.addEventListener('resize', checkMobile);
-
-    // Cleanup
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const toggleExpanded = (index: number) => {
     setExpandedItems(prev => 
@@ -176,137 +160,135 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="py-6 sm:py-8 lg:py-24 bg-gradient-to-b from-slate-900 to-slate-950">
+    <section id="experience" className="py-8 sm:py-12 lg:py-16 bg-gradient-to-b from-slate-900 to-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-6 sm:mb-8 lg:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-white mb-2 sm:mb-3 lg:mb-6 tracking-tight">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3 sm:mb-4 lg:mb-6 tracking-tight">
             Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Experience</span>
           </h2>
-          <p className="text-sm sm:text-base lg:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed">
             A journey through innovative data engineering solutions and impactful projects
           </p>
         </div>
 
-        <div className="relative">
+        <div className="relative max-w-4xl mx-auto">
           {/* Enhanced timeline line */}
-          <div className="absolute left-2.5 sm:left-3 lg:left-1/2 top-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-600 lg:transform lg:-translate-x-0.5 rounded-full"></div>
+          <div className="absolute left-4 sm:left-5 lg:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-600 rounded-full"></div>
 
-          <div className="space-y-3 sm:space-y-4 lg:space-y-16">
+          <div className="space-y-4 sm:space-y-6">
             {experiences.map((exp, index) => (
-              <div key={index} className={`relative flex items-start ${
-                index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-              }`}>
+              <div key={index} className="relative">
                 {/* Enhanced timeline dot */}
-                <div className="absolute left-2.5 sm:left-3 lg:left-1/2 w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-6 lg:h-6 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full border-2 sm:border-2 lg:border-4 border-slate-950 lg:transform lg:-translate-x-1/2 z-10 shadow-lg shadow-cyan-500/50">
+                <div className="absolute left-4 sm:left-5 lg:left-6 w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full border-2 border-slate-950 transform -translate-x-1/2 z-10 shadow-lg shadow-cyan-500/50">
                   {exp.isActive && (
                     <>
                       <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-ping"></div>
-                      <Zap className="absolute inset-0 w-1 h-1 sm:w-1.5 sm:h-1.5 lg:w-3 lg:h-3 text-white m-auto animate-pulse" />
+                      <Zap className="absolute inset-0 w-1.5 h-1.5 sm:w-2 sm:h-2 text-white m-auto animate-pulse" />
                     </>
                   )}
                 </div>
 
-                {/* Content card - Enhanced mobile contrast and separation */}
-                <div className={`w-full lg:w-5/12 ml-6 sm:ml-7 lg:ml-0 ${
-                  index % 2 === 0 ? 'lg:mr-8' : 'lg:ml-8'
-                }`}>
-                  <div className="group relative bg-slate-800/60 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 border-2 border-slate-700/70 hover:border-slate-600/80 transition-all duration-500 hover:transform hover:scale-105 shadow-lg shadow-slate-900/50">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} opacity-0 group-hover:opacity-8 rounded-lg sm:rounded-xl lg:rounded-3xl transition-opacity duration-500`}></div>
+                {/* Compact content card */}
+                <div className="ml-8 sm:ml-10 lg:ml-12">
+                  <div className="group relative bg-slate-900/60 backdrop-blur-xl rounded-xl lg:rounded-2xl p-4 sm:p-5 lg:p-6 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300 hover:transform hover:scale-[1.02]">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} opacity-0 group-hover:opacity-8 rounded-xl lg:rounded-2xl transition-opacity duration-300`}></div>
                     
                     <div className="relative z-10">
-                      {/* Enhanced Header with better contrast */}
-                      <div className="flex items-start gap-2 sm:gap-3 mb-3 sm:mb-4 lg:mb-6">
-                        <div className={`flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 lg:w-16 lg:h-16 bg-gradient-to-br ${exp.gradient} bg-opacity-15 rounded-lg sm:rounded-xl lg:rounded-2xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0 border border-slate-600/30`}>
-                          <Building className={`w-4 h-4 sm:w-5 sm:h-5 lg:w-8 lg:h-8 bg-gradient-to-br ${exp.gradient} bg-clip-text text-transparent`} />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
-                            <h3 className="text-sm sm:text-base lg:text-xl font-bold text-white">{exp.company}</h3>
-                            {exp.isActive && (
-                              <span className="px-1.5 py-0.5 sm:px-2 sm:py-1 bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-[9px] sm:text-xs font-bold rounded-full animate-pulse shadow-md">
-                                CURRENT
-                              </span>
+                      {/* Compact Header */}
+                      <div className="flex items-start justify-between mb-3 sm:mb-4">
+                        <div className="flex items-start gap-3 sm:gap-4 flex-1 min-w-0">
+                          <div className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${exp.gradient} bg-opacity-15 rounded-lg lg:rounded-xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                            <Building className={`w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br ${exp.gradient} bg-clip-text text-transparent`} />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 mb-1">
+                              <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white truncate">{exp.company}</h3>
+                              {exp.isActive && (
+                                <span className="px-2 py-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-xs font-bold rounded-full animate-pulse shadow-md flex-shrink-0">
+                                  CURRENT
+                                </span>
+                              )}
+                            </div>
+                            <h4 className="text-sm sm:text-base font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-1">
+                              {exp.role}
+                            </h4>
+                            {exp.client && (
+                              <p className="text-xs text-cyan-300 font-semibold bg-slate-700/30 px-2 py-0.5 rounded-full inline-block">{exp.client}</p>
                             )}
                           </div>
-                          <h4 className="text-xs sm:text-sm lg:text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-1 sm:mb-2">
-                            {exp.role}
-                          </h4>
-                          {exp.client && (
-                            <p className="text-[10px] sm:text-xs text-cyan-300 font-semibold bg-slate-700/30 px-2 py-0.5 rounded-full inline-block">{exp.client}</p>
-                          )}
                         </div>
                       </div>
 
-                      {/* Enhanced Meta info with better spacing */}
-                      <div className="flex flex-col gap-1 sm:gap-1.5 mb-3 sm:mb-4 text-[10px] sm:text-xs text-slate-300 bg-slate-700/20 rounded-lg p-2 sm:p-3">
-                        <div className="flex items-center gap-1.5 sm:gap-2">
-                          <Calendar className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-cyan-400" />
+                      {/* Compact Meta info */}
+                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mb-3 text-xs text-slate-300 bg-slate-700/20 rounded-lg p-3">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="w-3 h-3 text-cyan-400 flex-shrink-0" />
                           <span className="font-medium">{exp.period}</span>
                         </div>
-                        <div className="flex items-center gap-1.5 sm:gap-2">
-                          <MapPin className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-cyan-400" />
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-3 h-3 text-cyan-400 flex-shrink-0" />
                           <span className="font-medium">{exp.location}</span>
                         </div>
                       </div>
 
-                      {/* Enhanced Technologies with better contrast */}
-                      <div className="mb-3 sm:mb-4">
-                        <div className="flex flex-wrap gap-1 sm:gap-1.5">
-                          {exp.technologies.slice(0, isMobile ? 3 : exp.technologies.length).map((tech, techIndex) => (
+                      {/* Compact Technologies */}
+                      <div className="mb-3">
+                        <div className="flex flex-wrap gap-1.5">
+                          {exp.technologies.slice(0, 6).map((tech, techIndex) => (
                             <span 
                               key={techIndex}
-                              className="px-1.5 py-0.5 sm:px-2 sm:py-1 bg-slate-700/60 text-slate-200 text-[9px] sm:text-xs font-medium rounded-md border border-slate-600/50 hover:border-cyan-400/60 transition-colors shadow-sm"
+                              className="px-2 py-1 bg-slate-700/60 text-slate-200 text-xs font-medium rounded-md border border-slate-600/50 hover:border-cyan-400/60 transition-colors"
                             >
                               {tech}
                             </span>
                           ))}
-                          {isMobile && exp.technologies.length > 3 && (
-                            <span className="px-1.5 py-0.5 bg-slate-600/60 text-slate-300 text-[9px] font-medium rounded-md border border-slate-500/50">
-                              +{exp.technologies.length - 3}
+                          {exp.technologies.length > 6 && (
+                            <span className="px-2 py-1 bg-slate-600/60 text-slate-300 text-xs font-medium rounded-md border border-slate-500/50">
+                              +{exp.technologies.length - 6}
                             </span>
                           )}
                         </div>
                       </div>
 
-                      {/* Enhanced Summary with better readability */}
-                      <div className="mb-3 sm:mb-4">
-                        <p className="text-xs sm:text-sm lg:text-base text-slate-200 leading-relaxed bg-slate-700/20 p-2 sm:p-3 rounded-lg border-l-2 border-cyan-400/50">
-                          {exp.summary}
-                        </p>
-                      </div>
+                      {/* Compact Summary */}
+                      <p className="text-sm text-slate-200 leading-relaxed mb-4 bg-slate-700/20 p-3 rounded-lg border-l-2 border-cyan-400/50">
+                        {exp.summary}
+                      </p>
 
-                      {/* Enhanced collapsible achievements */}
-                      <div>
-                        <button
-                          onClick={() => toggleExpanded(index)}
-                          className="flex items-center gap-1 sm:gap-2 text-cyan-300 hover:text-cyan-200 transition-colors text-xs sm:text-sm font-semibold mb-2 sm:mb-3 group/btn bg-slate-700/30 px-2 py-1 rounded-md hover:bg-slate-700/50"
-                        >
-                          {expandedItems.includes(index) ? (
-                            <>
-                              <ChevronUp className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:scale-110 transition-transform" />
-                              Hide Details
-                            </>
-                          ) : (
-                            <>
-                              <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:scale-110 transition-transform" />
-                              View Details
-                            </>
-                          )}
-                        </button>
-                        
-                        {expandedItems.includes(index) && (
-                          <div className="bg-slate-700/20 rounded-lg p-2 sm:p-3 border border-slate-600/30 animate-fade-in-up">
-                            <ul className="space-y-1.5 sm:space-y-2">
-                              {exp.achievements.map((achievement, achievementIndex) => (
-                                <li key={achievementIndex} className="flex items-start gap-1.5 sm:gap-2 text-[10px] sm:text-xs lg:text-sm text-slate-200">
-                                  <ChevronRight className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-                                  <span className="leading-relaxed">{achievement}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
+                      {/* Compact collapsible achievements */}
+                      <button
+                        onClick={() => toggleExpanded(index)}
+                        className="flex items-center gap-2 text-cyan-300 hover:text-cyan-200 transition-colors text-sm font-semibold group/btn bg-slate-700/30 px-3 py-2 rounded-lg hover:bg-slate-700/50 w-full justify-center"
+                      >
+                        {expandedItems.includes(index) ? (
+                          <>
+                            <ChevronUp className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
+                            Hide Details
+                          </>
+                        ) : (
+                          <>
+                            <ChevronDown className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
+                            View Details
+                          </>
                         )}
-                      </div>
+                      </button>
+                      
+                      {expandedItems.includes(index) && (
+                        <div className="mt-4 bg-slate-700/20 rounded-lg p-4 border border-slate-600/30 animate-fade-in-up">
+                          <h5 className="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+                            <ChevronRight className="w-3 h-3 text-cyan-400" />
+                            Key Achievements
+                          </h5>
+                          <ul className="space-y-2">
+                            {exp.achievements.map((achievement, achievementIndex) => (
+                              <li key={achievementIndex} className="flex items-start gap-2 text-xs text-slate-200">
+                                <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-1.5 flex-shrink-0"></div>
+                                <span className="leading-relaxed">{achievement}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
