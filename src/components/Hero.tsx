@@ -75,29 +75,48 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0 pointer-events-none bg-[linear-gradient(rgba(148,163,184,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.02)_1px,transparent_1px)] bg-[size:60px_60px] sm:bg-[size:72px_72px]"></div>
 
       {/* Spline 3D Animation - overlays only the Hero section, above animated background */}
+      {/* Responsive Spline 3D Animation: mobile and desktop configs are independent */}
       <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: 1,
-          pointerEvents: 'none',
-          background: 'transparent',
-          overflow: 'hidden',
-        }}
+        className="absolute inset-0 z-1 pointer-events-none bg-transparent overflow-hidden"
       >
+        {/* Desktop view (md and up): original config */}
         <div
+          className="hidden md:block"
           style={{
             position: 'absolute',
             right: '0',
-            bottom: '-18vh', // a bit more down
+            bottom: '-18vh',
             width: '80vw',
             height: '90vh',
             minWidth: '900px',
             minHeight: '900px',
             maxWidth: '1600px',
             maxHeight: '1600px',
+            pointerEvents: 'none',
+            background: 'transparent',
+            zIndex: 2,
+          }}
+        >
+          <spline-viewer
+            url="https://prod.spline.design/h1K2eXdoHJYdqnrp/scene.splinecode"
+            loading-anim-type="none"
+            style={{ width: '100%', height: '100%', background: 'transparent' }}
+          ></spline-viewer>
+        </div>
+        {/* Mobile view (below md): smaller, lower, and centered */}
+        <div
+          className="block md:hidden"
+          style={{
+            position: 'absolute',
+            left: '65%', // a bit left
+            top: '10vh',
+            transform: 'translateX(-50%)',
+            width: '170vw',
+            height: '68vh',
+            minWidth: '0',
+            minHeight: '0',
+            maxWidth: '1000px',
+            maxHeight: '600px',
             pointerEvents: 'none',
             background: 'transparent',
             zIndex: 2,
