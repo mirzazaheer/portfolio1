@@ -200,57 +200,57 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => {
             const Icon = project.icon;
             return (
-              <div key={index} className="group relative bg-slate-900/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-5 lg:p-6 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300 hover:transform hover:scale-105">
+              <div key={index} className="group relative bg-slate-900/60 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-3 sm:p-4 lg:p-5 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300 hover:transform hover:scale-105">
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-8 rounded-2xl sm:rounded-3xl transition-opacity duration-300`}></div>
                 
                 <div className="relative z-10">
                   {/* Header */}
-                  <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-5">
-                    <div className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-br ${project.gradient} bg-opacity-15 rounded-lg sm:rounded-xl lg:rounded-2xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                      <Icon className={`w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 bg-gradient-to-br ${project.gradient} bg-clip-text text-transparent`} />
+                  <div className="flex items-start gap-2 sm:gap-3 mb-3 sm:mb-4">
+                    <div className={`flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-br ${project.gradient} bg-opacity-15 rounded-lg sm:rounded-xl lg:rounded-2xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                      <Icon className={`w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-gradient-to-br ${project.gradient} bg-clip-text text-transparent`} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1 sm:mb-2">
-                        <span className={`px-2 py-0.5 sm:px-3 sm:py-1 bg-gradient-to-r ${project.gradient} bg-opacity-10 text-[10px] sm:text-xs font-medium rounded-full border border-slate-700/50`}>
+                      <div className="flex items-center gap-1 mb-0.5 sm:mb-1">
+                        <span className={`px-1.5 py-0.5 sm:px-2 sm:py-0.5 bg-gradient-to-r ${project.gradient} bg-opacity-10 text-[9px] sm:text-xs font-medium rounded-full border border-slate-700/50`}>
                           {project.category}
                         </span>
                       </div>
-                      <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 transition-all duration-300 mb-1 leading-tight">
+                      <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 transition-all duration-300 mb-0.5 leading-tight">
                         {project.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-400 font-medium mb-1 sm:mb-2">{project.subtitle}</p>
-                      <p className="text-[10px] sm:text-xs text-cyan-400 font-semibold">{project.client}</p>
+                      <p className="text-[11px] sm:text-xs text-slate-400 font-medium mb-0.5 sm:mb-1">{project.subtitle}</p>
+                      <p className="text-[9px] sm:text-[11px] text-cyan-400 font-semibold">{project.client}</p>
                     </div>
                   </div>
 
                   {/* Description - Improved text alignment */}
-                  <p className="text-slate-300 leading-relaxed mb-4 sm:mb-5 text-xs sm:text-sm lg:text-base text-justify">
+                  <p className="text-slate-300 leading-snug mb-3 sm:mb-4 text-[11px] sm:text-xs lg:text-sm text-justify max-w-full">
                     {project.description}
                   </p>
 
                   {/* Key Features */}
-                  <div className="mb-4 sm:mb-5">
-                    <h4 className="text-xs sm:text-sm font-semibold text-white mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2">
+                  <div className="mb-3 sm:mb-4">
+                    <h4 className="text-[11px] sm:text-xs font-semibold text-white mb-1.5 sm:mb-2 flex items-center gap-1 sm:gap-1.5">
                       <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
                       Key Features
                     </h4>
-                    <ul className="grid grid-cols-1 gap-1.5 sm:gap-2">
+                    <ul className="grid grid-cols-1 gap-1 sm:gap-1.5">
                       {project.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start gap-1.5 sm:gap-2 text-[10px] sm:text-xs lg:text-sm text-slate-400">
+                        <li key={featureIndex} className="flex items-start gap-1 sm:gap-1.5 text-[9px] sm:text-xs lg:text-sm text-slate-400">
                           <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-cyan-400 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                          <span className="leading-relaxed">{feature}</span>
+                          <span className="leading-snug">{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   {/* Technologies */}
-                  <div className="mb-5 sm:mb-6">
-                    <div className="flex flex-wrap gap-1 sm:gap-1.5">
+                  <div className="mb-4 sm:mb-5">
+                    <div className="flex flex-wrap gap-0.5 sm:gap-1">
                       {project.technologies.map((tech, techIndex) => (
                         <span 
                           key={techIndex}
-                          className="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-slate-800/60 text-slate-300 text-[9px] sm:text-xs font-medium rounded-md border border-slate-700/50 hover:border-cyan-400/50 transition-colors"
+                          className="px-1.5 py-0.5 sm:px-2 sm:py-0.5 bg-slate-800/60 text-slate-300 text-[8.5px] sm:text-xs font-medium rounded-md border border-slate-700/50 hover:border-cyan-400/50 transition-colors"
                         >
                           {tech}
                         </span>
