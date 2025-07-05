@@ -223,8 +223,8 @@ const Projects: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Description */}
-                  <p className="text-slate-300 leading-relaxed mb-4 sm:mb-5 text-xs sm:text-sm lg:text-base">
+                  {/* Description - Improved text alignment */}
+                  <p className="text-slate-300 leading-relaxed mb-4 sm:mb-5 text-xs sm:text-sm lg:text-base text-justify">
                     {project.description}
                   </p>
 
