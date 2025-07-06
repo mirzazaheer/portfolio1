@@ -5,7 +5,17 @@ const Certifications: React.FC = () => {
   // SVG Logo Components for each certification
   const SnowflakeLogo = () => (
     <svg viewBox="0 0 24 24" className="w-full h-full">
-      <path fill="currentColor" d="M12.5 2.5l1.8 1.8-1.8 1.8-1.8-1.8L12.5 2.5zm6.4 3.2l1.8 1.8-1.8 1.8-1.8-1.8 1.8-1.8zM5.1 5.7l1.8 1.8-1.8 1.8-1.8-1.8L5.1 5.7zm14.4 4.8l1.8 1.8-1.8 1.8-1.8-1.8 1.8-1.8zm-16.2 0l1.8 1.8-1.8 1.8-1.8-1.8L3.3 10.5zm8.2 1.5l1.8 1.8-1.8 1.8-1.8-1.8L11.5 12zm8.2 3.8l1.8 1.8-1.8 1.8-1.8-1.8 1.8-1.8zm-16.2 0l1.8 1.8-1.8 1.8-1.8-1.8L3.5 15.8zm8.2 1.5l1.8 1.8-1.8 1.8-1.8-1.8 1.8-1.8zm6.4 3.2l1.8 1.8-1.8 1.8-1.8-1.8 1.8-1.8z"/>
+      {/* Correct Snowflake company logo - stylized snowflake with 6 points */}
+      <g fill="currentColor">
+        <path d="M12 2l1.5 2.6L12 7.2 10.5 4.6 12 2z"/>
+        <path d="M19.8 6l-2.6 1.5L14.6 6l2.6-1.5L19.8 6z"/>
+        <path d="M19.8 18l-2.6-1.5L14.6 18l2.6 1.5L19.8 18z"/>
+        <path d="M12 22l-1.5-2.6L12 16.8l1.5 2.6L12 22z"/>
+        <path d="M4.2 18l2.6-1.5L9.4 18l-2.6 1.5L4.2 18z"/>
+        <path d="M4.2 6l2.6 1.5L9.4 6l-2.6-1.5L4.2 6z"/>
+        <circle cx="12" cy="12" r="2" fill="currentColor"/>
+        <path d="M12 8v8M8.5 10l7 4M8.5 14l7-4"/>
+      </g>
     </svg>
   );
 
@@ -54,7 +64,7 @@ const Certifications: React.FC = () => {
       logo: SnowflakeLogo,
       level: 'Professional',
       gradient: 'from-cyan-400 to-blue-500',
-      year: '2024',
+      year: '2023',
       logoColor: 'text-cyan-400'
     },
     {
@@ -63,7 +73,7 @@ const Certifications: React.FC = () => {
       logo: MicrosoftLogo,
       level: 'Certified',
       gradient: 'from-blue-400 to-indigo-500',
-      year: '2024',
+      year: '2023',
       logoColor: 'text-blue-400'
     },
     {
@@ -72,7 +82,7 @@ const Certifications: React.FC = () => {
       logo: DbtLogo,
       level: 'Certified',
       gradient: 'from-orange-400 to-red-500',
-      year: '2023',
+      year: '2025',
       logoColor: 'text-orange-400'
     },
     {
