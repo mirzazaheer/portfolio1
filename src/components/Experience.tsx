@@ -143,23 +143,6 @@ const Experience: React.FC = () => {
       ],
       isActive: false,
       gradient: 'from-yellow-500 to-green-500'
-    },
-    {
-      company: 'KaaShiv InfoTech',
-      role: 'Web Development Intern',
-      period: 'Jun 2019',
-      location: 'Chennai, India',
-      client: 'Front End Development Project',
-      technologies: ['HTML', 'CSS', 'PHP', 'JavaScript'],
-      summary: 'Gained practical experience in web development technologies and user interface design.',
-      achievements: [
-        'Developed responsive web pages using HTML, CSS, and JavaScript',
-        'Implemented dynamic functionality with PHP backend integration',
-        'Enhanced user experience through improved interface design',
-        'Assisted senior developers in project development and maintenance'
-      ],
-      isActive: false,
-      gradient: 'from-green-500 to-teal-500'
     }
   ];
 

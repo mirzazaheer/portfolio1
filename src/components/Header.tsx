@@ -99,12 +99,12 @@ const Header: React.FC = () => {
 
           {/* Desktop controls - CV button and Profile Photo */}
           <div className="hidden lg:flex items-center gap-4">
-            {/* Fixed CV button with perfect containment */}
-            <button className="group relative flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-cyan-500/20 text-sm overflow-hidden">
-              <Download className="w-4 h-4 group-hover:animate-bounce relative z-10" />
+            {/* Reduced CV button size for desktop */}
+            <button className="group relative flex items-center gap-1.5 px-2.5 py-1.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-md hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-cyan-500/20 text-xs overflow-hidden">
+              <Download className="w-3.5 h-3.5 group-hover:animate-bounce relative z-10" />
               <span className="relative z-10">CV</span>
               {/* Contained gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md"></div>
             </button>
             {/* Desktop Profile Photo - Slides in from animation with perfect positioning */}
             <div className={`relative w-12 h-12 rounded-xl overflow-hidden border-2 border-slate-700/50 transition-all duration-1000 ease-out group ${
@@ -134,12 +134,12 @@ const Header: React.FC = () => {
 
           {/* Mobile & Tablet controls - CV button and menu */}
           <div className="lg:hidden flex items-center gap-2">
-            {/* Fixed mobile CV button with proper containment */}
-            <button className="group relative flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-cyan-500/20 text-sm overflow-hidden">
-              <Download className="w-4 h-4 group-hover:animate-bounce relative z-10" />
+            {/* Reduced mobile CV button size */}
+            <button className="group relative flex items-center gap-1.5 px-2 py-1.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-md hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-cyan-500/20 text-xs overflow-hidden">
+              <Download className="w-3.5 h-3.5 group-hover:animate-bounce relative z-10" />
               <span className="relative z-10">CV</span>
               {/* Contained gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md"></div>
             </button>
             {/* Menu button */}
             <button
