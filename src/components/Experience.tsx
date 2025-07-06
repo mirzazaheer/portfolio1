@@ -37,37 +37,23 @@ const Experience: React.FC = () => {
     {
       company: 'Mastek',
       role: 'Senior Software Engineer',
-      period: 'Oct 2024 – Dec 2024',
+      period: 'Sep 2023 – Dec 2024',
       location: 'Mumbai, India',
-      client: 'Kellanova',
-      technologies: ['Snowflake', 'dbt', 'AWS', 'SQS', 'Glue', 'Iceberg'],
-      summary: 'Architected scalable data pipelines with SQS-based ingestion and Iceberg tables for ACID-compliant operations.',
+      client: 'Kellanova & Alegeus',
+      technologies: ['Snowflake', 'dbt', 'AWS', 'SQS', 'Glue', 'Iceberg', 'Azure Fabric', 'Databricks', 'Delta Lake', 'Python', 'CosmosDB', 'Kafka'],
+      summary: 'Led data engineering initiatives across multiple clients, architecting scalable pipelines with SQS-based ingestion, Iceberg tables, and enterprise data lake solutions.',
       achievements: [
-        'Architected & implemented SQS-based ingestion pipeline replacing Lambda model, improving scalability',
+        'Architected & implemented SQS-based ingestion pipeline replacing Lambda model, improving scalability for Kellanova',
         'Designed and migrated to Iceberg tables for ACID-compliant data lake operations',
         'Created custom Data Extractor to automate S3 to Snowflake/Redshift loads',
-        'Refactored legacy File Register for performance & modularity',
-        'Developed reusable Spark & Python pipelines and fixed critical production bugs'
+        'Developed Silver/Gold layer transformations for Azure Fabric data lake architecture for Alegeus',
+        'Built custom validation & reconciliation tools for data quality assurance across both clients',
+        'Created data sync tools using Python and Java microservices',
+        'Implemented real-time streaming solutions using Kafka for financial services data',
+        'Refactored legacy File Register for performance & modularity and fixed critical production bugs'
       ],
       isActive: false,
       gradient: 'from-blue-500 to-purple-600'
-    },
-    {
-      company: 'Mastek',
-      role: 'Senior Software Engineer',
-      period: 'Sep 2023 – Aug 2024',
-      location: 'Mumbai, India',
-      client: 'Alegeus',
-      technologies: ['Azure Fabric', 'Databricks', 'Snowflake', 'Delta Lake', 'Python', 'CosmosDB', 'Kafka'],
-      summary: 'Built enterprise data lake with Silver/Gold transformations and real-time streaming solutions.',
-      achievements: [
-        'Developed Silver/Gold layer transformations for data lake architecture',
-        'Built custom validation & reconciliation tools for data quality assurance',
-        'Created data sync tools using Python and Java microservices',
-        'Implemented real-time streaming solutions using Kafka'
-      ],
-      isActive: false,
-      gradient: 'from-purple-600 to-pink-500'
     },
     {
       company: 'InfoCepts',
@@ -85,24 +71,25 @@ const Experience: React.FC = () => {
         'Created automation scripts for data quality monitoring'
       ],
       isActive: false,
-      gradient: 'from-pink-500 to-rose-500'
+      gradient: 'from-purple-600 to-pink-500'
     },
     {
       company: 'InfoCepts',
       role: 'Associate Data Engineer',
       period: 'Sep 2021 – Dec 2022',
       location: 'Pune, India',
-      client: 'Michael Kors, Capri Holdings',
+      client: 'Michael Kors, Capri Holdings & Versace',
       technologies: ['Snowflake', 'ETL', 'Shell Script', 'PowerShell', 'SQL'],
-      summary: 'Developed robust ETL processes and automation scripts with multiple client recognitions.',
+      summary: 'Developed robust ETL processes and automation scripts across luxury fashion brands with multiple client recognitions.',
       achievements: [
-        'Developed robust ETL jobs and Snowflake stored procedures',
-        'Created Shell & PowerShell scripts for automation',
-        'Implemented exception handling & metadata logging',
-        'Received multiple client appreciations and team awards'
+        'Developed robust ETL jobs and Snowflake stored procedures for multiple luxury fashion brands',
+        'Created Shell & PowerShell scripts for automation across Michael Kors, Capri Holdings, and Versace',
+        'Implemented exception handling & metadata logging for all client data pipelines',
+        'Built data integration solutions for Versace\'s retail and e-commerce operations',
+        'Received multiple client appreciations and team awards for exceptional performance'
       ],
       isActive: false,
-      gradient: 'from-rose-500 to-orange-500'
+      gradient: 'from-pink-500 to-rose-500'
     },
     {
       company: 'InfoCepts',
@@ -120,7 +107,7 @@ const Experience: React.FC = () => {
         'Collaborated with Solutions Team for IDS enhancements'
       ],
       isActive: false,
-      gradient: 'from-orange-500 to-yellow-500'
+      gradient: 'from-rose-500 to-orange-500'
     },
     {
       company: 'InfoCepts',
@@ -136,6 +123,23 @@ const Experience: React.FC = () => {
         'Gained hands-on experience with MS SQL Server and MicroStrategy',
         'Learned Informatica PowerCenter and Data Warehouse Design',
         'Completed Quality Assurance and Advanced Analytics modules'
+      ],
+      isActive: false,
+      gradient: 'from-orange-500 to-yellow-500'
+    },
+    {
+      company: 'KaaShiv InfoTech',
+      role: 'Web Development Intern',
+      period: 'Jun 2019',
+      location: 'Chennai, India',
+      client: 'Front End Development Project',
+      technologies: ['HTML', 'CSS', 'PHP', 'JavaScript'],
+      summary: 'Gained practical experience in web development technologies and user interface design.',
+      achievements: [
+        'Developed responsive web pages using HTML, CSS, and JavaScript',
+        'Implemented dynamic functionality with PHP backend integration',
+        'Enhanced user experience through improved interface design',
+        'Assisted senior developers in project development and maintenance'
       ],
       isActive: false,
       gradient: 'from-yellow-500 to-green-500'
