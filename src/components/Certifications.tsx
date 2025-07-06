@@ -5,16 +5,42 @@ const Certifications: React.FC = () => {
   // SVG Logo Components for each certification
   const SnowflakeLogo = () => (
     <svg viewBox="0 0 24 24" className="w-full h-full">
-      {/* Correct Snowflake company logo - stylized snowflake with 6 points */}
+      {/* Snowflake logo matching the provided design */}
       <g fill="currentColor">
-        <path d="M12 2l1.5 2.6L12 7.2 10.5 4.6 12 2z"/>
-        <path d="M19.8 6l-2.6 1.5L14.6 6l2.6-1.5L19.8 6z"/>
-        <path d="M19.8 18l-2.6-1.5L14.6 18l2.6 1.5L19.8 18z"/>
-        <path d="M12 22l-1.5-2.6L12 16.8l1.5 2.6L12 22z"/>
-        <path d="M4.2 18l2.6-1.5L9.4 18l-2.6 1.5L4.2 18z"/>
-        <path d="M4.2 6l2.6 1.5L9.4 6l-2.6-1.5L4.2 6z"/>
-        <circle cx="12" cy="12" r="2" fill="currentColor"/>
-        <path d="M12 8v8M8.5 10l7 4M8.5 14l7-4"/>
+        {/* Center diamond */}
+        <path d="M12 10l2 2-2 2-2-2 2-2z"/>
+        
+        {/* Top arrow */}
+        <path d="M12 2l-1.5 1.5L12 5l1.5-1.5L12 2z"/>
+        <rect x="11" y="3" width="2" height="6" rx="1"/>
+        
+        {/* Bottom arrow */}
+        <path d="M12 22l1.5-1.5L12 19l-1.5 1.5L12 22z"/>
+        <rect x="11" y="15" width="2" height="6" rx="1"/>
+        
+        {/* Top-right arrow */}
+        <path d="M19.8 6.2l-1.06 1.06L17.3 6.2l1.06-1.06L19.8 6.2z"/>
+        <rect x="14.5" y="5.5" width="6" height="2" rx="1" transform="rotate(45 17.5 6.5)"/>
+        
+        {/* Bottom-left arrow */}
+        <path d="M4.2 17.8l1.06-1.06L6.7 17.8l-1.06 1.06L4.2 17.8z"/>
+        <rect x="3.5" y="16.5" width="6" height="2" rx="1" transform="rotate(45 6.5 17.5)"/>
+        
+        {/* Top-left arrow */}
+        <path d="M4.2 6.2l1.06 1.06L6.7 6.2l-1.06-1.06L4.2 6.2z"/>
+        <rect x="3.5" y="5.5" width="6" height="2" rx="1" transform="rotate(-45 6.5 6.5)"/>
+        
+        {/* Bottom-right arrow */}
+        <path d="M19.8 17.8l-1.06-1.06L17.3 17.8l1.06 1.06L19.8 17.8z"/>
+        <rect x="14.5" y="16.5" width="6" height="2" rx="1" transform="rotate(-45 17.5 17.5)"/>
+        
+        {/* Left arrow */}
+        <path d="M2 12l1.5-1.5L5 12l-1.5 1.5L2 12z"/>
+        <rect x="3" y="11" width="6" height="2" rx="1"/>
+        
+        {/* Right arrow */}
+        <path d="M22 12l-1.5 1.5L19 12l1.5-1.5L22 12z"/>
+        <rect x="15" y="11" width="6" height="2" rx="1"/>
       </g>
     </svg>
   );
