@@ -2,54 +2,105 @@ import React from 'react';
 import { Award, CheckCircle, Star, Trophy, Zap } from 'lucide-react';
 
 const Certifications: React.FC = () => {
+  // SVG Logo Components for each certification
+  const SnowflakeLogo = () => (
+    <svg viewBox="0 0 24 24" className="w-full h-full">
+      <path fill="currentColor" d="M12.5 2.5l1.8 1.8-1.8 1.8-1.8-1.8L12.5 2.5zm6.4 3.2l1.8 1.8-1.8 1.8-1.8-1.8 1.8-1.8zM5.1 5.7l1.8 1.8-1.8 1.8-1.8-1.8L5.1 5.7zm14.4 4.8l1.8 1.8-1.8 1.8-1.8-1.8 1.8-1.8zm-16.2 0l1.8 1.8-1.8 1.8-1.8-1.8L3.3 10.5zm8.2 1.5l1.8 1.8-1.8 1.8-1.8-1.8L11.5 12zm8.2 3.8l1.8 1.8-1.8 1.8-1.8-1.8 1.8-1.8zm-16.2 0l1.8 1.8-1.8 1.8-1.8-1.8L3.5 15.8zm8.2 1.5l1.8 1.8-1.8 1.8-1.8-1.8 1.8-1.8zm6.4 3.2l1.8 1.8-1.8 1.8-1.8-1.8 1.8-1.8z"/>
+    </svg>
+  );
+
+  const MicrosoftLogo = () => (
+    <svg viewBox="0 0 24 24" className="w-full h-full">
+      <path fill="#F25022" d="M1 1h10v10H1z"/>
+      <path fill="#00A4EF" d="M13 1h10v10H13z"/>
+      <path fill="#7FBA00" d="M1 13h10v10H1z"/>
+      <path fill="#FFB900" d="M13 13h10v10H13z"/>
+    </svg>
+  );
+
+  const DbtLogo = () => (
+    <svg viewBox="0 0 24 24" className="w-full h-full">
+      <path fill="currentColor" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+    </svg>
+  );
+
+  const Neo4jLogo = () => (
+    <svg viewBox="0 0 24 24" className="w-full h-full">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2"/>
+      <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" strokeWidth="2"/>
+      <circle cx="12" cy="12" r="2" fill="currentColor"/>
+      <path stroke="currentColor" strokeWidth="2" d="M12 2v4M12 18v4M2 12h4M18 12h4"/>
+    </svg>
+  );
+
+  const DatabricksLogo = () => (
+    <svg viewBox="0 0 24 24" className="w-full h-full">
+      <path fill="currentColor" d="M12 2l8 4.5v11L12 22l-8-4.5v-11L12 2zm0 2.5L6 7.5v9l6 3.5 6-3.5v-9L12 4.5z"/>
+      <path fill="currentColor" d="M12 8l4 2.5v5L12 18l-4-2.5v-5L12 8z"/>
+    </svg>
+  );
+
+  const HackerRankLogo = () => (
+    <svg viewBox="0 0 24 24" className="w-full h-full">
+      <path fill="currentColor" d="M12 2L2 7v10l10 5 10-5V7l-10-5zm0 2.5L19 8.5v7L12 19.5 5 15.5v-7L12 4.5z"/>
+      <path fill="currentColor" d="M8 10h8v4H8z"/>
+    </svg>
+  );
+
   const certifications = [
     {
       name: 'Snowflake SnowPro Core',
       provider: 'Snowflake',
-      icon: '❄️',
+      logo: SnowflakeLogo,
       level: 'Professional',
       gradient: 'from-cyan-400 to-blue-500',
-      year: '2024'
+      year: '2024',
+      logoColor: 'text-cyan-400'
     },
     {
       name: 'Azure AI Fundamentals',
       provider: 'Microsoft',
-      icon: '🏢',
+      logo: MicrosoftLogo,
       level: 'Certified',
       gradient: 'from-blue-400 to-indigo-500',
-      year: '2024'
+      year: '2024',
+      logoColor: 'text-blue-400'
     },
     {
       name: 'dbt Certified Developer',
       provider: 'dbt Labs',
-      icon: '🔧',
+      logo: DbtLogo,
       level: 'Certified',
       gradient: 'from-orange-400 to-red-500',
-      year: '2023'
+      year: '2023',
+      logoColor: 'text-orange-400'
     },
     {
       name: 'Neo4j Certified Professional',
       provider: 'Neo4j',
-      icon: '🔗',
+      logo: Neo4jLogo,
       level: 'Professional',
       gradient: 'from-green-400 to-emerald-500',
-      year: '2023'
+      year: '2023',
+      logoColor: 'text-green-400'
     },
     {
       name: 'Databricks Lakehouse Fundamentals',
       provider: 'Databricks',
-      icon: '🧱',
+      logo: DatabricksLogo,
       level: 'Certified',
       gradient: 'from-purple-400 to-pink-500',
-      year: '2023'
+      year: '2023',
+      logoColor: 'text-purple-400'
     },
     {
       name: 'HackerRank SQL Advanced',
       provider: 'HackerRank',
-      icon: '🏆',
+      logo: HackerRankLogo,
       level: 'Advanced',
       gradient: 'from-yellow-400 to-orange-500',
-      year: '2022'
+      year: '2022',
+      logoColor: 'text-yellow-400'
     }
   ];
 
@@ -71,43 +122,48 @@ const Certifications: React.FC = () => {
           </p>
         </div>
 
-        {/* Certifications Grid - More compact and sleek */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8 lg:mb-10">
-          {certifications.map((cert, index) => (
-            <div key={index} className="group relative">
-              <div className="bg-slate-900/60 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-3 lg:p-4 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300 hover:transform hover:scale-105 h-full">
-                <div className={`absolute inset-0 bg-gradient-to-br ${cert.gradient} opacity-0 group-hover:opacity-8 rounded-lg sm:rounded-xl lg:rounded-2xl transition-opacity duration-300`}></div>
-                
-                <div className="relative z-10 h-full flex flex-col">
-                  {/* Header with icon and badge */}
-                  <div className="flex items-start justify-between mb-2 sm:mb-3">
-                    <div className="text-lg sm:text-xl lg:text-2xl">{cert.icon}</div>
-                    <div className={`px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full text-[8px] sm:text-[10px] lg:text-xs font-bold text-white bg-gradient-to-r ${cert.gradient} shadow-sm`}>
-                      {cert.level}
+        {/* Certifications Grid - Clean and modern with real logos */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 mb-6 sm:mb-8 lg:mb-10">
+          {certifications.map((cert, index) => {
+            const LogoComponent = cert.logo;
+            return (
+              <div key={index} className="group relative">
+                <div className="bg-slate-900/70 backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-5 border border-slate-800/60 hover:border-slate-700/60 transition-all duration-300 hover:transform hover:scale-105 h-full">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${cert.gradient} opacity-0 group-hover:opacity-8 rounded-xl sm:rounded-2xl lg:rounded-3xl transition-opacity duration-300`}></div>
+                  
+                  <div className="relative z-10 h-full flex flex-col">
+                    {/* Header with clean logo and badge */}
+                    <div className="flex items-start justify-between mb-3 sm:mb-4">
+                      <div className={`w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 ${cert.logoColor} group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                        <LogoComponent />
+                      </div>
+                      <div className={`px-2 py-1 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] lg:text-xs font-bold text-white bg-gradient-to-r ${cert.gradient} shadow-sm`}>
+                        {cert.level}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content */}
-                  <div className="flex-grow">
-                    <h3 className="text-xs sm:text-sm lg:text-base font-bold text-white mb-1 sm:mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 transition-all duration-300 leading-tight line-clamp-2">
-                      {cert.name}
-                    </h3>
-                    
-                    <div className="flex items-center justify-between">
-                      <p className="text-slate-400 text-[10px] sm:text-xs font-medium truncate">{cert.provider}</p>
-                      <span className="text-cyan-400 text-[9px] sm:text-[10px] font-semibold">{cert.year}</span>
+                    {/* Content */}
+                    <div className="flex-grow">
+                      <h3 className="text-xs sm:text-sm lg:text-base font-bold text-white mb-2 sm:mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-blue-500 transition-all duration-300 leading-tight line-clamp-2">
+                        {cert.name}
+                      </h3>
+                      
+                      <div className="flex items-center justify-between mb-2 sm:mb-3">
+                        <p className="text-slate-400 text-[10px] sm:text-xs font-medium truncate">{cert.provider}</p>
+                        <span className="text-cyan-400 text-[9px] sm:text-[10px] font-semibold">{cert.year}</span>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Verification badge */}
-                  <div className="flex items-center gap-1 mt-2 sm:mt-3">
-                    <CheckCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-cyan-400" />
-                    <span className="text-cyan-400 text-[9px] sm:text-[10px] font-semibold">Verified</span>
+                    {/* Verification badge */}
+                    <div className="flex items-center gap-1 sm:gap-1.5">
+                      <CheckCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-cyan-400" />
+                      <span className="text-cyan-400 text-[9px] sm:text-[10px] font-semibold">Verified</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Achievements - Streamlined horizontal layout */}
